@@ -1,4 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-public class OggettoServiceImpl {
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiService;
+
+public class OggettoServiceImpl implements OggettiService {
 }

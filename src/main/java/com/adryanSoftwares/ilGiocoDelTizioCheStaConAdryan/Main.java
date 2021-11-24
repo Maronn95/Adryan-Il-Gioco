@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IlGiocoDelTizioCheStaConAdryanApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IlGiocoDelTizioCheStaConAdryanApplication.class, args);
+		SpringApplication.run(Main.class, args);
 		System.out.print("shao");
 	}
 

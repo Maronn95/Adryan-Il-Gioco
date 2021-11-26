@@ -1,4 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys;
 
-public class AzioniRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.Repository;
+
+public class AzioniRepo <String, Long> implements Repository {
 }

@@ -1,6 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import javax.persistence.*;
 @Setter
 @Getter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class AzioniEntity {
 
     @Id
@@ -17,8 +21,4 @@ public class AzioniEntity {
 
     private String name;
 
-    public AzioniEntity(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

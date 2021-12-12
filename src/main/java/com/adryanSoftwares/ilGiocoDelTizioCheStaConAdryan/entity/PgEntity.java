@@ -1,14 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.context.properties.bind.Name;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PgEntity {
 
     @Id
@@ -18,8 +21,4 @@ public class PgEntity {
 
     private String name;
 
-    public PgEntity(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

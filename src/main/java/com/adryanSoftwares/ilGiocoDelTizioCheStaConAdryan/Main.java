@@ -12,7 +12,7 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 		MockPg mockPg = new MockPg();
 		mockPg.printPg();
-		System.out.print("shao");
+		System.out.print("Tutto OK");
 	}
 
 }

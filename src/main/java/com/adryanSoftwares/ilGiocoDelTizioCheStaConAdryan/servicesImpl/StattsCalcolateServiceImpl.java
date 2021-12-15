@@ -1,0 +1,6 @@
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
+
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsCalcolateService;
+
+public class StattsCalcolateServiceImpl implements StattsCalcolateService {
+}

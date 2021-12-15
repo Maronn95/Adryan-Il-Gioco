@@ -22,6 +22,9 @@ public class PgEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "vita", nullable = false)
+    private int vita;
+
     @Column(name = "forza", nullable = false)
     private int Forza;
     @Column(name = "costituzione", nullable = false)

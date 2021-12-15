@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StattsEntity {
+public class StattsPureEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

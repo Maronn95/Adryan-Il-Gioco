@@ -1,13 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mock;
 
-
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.Column;
 
 @Getter
 @Setter
@@ -18,16 +15,38 @@ public class MockPg {
     private Long id;
 
     private String name;
-    private int Forza;
-    private int Costituzione;
-    private int Destrezza;
-    private int Intelligenza;
-    private int Carisma;
-    private int Saggezza;
+    private int forza;
+    private int costituzione;
+    private int destrezza;
+    private int intelligenza;
+    private int carisma;
+    private int saggezza;
+
+    private int vita;
+    private int vitaMax;
+    private int vitaAttuale;
+
+    public int calcoloVita(){
+        return vita;
+    }
 
     PgEntity pgEntity = new PgEntity ();
 
-    public PgEntity carlo() {
+    public PgEntity dido() {
+        pgEntity.setVita(20);
+        pgEntity.setName("Carlo");
+        pgEntity.setForza(10);
+        pgEntity.setDestrezza(10);
+        pgEntity.setCostituzione(10);
+        pgEntity.setIntelligenza(10);
+        pgEntity.setCarisma(10);
+        pgEntity.setSaggezza(10);
+
+        return pgEntity;
+    }
+
+    public PgEntity camp() {
+        pgEntity.setVita(20);
         pgEntity.setName("Carlo");
         pgEntity.setForza(10);
         pgEntity.setDestrezza(10);
@@ -39,13 +58,14 @@ public class MockPg {
     }
 
     public void printPg (){
-        System.out.println(carlo().getId());
-        System.out.println(carlo().getName());
-        System.out.println(carlo().getForza());
-        System.out.println(carlo().getDestrezza());
-        System.out.println(carlo().getCostituzione());
-        System.out.println(carlo().getIntelligenza());
-        System.out.println(carlo().getCarisma());
-        System.out.println(carlo().getSaggezza());
+        System.out.println("Id "+dido().getId());
+        System.out.println("Punti vita "+dido().getVita());
+        System.out.println("Nome "+dido().getName());
+        System.out.println("Forza "+dido().getForza());
+        System.out.println("Destrezza "+dido().getDestrezza());
+        System.out.println("Costituzione "+dido().getCostituzione());
+        System.out.println("Intelligenza "+dido().getIntelligenza());
+        System.out.println("Carisma "+dido().getCarisma());
+        System.out.println("Saggezza "+dido().getSaggezza());
     }
 }

@@ -5,7 +5,9 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys.AzioniRepo;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.AzioniService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AzioniServiceImpl implements AzioniService {
 
     @Autowired

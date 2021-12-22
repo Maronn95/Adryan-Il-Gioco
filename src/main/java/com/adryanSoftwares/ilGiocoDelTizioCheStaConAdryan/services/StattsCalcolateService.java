@@ -1,7 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import org.springframework.stereotype.Service;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 
-@Service
 public interface StattsCalcolateService {
+
+    StattsPureEntity tXc();
+
+    StattsPureEntity calcoloCa();
+
+    StattsPureEntity vita(int vita);
+
+    StattsPureEntity vitaMax();
+
+    StattsPureEntity vitaAttuale();
+
 }

@@ -1,9 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.AzioniEntity;
-import org.springframework.stereotype.Service;
-
-@Service
 public interface AzioniService {
 
     //------------------------------------AZIONI EFFETTUATE------------------------------------

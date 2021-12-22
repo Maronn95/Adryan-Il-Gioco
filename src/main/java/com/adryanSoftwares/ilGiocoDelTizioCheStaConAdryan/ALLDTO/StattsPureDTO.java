@@ -1,22 +1,20 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StattsPureEntity {
+public class StattsPureDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @NotNull
     private Long id;
 
     @Column(name = "vita", nullable = false)
@@ -42,6 +40,4 @@ public class StattsPureEntity {
     private int vitaAttuale;
     @Column(name = "cA")
     private int ca;
-
-
 }

@@ -1,10 +1,12 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys.PgRepo;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys.StattsPureRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,16 +16,15 @@ import java.util.List;
 public class StattsPureServiceImpl implements StattsPureService {
 
     @Autowired
-    StattsPureEntity stattsPureEntity;
-    JpaRepository<StattsPureEntity, Long> stattsPureRepository;
-    StattsPureDTO stattsPureDTO;
+    StattsPureRepository stattsPureRepository;
+    PgRepo pgRepo;
 
     //convertitore ENTITY-->DTO
 
     private StattsPureDTO convertToDto (StattsPureEntity stattsPureEntity){
         StattsPureDTO stattsPureDTO =new StattsPureDTO();
 
-        stattsPureDTO.setId(stattsPureEntity.getId());
+        stattsPureDTO.setIdStattsPure(stattsPureEntity.getIdStattsPure());
 
         stattsPureDTO.setVita(stattsPureEntity.getVita());
         stattsPureDTO.setVitaMax(stattsPureEntity.getVitaMax());
@@ -35,6 +36,8 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureDTO.setSaggezza(stattsPureEntity.getSaggezza());
         stattsPureDTO.setIntelligenza(stattsPureEntity.getIntelligenza());
         stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());
+
+        stattsPureDTO.setName(stattsPureEntity.getName());
 
         stattsPureDTO.setCa(stattsPureEntity.getCa());
 
@@ -48,8 +51,9 @@ public class StattsPureServiceImpl implements StattsPureService {
     private StattsPureEntity convertToEntity (StattsPureDTO stattsPureDTO){
         StattsPureEntity stattsPureEntity = new StattsPureEntity();
 
-        stattsPureEntity.setId(stattsPureDTO.getId());
-
+        if(stattsPureDTO.getIdStattsPure() != null){
+        stattsPureEntity.setIdStattsPure(stattsPureDTO.getIdStattsPure());
+        }
         stattsPureEntity.setVita(stattsPureDTO.getVita());
         stattsPureEntity.setVitaMax(stattsPureDTO.getVitaMax());
         stattsPureEntity.setVitaAttuale(stattsPureDTO.getVitaAttuale());
@@ -60,6 +64,7 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureEntity.setSaggezza(stattsPureDTO.getSaggezza());
         stattsPureEntity.setIntelligenza(stattsPureDTO.getIntelligenza());
         stattsPureEntity.setCarisma(stattsPureDTO.getCarisma());
+        stattsPureEntity.setName(stattsPureDTO.getName());
 
         stattsPureEntity.setCa(stattsPureDTO.getCa());
 
@@ -72,7 +77,7 @@ public class StattsPureServiceImpl implements StattsPureService {
     @Override
     public List<StattsPureDTO> getAllStatts() {
         List<StattsPureEntity> Pgstatts = stattsPureRepository.findAll();
-        List<StattsPureDTO> stattsDTO = new ArrayList<StattsPureDTO>();
+        List<StattsPureDTO> stattsDTO = new ArrayList<>();
         for(StattsPureEntity stattsPureEntity : Pgstatts){
             StattsPureDTO stattsPureDTO = convertToDto(stattsPureEntity);
             stattsDTO.add(stattsPureDTO);
@@ -81,10 +86,24 @@ public class StattsPureServiceImpl implements StattsPureService {
         return stattsDTO;
     }
 
+    /*@Override
+    public List<StattsPureEntity> getAllStattsEntity() {
+        List<StattsPureEntity> pgStatts = stattsPureRepository.findAll();
+        return pgStatts;
+    }*/
 
-    @Override
+
+    public StattsPureEntity getStattByIdPg(Long idPg) {
+        return pgRepo.getById(idPg).getStattsPureEntity();
+
+        }
+
+
+
+    /*@Override
     public StattsPureDTO getStatt(String name) {
         List<StattsPureEntity> statts = stattsPureRepository.findAll();
+        StattsPureDTO stattsPureDTO = new StattsPureDTO();
         for(StattsPureEntity stattsPureEntity : statts){
 
             if(name=="vita"){stattsPureDTO.setVita(stattsPureEntity.getVita());}
@@ -97,15 +116,27 @@ public class StattsPureServiceImpl implements StattsPureService {
             if(name=="saggezza"){stattsPureDTO.setSaggezza(stattsPureEntity.getSaggezza());}
             if(name=="intelligenza"){stattsPureDTO.setSaggezza(stattsPureEntity.getIntelligenza());}
             if(name=="carisma"){stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());}
+            if(name=="idPg"){stattsPureDTO.setIdPg(stattsPureEntity.getIdPg());}
 
             if(name=="ca"){stattsPureDTO.setCa(stattsPureEntity.getCa());}
             if(name=="utilizzoArmaX"){stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());}
         }
         return stattsPureDTO;
+    }*/
+
+    @Override
+    public StattsPureEntity getStattById(Long IdStattsPure) {
+        StattsPureEntity stattsPureEntity = stattsPureRepository.getById(IdStattsPure);
+        return stattsPureEntity;
     }
 
     @Override
-    public StattsPureDTO setStatt(Long id, StattsPureDTO stattsPureDTO) {
-        return null;
+    public StattsPureDTO setStatt(StattsPureDTO stattsPureDTO) {
+
+        StattsPureEntity stattsPure = convertToEntity(stattsPureDTO);
+        stattsPureRepository.save(stattsPure);
+
+        return stattsPureDTO;
     }
+
 }

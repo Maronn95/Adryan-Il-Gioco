@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/azioniPg")
 public class PgControllerAzioni {
 
-    @Autowired
-    AzioniService azioniService;
 
 
 }

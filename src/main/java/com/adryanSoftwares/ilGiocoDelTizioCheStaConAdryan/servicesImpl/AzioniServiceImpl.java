@@ -12,7 +12,6 @@ public class AzioniServiceImpl implements AzioniService {
 
     @Autowired
     AzioniRepo azioniRepo;
-    PgEntity pgEntity;
 
     @Override
     public AzioniEntity attaccoFisico(AzioniEntity azioniEntity) {

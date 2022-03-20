@@ -12,36 +12,36 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "stattsPureEntity")
 public class StattsPureEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "idStattsPure")
+    private Long idStattsPure;
 
-    @Column(name = "vita", nullable = false)
-    private int vita;
-
-    @Column(name = "forza", nullable = false)
+    @Column(name = "name")
+    private String name;
+    @Column(name = "forza")
     private int forza;
-    @Column(name = "costituzione", nullable = false)
+    @Column(name = "costituzione")
     private int costituzione;
-    @Column(name = "destrezza", nullable = false)
+    @Column(name = "destrezza")
     private int destrezza;
-    @Column(name = "intelligenza", nullable = false)
+    @Column(name = "intelligenza")
     private int intelligenza;
-    @Column(name = "carisma", nullable = false)
+    @Column(name = "carisma")
     private int carisma;
-    @Column(name = "saggezza", nullable = false)
+    @Column(name = "saggezza")
     private int saggezza;
-    @Column(name = "utilizzoArmaX", nullable = false)
+    @Column(name = "vita")
+    private int vita;
+    @Column(name = "utilizzoArmaX")
     private int utilizzoArmaX;
-    @Column(name = "vitaMax", nullable = false)
+    @Column(name = "vitaMax")
     private int vitaMax;
-    @Column(name = "vitaAttuale", nullable = false)
+    @Column(name = "vitaAttuale")
     private int vitaAttuale;
-    @Column(name = "cA")
+    @Column(name = "ca")
     private int ca;
-
-
 }

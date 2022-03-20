@@ -1,8 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import org.springframework.stereotype.Service;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.PgDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 
-@Service
+import java.util.List;
+
 public interface PgService {
 
+    PgDTO setPg(PgDTO pgDTO);
+
+    List<PgDTO> getAllPg();
+
+    PgEntity getPg(Long idPg);
+
+    PgEntity setStattPure(Long idPg, Long idStattsPure);
 }

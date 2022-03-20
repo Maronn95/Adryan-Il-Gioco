@@ -1,13 +1,15 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
+
 import java.util.List;
 
 public interface StattsPureService {
 
     List<StattsPureDTO> getAllStatts();
 
-    StattsPureDTO getStatt(String name);
+    StattsPureEntity getStattById(Long idPg);
 
-    StattsPureDTO setStatt(Long id, StattsPureDTO stattsPureDTO);
+    StattsPureDTO setStatt(StattsPureDTO stattsPureDTO);
 }

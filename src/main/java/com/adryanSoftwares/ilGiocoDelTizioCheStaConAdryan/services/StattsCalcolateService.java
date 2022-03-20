@@ -1,12 +1,13 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 
 public interface StattsCalcolateService {
 
     StattsPureEntity tXc();
 
-    StattsPureEntity calcoloCa();
+    StattsPureDTO calcoloCa(long idPg);
 
     StattsPureEntity vita(int vita);
 

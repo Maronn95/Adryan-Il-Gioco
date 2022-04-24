@@ -20,8 +20,6 @@ public class StattsPureEntity {
     @Column(name = "idStattsPure")
     private Long idStattsPure;
 
-    @Column(name = "name")
-    private String name;
     @Column(name = "forza")
     private int forza;
     @Column(name = "costituzione")

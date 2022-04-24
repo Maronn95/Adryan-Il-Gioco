@@ -15,7 +15,6 @@ public class StattsPureDTO {
 
     private int vita;
 
-    private String name;
     private int forza;
     private int costituzione;
     private int destrezza;

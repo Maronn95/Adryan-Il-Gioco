@@ -37,8 +37,6 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureDTO.setIntelligenza(stattsPureEntity.getIntelligenza());
         stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());
 
-        stattsPureDTO.setName(stattsPureEntity.getName());
-
         stattsPureDTO.setCa(stattsPureEntity.getCa());
 
         stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());
@@ -64,7 +62,6 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureEntity.setSaggezza(stattsPureDTO.getSaggezza());
         stattsPureEntity.setIntelligenza(stattsPureDTO.getIntelligenza());
         stattsPureEntity.setCarisma(stattsPureDTO.getCarisma());
-        stattsPureEntity.setName(stattsPureDTO.getName());
 
         stattsPureEntity.setCa(stattsPureDTO.getCa());
 
@@ -72,7 +69,6 @@ public class StattsPureServiceImpl implements StattsPureService {
 
         return stattsPureEntity;
     }
-
 
     @Override
     public List<StattsPureDTO> getAllStatts() {
@@ -92,13 +88,10 @@ public class StattsPureServiceImpl implements StattsPureService {
         return pgStatts;
     }*/
 
-
     public StattsPureEntity getStattByIdPg(Long idPg) {
         return pgRepo.getById(idPg).getStattsPureEntity();
 
         }
-
-
 
     /*@Override
     public StattsPureDTO getStatt(String name) {

@@ -7,24 +7,38 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "pg")
 public class PgEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idPg")
     private Long idPg;
 
-    @Column(name = "name")
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "idStattsPure")
     private StattsPureEntity stattsPureEntity;
 
+    public PgEntity(Long idPg) {
+
+        switch (Math.toIntExact(idPg)) {
+            case 1:
+                this.idPg = idPg;
+                this.name = "Zezzone";
+                this.stattsPureEntity = new StattsPureEntity(1L);
+                break;
+
+            case 2:
+                this.idPg = idPg;
+                this.name = "Cafone";
+                this.stattsPureEntity = new StattsPureEntity(2L);
+                break;
+
+            case 3:
+                this.idPg = idPg;
+                this.name = "Cujone";
+                this.stattsPureEntity = new StattsPureEntity(3L);
+                break;
+        }
+    }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 public class OggettiBattlegroundEntity  {
 
-    private Integer oggettoBattegroundId;
+    private Long oggettoBattegroundId;
 
 
     private String descrizione;
@@ -34,8 +34,8 @@ public class OggettiBattlegroundEntity  {
 
     private Double randomLoot;
 
-    public OggettiBattlegroundEntity(Integer oggettoBattegroundId){
-     switch(oggettoBattegroundId){
+    public OggettiBattlegroundEntity(Long oggettoBattegroundId){
+     switch(Math.toIntExact(oggettoBattegroundId)){
          case 1:
              this.oggettoBattegroundId = oggettoBattegroundId;
              this.descrizione = "Albero semplice";

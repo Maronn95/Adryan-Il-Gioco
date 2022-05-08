@@ -5,15 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Armi {
 
-    private Integer armiId;
+
+    private Long armiId;
 
     private String name;
 
@@ -35,7 +34,7 @@ public class Armi {
 
        switch (armiId){
            case 1:
-               this.armiId=1;
+               this.armiId=1L;
                this.name="Spada Zezza";
                this.descrizione="È proprio una spada de merda";
                this.armaADistanza=false;
@@ -47,7 +46,7 @@ public class Armi {
                break;
 
             case 2:
-                this.armiId=2;
+                this.armiId=2L;
                 this.name="Martello Zezzo";
                 this.descrizione="Proprio un martello de merda";
                 this.armaADistanza=false;
@@ -59,7 +58,7 @@ public class Armi {
                 break;
 
            case 3:
-               this.armiId=3;
+               this.armiId=3L;
                this.name="Arco Zezzo";
                this.descrizione="Non ci pii un cazzo con què";
                this.armaADistanza=true;

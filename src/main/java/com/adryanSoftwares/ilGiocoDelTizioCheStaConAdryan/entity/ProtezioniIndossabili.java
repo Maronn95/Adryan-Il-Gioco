@@ -1,11 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro.EffettiMagiciDifensivi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro.Locazione;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Getter
 @Setter

@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,7 +32,7 @@ public class OggettiBattlegroundEntityDto {
   private Boolean loot;
 
   @JsonProperty("RandomLoot")
-  private Integer randomLoot;
+  private Double randomLoot;
 
 
 

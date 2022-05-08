@@ -1,17 +1,15 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class OggettiEntity {
-    @Setter
-    @Getter
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idOggetto")
     private Long idOggetto;
 
 }

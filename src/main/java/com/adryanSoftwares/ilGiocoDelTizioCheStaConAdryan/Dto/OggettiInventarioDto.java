@@ -1,8 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Rarita;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro.Rarita;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

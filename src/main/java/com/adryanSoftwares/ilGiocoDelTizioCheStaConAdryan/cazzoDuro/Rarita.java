@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro;
 
 public enum Rarita {
     COMUNE,

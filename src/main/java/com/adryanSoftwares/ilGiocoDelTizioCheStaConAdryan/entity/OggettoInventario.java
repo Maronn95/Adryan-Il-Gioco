@@ -1,8 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro.Rarita;
 import lombok.*;
-
-import javax.persistence.*;
 
 
 @Getter

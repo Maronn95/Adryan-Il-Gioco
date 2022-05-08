@@ -1,9 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiBattlegroundEntityDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiInventarioDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
 
 public class OggettiInventarioMapper {
@@ -25,12 +22,6 @@ public class OggettiInventarioMapper {
 
              if(OI.getRarita()!=null){
                  dto.setRarita(OI.getRarita());
-             }
-             if(OI.getArma()!=null){
-                 dto.setArmaId(OI.getArma().getArmiId());
-             }
-             if(OI.getProtezioneIndossabile()!=null){
-                 dto.setProtezioneIndossabileId(OI.getProtezioneIndossabile().getProtezioneIndossabileId());
              }
 
             }

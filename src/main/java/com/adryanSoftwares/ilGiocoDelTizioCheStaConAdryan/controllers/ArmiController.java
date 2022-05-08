@@ -1,13 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiInventarioDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiInventarioMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoInventarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +15,12 @@ import java.util.List;
 public class ArmiController {
 
     @Autowired
-    ArmiServiceImpl AR;
+    ArmiServiceImpl armiServiceImpl;
 
     @RequestMapping(value="/armi")
     public List<ArmiDto> GetArmi(){
         ArmiMapper AM = new ArmiMapper();
-        List<Armi> armi=AR.getArmi();
+        List<Armi> armi=armiServiceImpl.getArmi();
         List<ArmiDto> armiDto =new ArrayList<ArmiDto>();
         for(Armi a:armi)
             armiDto.add( AM.entityToDto(a));
@@ -35,7 +31,7 @@ public class ArmiController {
     public ArmiDto getOggettiById(@PathVariable Long id)
     {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma =AR.getArmaById(id).get();
+        Armi arma =armiServiceImpl.getArmaById(id).get();
         ArmiDto armaDto =AM.entityToDto(arma);
         return armaDto ;
     }
@@ -49,7 +45,7 @@ public class ArmiController {
         } else {
             arma = AM.dtoToEntity(armaDto);
         }
-        AR.CreateArma(arma);
+        armiServiceImpl.CreateArma(arma);
     }
 
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
@@ -61,12 +57,12 @@ public class ArmiController {
         } else {
             arma = AM.dtoToEntity(armaDto);
         }
-        AR.CreateArma(arma);
+        armiServiceImpl.CreateArma(arma);
     }
 
 
     @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
     public void Delete(@PathVariable Long id){
-        AR.DeleteArma(id);
+        armiServiceImpl.DeleteArma(id);
     }
 }

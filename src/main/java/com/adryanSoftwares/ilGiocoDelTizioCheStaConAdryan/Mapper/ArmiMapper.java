@@ -55,12 +55,6 @@ public class ArmiMapper {
             if(dto.getGittata()!=null){
                 a.setGittata(dto.getGittata());
             }
-            if(dto.getAttaccoMultiplo()!=null){
-                a.setAttaccoMultiplo(dto.getAttaccoMultiplo());
-            }
-            if(dto.getProbabilitaAttaccoMultiplo()!=null){
-                a.setProbabilitaAttaccoMultiplo(dto.getProbabilitaAttaccoMultiplo());
-            }
             if(dto.getMoltiplicatoreCritico()!=null){
                 a.setMoltiplicatoreCritico(dto.getMoltiplicatoreCritico());
             }
@@ -82,8 +76,6 @@ public class ArmiMapper {
                 if(dto.getDannoTipo()!=null)A.setDannoTipo((dto.getDannoTipo()));
                 if(dto.getDanno()!=null)A.setDanno((dto.getDanno()));
                 if(dto.getGittata()!=null)A.setGittata((dto.getGittata()));
-                if(dto.getProbabilitaAttaccoMultiplo()!=null)A.setProbabilitaAttaccoMultiplo(dto.getProbabilitaAttaccoMultiplo());
-                if(dto.getAttaccoMultiplo()!=null)A.setAttaccoMultiplo((dto.getAttaccoMultiplo()));
                 if(dto.getMoltiplicatoreCritico()!=null)A.setMoltiplicatoreCritico((dto.getMoltiplicatoreCritico()));
                 return A;
             }

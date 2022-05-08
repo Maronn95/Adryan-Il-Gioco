@@ -8,36 +8,94 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
-
-@Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
-public class OggettiBattlegroundEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "OggettoBattlegroundId")
-    private Long OggettoBattegroundId;
+public class OggettiBattlegroundEntity  {
 
-    @Column(name = "Descrizione")
+    private Long oggettoBattegroundId;
+
+
     private String descrizione;
 
-    @Column(name ="DimensioneBattleground")
+
     private String dimensioneBattleground;
 
-    @Column(name="Copertura")
+
     private Boolean copertura;
 
-    @Column(name= "ValoreCopertura")
+
     private Double valoreCopertura;
 
-    @Column(name="Loot")
+
     private Boolean loot;
 
-    @Column(name="RandomLoot")
-    private Integer randomLoot;
 
+    private Double randomLoot;
+
+    public OggettiBattlegroundEntity(Long oggettoBattegroundId){
+     switch(Math.toIntExact(oggettoBattegroundId)){
+         case 1:
+             this.oggettoBattegroundId = oggettoBattegroundId;
+             this.descrizione = "Albero semplice";
+             this.dimensioneBattleground= "1X1";
+             this.copertura= true;
+             this.valoreCopertura = 30.00;
+             this.loot = true;
+             this.randomLoot= 10.00;
+             break;
+         case 2:
+             this.oggettoBattegroundId= oggettoBattegroundId;
+             this.descrizione= "Masso grande";
+             this.dimensioneBattleground= "2X2";
+             this.copertura = true;
+             this.valoreCopertura = 50.00;
+             this.loot = false;
+             this.randomLoot = 0.00;
+             break;
+         case 3:
+             this.oggettoBattegroundId = oggettoBattegroundId;
+             this.descrizione = "Forziere piccolo";
+             this.dimensioneBattleground = "1X1";
+             this.copertura = false;
+             this.valoreCopertura = 0.00;
+             this.loot = true;
+             this.randomLoot = 70.00;
+             break;
+         case 4:
+             this.oggettoBattegroundId = oggettoBattegroundId;
+             this.descrizione = "Forziere medio";
+             this.dimensioneBattleground = "1X1";
+             this.copertura = false;
+             this.valoreCopertura = 0.00;
+             this.loot = true;
+             this.randomLoot = 70.00;
+             break;
+         case 5:
+             this.oggettoBattegroundId = oggettoBattegroundId;
+             this.descrizione = "Forziere grande";
+             this.dimensioneBattleground= "2X2";
+             this.copertura = false;
+             this.valoreCopertura = 0.00;
+             this.loot = true;
+             this.randomLoot = 70.00;
+             break;
+     }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

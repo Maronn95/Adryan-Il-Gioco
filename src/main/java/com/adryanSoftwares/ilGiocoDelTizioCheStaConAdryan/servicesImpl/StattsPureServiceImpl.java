@@ -1,23 +1,14 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys.PgRepo;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.repositorys.StattsPureRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class StattsPureServiceImpl implements StattsPureService {
-
-    @Autowired
-    StattsPureRepository stattsPureRepository;
-    PgRepo pgRepo;
 
     //convertitore ENTITY-->DTO
 
@@ -72,64 +63,35 @@ public class StattsPureServiceImpl implements StattsPureService {
 
     @Override
     public List<StattsPureDTO> getAllStatts() {
-        List<StattsPureEntity> Pgstatts = stattsPureRepository.findAll();
+        /*List<StattsPureEntity> Pgstatts = stattsPureRepository.findAll();
         List<StattsPureDTO> stattsDTO = new ArrayList<>();
         for(StattsPureEntity stattsPureEntity : Pgstatts){
             StattsPureDTO stattsPureDTO = convertToDto(stattsPureEntity);
             stattsDTO.add(stattsPureDTO);
         }
 
-        return stattsDTO;
+        return stattsDTO;*/
+        return  null;
     }
 
-    /*@Override
-    public List<StattsPureEntity> getAllStattsEntity() {
-        List<StattsPureEntity> pgStatts = stattsPureRepository.findAll();
-        return pgStatts;
-    }*/
-
     public StattsPureEntity getStattByIdPg(Long idPg) {
-        return pgRepo.getById(idPg).getStattsPureEntity();
-
+        //return pgRepo.getById(idPg).getStattsPureEntity();
+        return  null;
         }
-
-    /*@Override
-    public StattsPureDTO getStatt(String name) {
-        List<StattsPureEntity> statts = stattsPureRepository.findAll();
-        StattsPureDTO stattsPureDTO = new StattsPureDTO();
-        for(StattsPureEntity stattsPureEntity : statts){
-
-            if(name=="vita"){stattsPureDTO.setVita(stattsPureEntity.getVita());}
-            if(name=="vitaAttuale"){stattsPureDTO.setVita(stattsPureEntity.getVitaAttuale());}
-            if(name=="vitaMax"){stattsPureDTO.setVita(stattsPureEntity.getVitaMax());}
-
-            if(name=="forza"){stattsPureDTO.setForza(stattsPureEntity.getForza());}
-            if(name=="costituzione"){stattsPureDTO.setCostituzione(stattsPureEntity.getCostituzione());}
-            if(name=="destrezza"){stattsPureDTO.setDestrezza(stattsPureEntity.getDestrezza());}
-            if(name=="saggezza"){stattsPureDTO.setSaggezza(stattsPureEntity.getSaggezza());}
-            if(name=="intelligenza"){stattsPureDTO.setSaggezza(stattsPureEntity.getIntelligenza());}
-            if(name=="carisma"){stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());}
-            if(name=="idPg"){stattsPureDTO.setIdPg(stattsPureEntity.getIdPg());}
-
-            if(name=="ca"){stattsPureDTO.setCa(stattsPureEntity.getCa());}
-            if(name=="utilizzoArmaX"){stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());}
-        }
-        return stattsPureDTO;
-    }*/
 
     @Override
     public StattsPureEntity getStattById(Long IdStattsPure) {
-        StattsPureEntity stattsPureEntity = stattsPureRepository.getById(IdStattsPure);
-        return stattsPureEntity;
+        //StattsPureEntity stattsPureEntity = stattsPureRepository.getById(IdStattsPure);
+        //return stattsPureEntity;
+        return  null;
     }
 
     @Override
     public StattsPureDTO setStatt(StattsPureDTO stattsPureDTO) {
-
         StattsPureEntity stattsPure = convertToEntity(stattsPureDTO);
-        stattsPureRepository.save(stattsPure);
-
-        return stattsPureDTO;
+        //stattsPureRepository.save(stattsPure);
+        //return stattsPureDTO;
+        return  null;
     }
 
 }

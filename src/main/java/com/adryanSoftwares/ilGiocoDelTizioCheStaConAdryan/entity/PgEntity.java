@@ -17,26 +17,33 @@ public class PgEntity {
 
     private StattsPureEntity stattsPureEntity;
 
-    public PgEntity(Long idPg) {
+    public PgEntity getPg(Long idPg) {
 
         switch (Math.toIntExact(idPg)) {
             case 1:
-                this.idPg = idPg;
-                this.name = "Zezzone";
-                this.stattsPureEntity = new StattsPureEntity(1L);
-                break;
+                PgEntity pg1 = new PgEntity();
+                pg1.setIdPg(idPg);
+                pg1.setName("Zezzone");
+                pg1.setStattsPureEntity(new StattsPureEntity(1L));
+                return pg1;
 
             case 2:
-                this.idPg = idPg;
-                this.name = "Cafone";
-                this.stattsPureEntity = new StattsPureEntity(2L);
-                break;
+                PgEntity pg2 = new PgEntity();
+                pg2.setIdPg(idPg);
+                pg2.setName("Cafone");
+                pg2.setStattsPureEntity(new StattsPureEntity(2L));
+                return pg2;
 
             case 3:
-                this.idPg = idPg;
-                this.name = "Cujone";
-                this.stattsPureEntity = new StattsPureEntity(3L);
-                break;
+                PgEntity pg3 = new PgEntity();
+                pg3.setIdPg(idPg);
+                pg3.setName("Cujone");
+                pg3.setStattsPureEntity(new StattsPureEntity(3L));
+                return pg3;
+
         }
+System.out.println("sei passato da qua");
+        return null;
+
     }
 }

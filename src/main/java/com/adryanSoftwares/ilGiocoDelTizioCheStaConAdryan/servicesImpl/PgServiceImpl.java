@@ -35,9 +35,14 @@ public class PgServiceImpl implements PgService {
 
             return pgEntity;
             }
-
         System.out.println("Id non trovato");*/
-        return null;
+
+        PgEntity pg = new PgEntity();
+        pg.setIdPg(pg.getPg(idPg).getIdPg());
+        pg.setName(pg.getPg(idPg).getName());
+        pg.setStattsPureEntity(pg.getPg(idPg).getStattsPureEntity());
+        pg.getPg(idPg);
+        return pg;
     }
 
     private PgDTO convertToDto (PgEntity pgEntity) {

@@ -1,15 +1,19 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiBattlegroundEntityDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONtests.JSONtest;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiBattlegroundService;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoBattlegroundServiceImpl;
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
 import lombok.Value;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +24,21 @@ public class OggettiBattleGroundController {
 
     @Autowired
     OggettoBattlegroundServiceImpl OBS;
+
+    @Autowired
+    JSONtest JT;
+
+
+    @RequestMapping(value="/JSONprint", method= RequestMethod.GET)
+    public JSONObject timeToPrint() throws Exception {
+        return JT.loadData();
+    }
+
+    @RequestMapping(value="/newJSONpg", method= RequestMethod.GET)
+    public JSONObject creaPGinJSON() throws Exception {
+        return null;
+        //return JT.creaPg() ;
+    }
 
     //private OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
 

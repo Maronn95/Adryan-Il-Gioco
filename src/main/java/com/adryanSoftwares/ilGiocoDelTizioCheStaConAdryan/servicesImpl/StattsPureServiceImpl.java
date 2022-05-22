@@ -28,9 +28,9 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureDTO.setIntelligenza(stattsPureEntity.getIntelligenza());
         stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());
 
-        stattsPureDTO.setCa(stattsPureEntity.getCa());
+        //stattsPureDTO.setCa(stattsPureEntity.getCa());
 
-        stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());
+        //stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());
 
         return stattsPureDTO;
     }
@@ -54,9 +54,9 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureEntity.setIntelligenza(stattsPureDTO.getIntelligenza());
         stattsPureEntity.setCarisma(stattsPureDTO.getCarisma());
 
-        stattsPureEntity.setCa(stattsPureDTO.getCa());
+        //stattsPureEntity.setCa(stattsPureDTO.getCa());
 
-        stattsPureEntity.setUtilizzoArmaX(stattsPureDTO.getUtilizzoArmaX());
+        //stattsPureEntity.setUtilizzoArmaX(stattsPureDTO.getUtilizzoArmaX());
 
         return stattsPureEntity;
     }

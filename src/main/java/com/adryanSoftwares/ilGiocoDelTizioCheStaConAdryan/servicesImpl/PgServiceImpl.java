@@ -9,7 +9,6 @@ import java.util.List;
 @Service
 public class PgServiceImpl implements PgService {
 
-
     @Override
     public PgEntity setStattPure(Long IdPg, Long IdStattsPure) {
         /*PgEntity pgEntity = pgRepository.getById(IdPg);

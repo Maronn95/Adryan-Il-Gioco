@@ -1,9 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsCalcolateService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @Setter
@@ -14,6 +16,9 @@ public class StattsCalcEntity {
     private int utilizzoArmaX;
     private int ca;
 
+    @Autowired
+    StattsCalcolateService stattsCalcolateService;
+
     public StattsCalcEntity calcolaStattsCalc (int forza,
                                                int costituzione,
                                                int destrezza,
@@ -23,6 +28,8 @@ public class StattsCalcEntity {
                                                int vita,
                                                int vitaMax,
                                                int vitaAttuale){
+
+
 
         StattsCalcEntity stattsCalcEntity = new StattsCalcEntity();
 

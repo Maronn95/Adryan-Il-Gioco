@@ -1,9 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @Setter
@@ -20,13 +22,14 @@ public class StattsPureEntity {
     private int carisma;
     private int saggezza;
     private int vita;
-    //private int utilizzoArmaX;
     private int vitaMax;
     private int vitaAttuale;
     private StattsCalcEntity stattsCalcEntity;
-    //private int ca;
 
-    public StattsPureEntity(Long idStattsPure) {
+    @Autowired
+    StattsPureService stattsPureService;
+
+    /*public StattsPureEntity(Long idStattsPure) {
 
         switch (Math.toIntExact(idStattsPure)) {
             case 1 :
@@ -104,5 +107,5 @@ public class StattsPureEntity {
                                                                             this.vitaAttuale);
                 break;
         }
-    }
+    }*/
 }

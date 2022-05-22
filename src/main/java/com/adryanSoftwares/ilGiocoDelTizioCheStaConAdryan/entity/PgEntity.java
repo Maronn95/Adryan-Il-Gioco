@@ -17,7 +17,7 @@ public class PgEntity {
 
     private StattsPureEntity stattsPureEntity;
 
-    public PgEntity getPg(Long idPg) {
+    /*public PgEntity getPg(Long idPg) {
 
         switch (Math.toIntExact(idPg)) {
             case 1:
@@ -45,5 +45,5 @@ public class PgEntity {
 System.out.println("sei passato da qua");
         return null;
 
-    }
+    }*/
 }

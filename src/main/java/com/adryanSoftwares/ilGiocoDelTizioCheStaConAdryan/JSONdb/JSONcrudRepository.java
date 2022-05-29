@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.catalina.mapper.Mapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Indexed;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,28 +22,18 @@ import java.util.Map;
 
 @Repository
 @Indexed
-public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , Resp>  {
+public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , Resp> {
 
     String loc = System.getProperty("user.dir");
 
-    final String seqPgPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
-    final String seqArmiPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
-    final String tablePgPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
-    final String tableArmiPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
-
+    final String seqPgPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
+    final String seqArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
+    final String tablePgPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
+    final String tableArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
+    //final Class <Resp> respClass;
     private Integer addSeq(String table) throws IOException, ParseException {
 
-        String pathSeq = new String();
-        switch (table) {
-            case "PG":
-                pathSeq = this.seqPgPath;
-                break;
-            case "Armi":
-                pathSeq = this.seqArmiPath;
-                break;
-            default:
-                break;
-        }
+        String pathSeq = getThisTablePath(table)+"JSONSequence"+table+".JSON";
         Path pathSettings = Paths.get(pathSeq);
 
         Object Impostazioni = new JSONParser().parse(new FileReader(String.valueOf(pathSettings))); // apro il json di sequence come oggetto
@@ -68,8 +60,23 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
     @Override
     public <Resp> Resp create(Req JsonReq, Resp JsonResp, String table) throws IOException, ParseException {
 
-        String pathNew = new String();
+        String pathNew = this.getThisTablePath(table);
 
+
+        ObjectMapper oMapper = new ObjectMapper();
+        Map<String, Object> map = oMapper.convertValue(JsonReq, Map.class);
+        JSONObject newJSON = new JSONObject(map);
+        int jSeq = this.addSeq(table);
+        pathNew += table + jSeq + ".JSON";
+        newJSON.put("id" + table, jSeq);
+        String JSONString1 = newJSON.toJSONString();
+        Files.write(Path.of(pathNew), JSONString1.getBytes());
+        Resp JSONresp = (Resp) oMapper.readValue(JSONString1, JsonResp.getClass());
+        return JSONresp;
+    }
+
+    private String getThisTablePath(String table) {
+        String pathNew = new String();
         switch (table) {
             case "PG":
                 pathNew = this.tablePgPath;
@@ -80,24 +87,24 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
             default:
                 break;
         }
-        ObjectMapper oMapper = new ObjectMapper();
-        Map<String, Object> map = oMapper.convertValue(JsonReq, Map.class);
-        JSONObject newJSON = new JSONObject(map);
-        int jSeq = this.addSeq(table);
-        pathNew += table + jSeq + ".JSON";
-        newJSON.put("id" + table, jSeq);
-        String JSONString1 = newJSON.toJSONString();
-        Files.write(Path.of(pathNew), JSONString1.getBytes());
-        Resp JSONresp = (Resp) oMapper.readValue(JSONString1, JsonResp.getClass());
-        System.out.println(this.loc);
-        return JSONresp;
+        return pathNew;
     }
 
+    @Override
+    public <Resp> Resp slectById(Integer idJSONreq, String table) throws IOException, ParseException {
 
-   /* public <T> T slectById (Integer idJSON String table){
+        String selectedPathString = this.getThisTablePath(table)+table+idJSONreq + ".JSON";
+        Path pathSelected = Paths.get(selectedPathString);
 
+        Object selectedObj = new JSONParser().parse(new FileReader(String.valueOf(pathSelected)));
+        Mapper oMapper = new Mapper();
+        //Resp JSONresp = (Resp) new ObjectMapper().readValue(selectedObj.toString(),<Resp>Resp);
+
+
+       // return JSONresp;
         return null;
-    }*/
+
+    }
 }
 
 

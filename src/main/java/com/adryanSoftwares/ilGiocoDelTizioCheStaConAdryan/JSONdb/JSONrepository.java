@@ -13,4 +13,5 @@ public interface JSONrepository<Req, Resp>{
 
     <Resp> Resp create (Req JsonReq, Resp JsonResp, String table) throws IOException, ParseException;
 
+    <Resp2> Resp2 slectById(Integer idJSONreq, String table) throws IOException, ParseException;
 }

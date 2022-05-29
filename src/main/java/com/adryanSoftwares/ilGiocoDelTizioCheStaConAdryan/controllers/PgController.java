@@ -5,9 +5,11 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.PgNew
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.PgServiceImpl;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -18,7 +20,10 @@ public class PgController {
     @Autowired
     PgJSONservice pgJSONs;
 
-
+    @GetMapping("/getPg/{idPg}")
+    public PgNewJSONresp getPg (@PathVariable("idPg") Integer idPg) throws IOException, ParseException {
+        return pgJSONs.selectPg(idPg);
+    }
 
 
     @RequestMapping(value="/newJSONpg", method= RequestMethod.GET)

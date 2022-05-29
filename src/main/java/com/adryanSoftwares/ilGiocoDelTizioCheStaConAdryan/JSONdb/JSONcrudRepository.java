@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Indexed;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +18,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 @Repository
-@Transactional
+@Indexed
 public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , Resp>  {
 
     final String seqPgPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
@@ -25,7 +26,7 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
     final String tablePgPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
     final String tableArmiPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
 
-    public Integer addSeq(String table) throws IOException, ParseException {
+    private Integer addSeq(String table) throws IOException, ParseException {
 
         String pathSeq = new String();
         switch (table) {

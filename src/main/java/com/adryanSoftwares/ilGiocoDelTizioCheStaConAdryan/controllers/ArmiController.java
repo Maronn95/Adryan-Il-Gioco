@@ -1,12 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.ArmiNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +21,9 @@ public class ArmiController {
 
     @Autowired
     ArmiServiceImpl armiServiceImpl;
+
+    @Autowired
+    ArmiJSONservice armiJSON;
 
     @RequestMapping(value="/armi")
     public List<ArmiDto> GetArmi(){
@@ -60,8 +68,13 @@ public class ArmiController {
         armiServiceImpl.CreateArma(arma);
     }
 
+    @RequestMapping(value ="/newArma", method= RequestMethod.GET)
+    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException {
+        return armiJSON.newArmi( armaDto);
+    }
 
-    @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
+
+                         @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
     public void Delete(@PathVariable Long id){
         armiServiceImpl.DeleteArma(id);
     }

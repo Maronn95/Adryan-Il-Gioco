@@ -23,7 +23,6 @@ public class PgController {
 
     @RequestMapping(value="/newJSONpg", method= RequestMethod.GET)
     public PgNewJSONresp creaPGinJSON(@RequestBody PgNewJSONreq pgJSON) throws Exception {
-        System.out.println("sono nel controller");
         return pgJSONs.newPg(pgJSON);
 
     }

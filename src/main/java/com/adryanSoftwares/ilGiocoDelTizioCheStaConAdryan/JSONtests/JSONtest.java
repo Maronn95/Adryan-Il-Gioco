@@ -1,20 +1,15 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONtests;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.Iterator;
-
-import static java.nio.file.StandardOpenOption.CREATE;
-import static org.springframework.util.SerializationUtils.serialize;
 
 @Service
 public class JSONtest {
@@ -58,36 +53,23 @@ public class JSONtest {
         return JSON;
 
     }
-    private static JSONObject creaPg (Object sonoDentro) throws IOException, ParseException {
 
-        Object Impostazioni = new JSONParser().parse(new FileReader("C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONtests\\JSONFile.JSON"));
-        JSONObject JSONImpostazioni = (JSONObject) Impostazioni;
-        Iterator iSpin = JSONImpostazioni.values().iterator();
-        while (iSpin.hasNext()){
 
-            // prendo e aggiorno la sequence
-            Object JSONSequenceObject  = iSpin.next();
-            Integer JSONSequence = Integer.valueOf(JSONSequenceObject.toString());
-            JSONSequence = JSONSequence+1;
-            System.out.println(JSONSequence);
+    public static JSONObject creaPg (JSONObject JSONObjPg) throws IOException, ParseException {
 
-            // prendo la nuova sequence e la salvo
-            JSONObject newSettings = JSONImpostazioni;
-            newSettings.replace("JSONSequence", JSONSequence );
-            Path pathSettings = Paths.get("C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONtests\\JSONFile.JSON");
-            String JSONSetting = newSettings.toString();
-            Files.write(pathSettings, JSONSetting.getBytes());
+        //test
+        StattsPureDTO statDto = (StattsPureDTO) JSONObjPg.get("statistichePure");
+        System.out.println(statDto.getStattsCalcDto().getca());
 
-            // aggiungo l'id al nuovo pg e lo salvo con name directory dinamica
-            JSONObject JSONObjPg = (JSONObject)sonoDentro;
-            Path path = Paths.get("C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONtests\\PG"+JSONSequence+"JSON.JSON");
-            JSONObjPg.put("idPg: ",JSONSequence);
-            String JSONString = JSONObjPg.toString();
-            Files.write(path, JSONString.getBytes());
 
-            return JSONObjPg;
-        }
-        return null;
+        //int jSeq = new JSONrepo().addSeq("PG");
+        Path path = Paths.get("C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONtests\\PGON.JSON");
+       // JSONObjPg.put("idPg: ",jSeq);
+        String JSONString = JSONObjPg.toString();
+        Files.write(path, JSONString.getBytes());
+
+        return JSONObjPg;
+
     }
 
     private JSONObject saveData(JSONObject JSON) throws IOException {

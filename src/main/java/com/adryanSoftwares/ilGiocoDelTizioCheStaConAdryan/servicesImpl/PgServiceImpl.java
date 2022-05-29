@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.PgDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgService;
 import org.springframework.stereotype.Service;
@@ -37,41 +37,40 @@ public class PgServiceImpl implements PgService {
         System.out.println("Id non trovato");*/
 
         PgEntity pg = new PgEntity();
-        pg.setIdPg(pg.getPg(idPg).getIdPg());
+        /*pg.setIdPg(pg.getPg(idPg).getIdPg());
         pg.setName(pg.getPg(idPg).getName());
         pg.setStattsPureEntity(pg.getPg(idPg).getStattsPureEntity());
-        pg.getPg(idPg);
+        pg.getPg(idPg);*/
         return pg;
     }
 
-    private PgDTO convertToDto (PgEntity pgEntity) {
-        PgDTO pgDTO = new PgDTO();
+    private PgNewJSONreq convertToDto (PgEntity pgEntity) {
+        PgNewJSONreq pgNewJSONreq = new PgNewJSONreq();
 
-        pgDTO.setIdPg(pgEntity.getIdPg());
-        pgDTO.setName(pgEntity.getName());
-        pgDTO.setStattsPureEntity(pgEntity.getStattsPureEntity());
-        System.out.println("PgDTO convertToDto = "+pgDTO.getIdPg()+pgEntity.getName()+pgEntity.getStattsPureEntity());
-        return pgDTO;
+        //pgNewJSONDTO.setIdPg(pgEntity.getIdPg());
+        pgNewJSONreq.setName(pgEntity.getName());
+        //pgDTO.setStattsPureDTO(pgEntity.getStattsPureEntity());
+        //System.out.println("PgDTO convertToDto = "+ pgNewJSONDTO.getIdPg()+pgEntity.getName()+pgEntity.getStattsPureEntity());
+        return pgNewJSONreq;
     }
 
-    private PgEntity convertToEntity (PgDTO pgDTO) {
+    private PgEntity convertToEntity (PgNewJSONreq pgNewJSONreq) {
         PgEntity pgEntity = new PgEntity();
-
-        pgEntity.setIdPg(pgDTO.getIdPg());
-        pgEntity.setName(pgDTO.getName());
-        pgEntity.setStattsPureEntity(pgDTO.getStattsPureEntity());
+    //  pgEntity.setIdPg(pgNewJSONDTO.getIdPg());
+        pgEntity.setName(pgNewJSONreq.getName());
+        //pgEntity.setStattsPureEntity(pgDTO.setStattsPureDTO(););
 
         return pgEntity;
     }
 
     @Override
-    public PgDTO setPg(PgDTO pgDTO) {
+    public PgNewJSONreq setPg(PgNewJSONreq pgNewJSONreq) {
         //return convertToDto(this.pgRepository.save(convertToEntity(pgDTO)));
         return null;
     }
 
     @Override
-    public List<PgDTO> getAllPg() {
+    public List<PgNewJSONreq> getAllPg() {
         /*List<PgEntity> Pgs = pgRepository.findAll();
         List<PgDTO> pgsDTO = new ArrayList<>();
         for(PgEntity pgEntity : Pgs){

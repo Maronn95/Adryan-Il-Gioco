@@ -67,7 +67,7 @@ public class StattsCalcolateServiceImpl implements StattsCalcolateService {
         StattsPureEntity stattsPureEntity = new StattsPureEntity();
         StattsPureDTO stattsPureDTO = new StattsPureDTO();
          stattsPureDTO = convertToDto(stattsPureEntity);
-        stattsPureDTO.setCa(stattsPureDTO.getCostituzione()+10);
+       // stattsPureDTO.setCa(stattsPureDTO.getCostituzione()+10);
          return stattsPureDTO;
     }
 

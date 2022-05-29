@@ -1,7 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.PgDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.PgNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.PgServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +14,22 @@ import java.util.List;
 @RequestMapping("/pg")
 public class PgController {
 
+
     @Autowired
-    PgServiceImpl pgServiceImpl;
+    PgJSONservice pgJSONs;
+
+
+
+
+    @RequestMapping(value="/newJSONpg", method= RequestMethod.GET)
+    public PgNewJSONresp creaPGinJSON(@RequestBody PgNewJSONreq pgJSON) throws Exception {
+        System.out.println("sono nel controller");
+        return pgJSONs.newPg(pgJSON);
+
+    }
+
+
+/*
 
     @GetMapping("/getPg/{idPg}")
     public PgEntity getPg (@PathVariable("idPg") Long idPg){
@@ -21,12 +37,12 @@ public class PgController {
     }
 
     @PostMapping("/setPg")
-    public PgDTO setPg(@RequestBody PgDTO pgDTO){
-        return  this.pgServiceImpl.setPg(pgDTO);
+    public PgNewJSONreq setPg(@RequestBody PgNewJSONreq pgNewJSONreq){
+        return  this.pgServiceImpl.setPg(pgNewJSONreq);
     }
 
     @GetMapping("/getAll")
-    public List<PgDTO> getAllPg(){
+    public List<PgNewJSONreq> getAllPg(){
         return this.pgServiceImpl.getAllPg();
     }
 

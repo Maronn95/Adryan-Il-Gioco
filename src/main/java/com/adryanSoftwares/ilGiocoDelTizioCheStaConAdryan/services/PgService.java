@@ -1,15 +1,16 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.PgDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 
 import java.util.List;
 
+
 public interface PgService {
 
-    PgDTO setPg(PgDTO pgDTO);
+    PgNewJSONreq setPg(PgNewJSONreq pgNewJSONreq);
 
-    List<PgDTO> getAllPg();
+    List<PgNewJSONreq> getAllPg();
 
     PgEntity getPg(Long idPg);
 

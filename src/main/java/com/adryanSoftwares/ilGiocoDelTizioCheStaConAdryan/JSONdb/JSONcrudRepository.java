@@ -94,10 +94,10 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
     }
 
 
-    public <T> T slectById (){
+   /* public <T> T slectById (Integer idJSON String table){
 
         return null;
-    }
+    }*/
 }
 
 

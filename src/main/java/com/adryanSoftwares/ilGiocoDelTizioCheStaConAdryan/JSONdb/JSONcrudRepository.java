@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.boot.system.SystemProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
 import org.springframework.stereotype.Repository;
@@ -21,10 +22,12 @@ import java.util.Map;
 @Indexed
 public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , Resp>  {
 
-    final String seqPgPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
-    final String seqArmiPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
-    final String tablePgPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
-    final String tableArmiPath = "C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
+    String loc = System.getProperty("user.dir");
+
+    final String seqPgPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
+    final String seqArmiPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
+    final String tablePgPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
+    final String tableArmiPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
 
     private Integer addSeq(String table) throws IOException, ParseException {
 
@@ -86,7 +89,7 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
         String JSONString1 = newJSON.toJSONString();
         Files.write(Path.of(pathNew), JSONString1.getBytes());
         Resp JSONresp = (Resp) oMapper.readValue(JSONString1, JsonResp.getClass());
-
+        System.out.println(this.loc);
         return JSONresp;
     }
 

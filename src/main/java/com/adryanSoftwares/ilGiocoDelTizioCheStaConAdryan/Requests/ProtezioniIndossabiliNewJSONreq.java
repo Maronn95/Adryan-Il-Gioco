@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -10,10 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProtezioniIndossabiliNewJSONresp {
-
-    @JsonProperty
-    private int idProtInd;
+public class ProtezioniIndossabiliNewJSONreq {
 
     @JsonProperty
     private String name;

@@ -1,10 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiInventarioDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
 
 public class ProtezioniIndossabiliMapper {
@@ -65,7 +61,7 @@ public class ProtezioniIndossabiliMapper {
 
         if(dto.getDurabilita()!=null)a.setDurabilita(dto.getDurabilita());
 
-        return a;    }
-
+        return a;
+    }
 
 }

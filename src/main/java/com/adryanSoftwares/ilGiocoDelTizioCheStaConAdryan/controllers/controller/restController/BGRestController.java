@@ -1,7 +1,7 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controller.restController;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controller.api.BGApi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api.BGApi;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
@@ -10,7 +10,6 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGround
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.BattleGroundServiceImpl;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

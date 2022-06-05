@@ -1,9 +1,11 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
+
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Magia.Magia;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Skills.Skills;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.poteri.Poteri;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,21 +17,29 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PgEntity {
+public class PgDTO {
 
+    @JsonProperty("idPg")
     private Long idPg;
 
+    @JsonProperty("name")
     private String name;
 
-    private StattsPureEntity stattsPureEntity;
+    @JsonProperty("stattsPureDTO")
+    private StattsPureDTO stattsPureDTO;
 
+    @JsonProperty("stattsCalcDto")
     private StattsCalcDto stattsCalcDto;
 
-    private String razza;
+    @JsonProperty("razza")
+    private Razza razza;
 
+    @JsonProperty("skills")
     private List<Skills> skills;
 
+    @JsonProperty("poteri")
     private List<Poteri> poteri;
 
+    @JsonProperty("magia")
     private List<Magia> magie;
 }

@@ -5,13 +5,9 @@ import org.apache.catalina.mapper.Mapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.boot.system.SystemProperties;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,9 +24,16 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
 
     final String seqPgPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\JSONSequencePG.JSON";
     final String seqArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
+    final String seqRazzaPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceRazza.JSON";
+    final String seqStattsPurePath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceStattsPure.JSON";
+    final String seqStattsCalcPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceStattsCalc.JSON";
+
     final String tablePgPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
+    final String tableRazzaPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONrazza\\";
     final String tableArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
     final String tableProtIndPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONProtInd\\";
+    final String tableStattsPurePath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONstattsPure\\";
+    final String tableStattsCalcPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONstattsCalc\\";
     //final Class <Resp> respClass;
     private Integer addSeq(String table) throws IOException, ParseException {
 
@@ -82,11 +85,17 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
             case "PG":
                 pathNew = this.tablePgPath;
                 break;
+            case "Razza":
+                pathNew = this.tableRazzaPath;
+                break;
             case "Armi":
                 pathNew = this.tableArmiPath;
                 break;
-            case "ProtInd":
-                pathNew = this.tableProtIndPath;
+            case "StattsPure":
+                pathNew = this.tableStattsPurePath;
+                break;
+            case "StattsCalc":
+                pathNew = this.tableStattsCalcPath;
                 break;
             default:
                 break;

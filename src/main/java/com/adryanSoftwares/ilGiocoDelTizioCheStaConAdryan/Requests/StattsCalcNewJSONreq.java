@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -10,14 +10,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StattsCalcDto {
+public class StattsCalcNewJSONreq {
 
-    @JsonProperty
+    @JsonProperty("utilizzoArmaX")
     private int utilizzoArmaX;
-    @JsonProperty
+    @JsonProperty("ca")
     private int ca;
+    @JsonProperty("vitaAttuale")
+    private int vitaAttuale;
 
-    public  int getca() {
-        return this.ca;
-    }
 }

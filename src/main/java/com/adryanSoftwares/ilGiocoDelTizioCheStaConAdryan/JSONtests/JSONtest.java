@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONtests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -14,16 +14,11 @@ import java.util.Iterator;
 @Service
 public class JSONtest {
 
-
-
-
-
     public JSONObject loadData() throws IOException, ParseException {
         //JSONParser ioParso = new JSONParser();
         Object sonoDentro = new JSONParser().parse(new FileReader("C:\\Users\\Utente\\IdeaProjects\\Adryan-Il-Gioco\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONtests\\JSONFile.JSON"));
         JSONObject jsonObject = JSONtest.printData(sonoDentro);
         return jsonObject;
-
     }
 
     private static JSONObject printData(Object sonoDentro) throws IOException {
@@ -59,7 +54,7 @@ public class JSONtest {
 
         //test
         StattsPureDTO statDto = (StattsPureDTO) JSONObjPg.get("statistichePure");
-        System.out.println(statDto.getStattsCalcDto().getca());
+        //System.out.println(statDto.getStattsCalcDto().getCa());
 
 
         //int jSeq = new JSONrepo().addSeq("PG");

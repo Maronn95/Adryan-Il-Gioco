@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.PgNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgService;
 import org.springframework.stereotype.Service;
@@ -35,13 +35,7 @@ public class PgServiceImpl implements PgService {
             return pgEntity;
             }
         System.out.println("Id non trovato");*/
-
-        PgEntity pg = new PgEntity();
-        /*pg.setIdPg(pg.getPg(idPg).getIdPg());
-        pg.setName(pg.getPg(idPg).getName());
-        pg.setStattsPureEntity(pg.getPg(idPg).getStattsPureEntity());
-        pg.getPg(idPg);*/
-        return pg;
+        return null;
     }
 
     private PgNewJSONreq convertToDto (PgEntity pgEntity) {

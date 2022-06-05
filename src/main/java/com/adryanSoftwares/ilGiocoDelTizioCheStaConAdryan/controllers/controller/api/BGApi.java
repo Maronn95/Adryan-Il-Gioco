@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controller.api;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;

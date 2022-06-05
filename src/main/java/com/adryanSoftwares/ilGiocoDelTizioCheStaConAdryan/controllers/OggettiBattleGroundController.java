@@ -29,11 +29,6 @@ public class OggettiBattleGroundController {
     }
 
 
-
-    //private OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
-
-
-    //private OggettBattlegroundServiceImpl OBS= new OggettBattlegroundServiceImpl();
     @RequestMapping(value="/Oggetti")
     public List<OggettiBattlegroundEntityDto> GetOggettiBattleground(){
         OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
@@ -65,25 +60,7 @@ public class OggettiBattleGroundController {
             oggetto=OBM.dtoToEntity(oggettiDto);
         }
         OBS.CreateOggetto(oggetto);
-
-
-
-        /*
-
-        new mapper mapeer
-        OggettiBG enitityOBG = mapper.dtotoentity(oggettDto)
-
-        saveorupdate(entityOBG);
-
-         *
-        * getById(request int){
-        new mapper
-        enityt= findById(int)
-        dto= mapper.entitytodto(entity)
-        return dto
-        }
-        *
-        **/}
+    }
 
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
     public void Update(@RequestBody OggettiBattlegroundEntityDto oggettiDto) {
@@ -96,6 +73,7 @@ public class OggettiBattleGroundController {
         }
         OBS.CreateOggetto(oggetto);
     }
+
     @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
     public void Delete(@PathVariable Long id){
                 OBS.DeleteOggetto(id);

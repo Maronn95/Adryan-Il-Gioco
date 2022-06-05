@@ -1,7 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controller.restController.BGRestController;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controller.restController.OggettoRestController;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BGRestController;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.OggettoRestController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
@@ -9,7 +9,6 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.OggettoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.Scanner;
 
 @RestController

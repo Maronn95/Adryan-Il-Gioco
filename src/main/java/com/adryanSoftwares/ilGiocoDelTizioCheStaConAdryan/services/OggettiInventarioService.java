@@ -1,6 +1,5 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
 
 import java.util.List;
@@ -8,15 +7,11 @@ import java.util.Optional;
 
 public interface OggettiInventarioService {
 
-    public List<OggettoInventario> getOggetti();
+    List<OggettoInventario> getOggetti();
 
+    Optional<OggettoInventario> getOggettiById(Long id);
 
-    public Optional<OggettoInventario> getOggettiById(Long id);
+    void CreateOggetto(OggettoInventario oggetto);
 
-
-    public void CreateOggetto(OggettoInventario oggetto);
-
-
-
-    public void DeleteOggetto(Long id);
+    void DeleteOggetto(Long id);
 }

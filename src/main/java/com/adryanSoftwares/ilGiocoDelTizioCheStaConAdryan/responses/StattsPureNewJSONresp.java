@@ -1,6 +1,5 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +10,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StattsPureDTO {
+
+public class StattsPureNewJSONresp {
+
     @JsonProperty
     private Long idStattsPure;
     @JsonProperty
@@ -27,12 +28,8 @@ public class StattsPureDTO {
     @JsonProperty
     private int saggezza;
     @JsonProperty
-    private int vita;
-    //private int utilizzoArmaX;
+    private int trash;
     @JsonProperty
     private int vitaMax;
-    @JsonProperty
-    private int vitaAttuale;
-    @JsonProperty
-    private StattsCalcDto stattsCalcDto;
+
 }

@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/stattsCalcolate")
-public class PgControllerStattsCalcolate {
+@RequestMapping("/pgAzioniDialogo")
+public class PgControllerAzioniDialogo {
 
 }

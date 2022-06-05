@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,9 @@ public class StattsPureServiceImpl implements StattsPureService {
 
         stattsPureDTO.setIdStattsPure(stattsPureEntity.getIdStattsPure());
 
-        stattsPureDTO.setVita(stattsPureEntity.getVita());
+        //stattsPureDTO.setVita(stattsPureEntity.getVita());
         stattsPureDTO.setVitaMax(stattsPureEntity.getVitaMax());
-        stattsPureDTO.setVitaAttuale(stattsPureEntity.getVitaAttuale());
+        //stattsPureDTO.setVitaAttuale(stattsPureEntity.getVitaAttuale());
 
         stattsPureDTO.setCostituzione(stattsPureEntity.getCostituzione());
         stattsPureDTO.setForza(stattsPureEntity.getForza());
@@ -29,7 +29,6 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureDTO.setCarisma(stattsPureEntity.getCarisma());
 
         //stattsPureDTO.setCa(stattsPureEntity.getCa());
-
         //stattsPureDTO.setUtilizzoArmaX(stattsPureEntity.getUtilizzoArmaX());
 
         return stattsPureDTO;
@@ -43,9 +42,9 @@ public class StattsPureServiceImpl implements StattsPureService {
         if(stattsPureDTO.getIdStattsPure() != null){
         stattsPureEntity.setIdStattsPure(stattsPureDTO.getIdStattsPure());
         }
-        stattsPureEntity.setVita(stattsPureDTO.getVita());
+        //stattsPureEntity.setVita(stattsPureDTO.getVita());
         stattsPureEntity.setVitaMax(stattsPureDTO.getVitaMax());
-        stattsPureEntity.setVitaAttuale(stattsPureDTO.getVitaAttuale());
+        //stattsPureEntity.setVitaAttuale(stattsPureDTO.getVitaAttuale());
 
         stattsPureEntity.setCostituzione(stattsPureDTO.getCostituzione());
         stattsPureEntity.setForza(stattsPureDTO.getForza());
@@ -55,7 +54,6 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureEntity.setCarisma(stattsPureDTO.getCarisma());
 
         //stattsPureEntity.setCa(stattsPureDTO.getCa());
-
         //stattsPureEntity.setUtilizzoArmaX(stattsPureDTO.getUtilizzoArmaX());
 
         return stattsPureEntity;
@@ -69,13 +67,11 @@ public class StattsPureServiceImpl implements StattsPureService {
             StattsPureDTO stattsPureDTO = convertToDto(stattsPureEntity);
             stattsDTO.add(stattsPureDTO);
         }
-
         return stattsDTO;*/
         return  null;
     }
 
     public StattsPureEntity getStattByIdPg(Long idPg) {
-        //return pgRepo.getById(idPg).getStattsPureEntity();
         return  null;
         }
 

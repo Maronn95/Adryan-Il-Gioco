@@ -1,6 +1,5 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

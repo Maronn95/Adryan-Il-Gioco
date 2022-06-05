@@ -7,17 +7,13 @@ import java.util.Optional;
 
 public interface OggettiBattlegroundService {
 
-    public List<OggettiBattlegroundEntity> getOggetti();
+    List<OggettiBattlegroundEntity> getOggetti();
 
+    Optional<OggettiBattlegroundEntity> getOggettiById(Long id);
 
-   public Optional<OggettiBattlegroundEntity> getOggettiById(Long id);
+    void CreateOggetto(OggettiBattlegroundEntity oggetto);
 
-
-   public void CreateOggetto(OggettiBattlegroundEntity oggetto);
-
-
-
-   public void DeleteOggetto(Long id);
+    void DeleteOggetto(Long id);
 
    }
 

@@ -1,9 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.StattsPureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,13 +20,6 @@ public class PgControllerStatsPure {
 
         return this.stattsPureServiceImpl.getAllStatts();
     }
-
-    /*@GetMapping("/getStatt/{name}")
-    public StattsPureDTO getStatt(@PathVariable("name") String name){
-
-        return this.stattsPureServiceImpl.getStatt(name);
-    }*/
-
     @PostMapping("/setStatt")
     public StattsPureDTO setStatt(@RequestBody StattsPureDTO stattsPureDTO){
         stattsPureServiceImpl.setStatt(stattsPureDTO);

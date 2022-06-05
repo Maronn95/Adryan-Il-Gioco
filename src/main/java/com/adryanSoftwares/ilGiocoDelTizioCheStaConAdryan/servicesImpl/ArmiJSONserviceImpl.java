@@ -15,7 +15,7 @@ public class ArmiJSONserviceImpl implements ArmiJSONservice {
 
     @Override
     public ArmiNewJSONresp newArmi(ArmiNewJSONreq req) throws IOException, ParseException {
-        JSONcrudRepository Jrep = new JSONcrudRepository();
-        return (ArmiNewJSONresp) Jrep.create(req, new ArmiNewJSONresp(), this.JSONtable);
+      //  return (ArmiNewJSONresp) Jrep.creates(req, new ArmiNewJSONresp(), this.JSONtable);
+        return null;
     }
 }

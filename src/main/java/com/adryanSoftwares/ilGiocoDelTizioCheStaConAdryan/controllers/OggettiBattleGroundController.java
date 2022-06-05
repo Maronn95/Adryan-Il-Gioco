@@ -1,7 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiBattlegroundEntityDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONtests.JSONtest;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoBattlegroundServiceImpl;
@@ -19,14 +18,6 @@ public class OggettiBattleGroundController {
     @Autowired
     OggettoBattlegroundServiceImpl OBS;
 
-    @Autowired
-    JSONtest JT;
-
-
-    @RequestMapping(value="/JSONprint", method= RequestMethod.GET)
-    public JSONObject timeToPrint() throws Exception {
-        return JT.loadData();
-    }
 
 
     @RequestMapping(value="/Oggetti")

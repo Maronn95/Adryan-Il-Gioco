@@ -7,10 +7,8 @@ public class ArmiMapper {
 
     public static ArmiDto entityToDto(Armi a){
         ArmiDto dto= new ArmiDto();
-        if(a!=null){
-            if(a.getArmiId()!=null){
-                dto.setArmiId(a.getArmiId());
-            }
+
+
             if(a.getDescrizione()!=null){
                 dto.setDescrizione(a.getDescrizione());
             }
@@ -28,16 +26,14 @@ public class ArmiMapper {
                 dto.setGittata((a.getGittata()));
             }
 
-        }
-        return dto;
+
+        return null;
     }
 
     public static Armi dtoToEntity(ArmiDto dto){
         Armi a= new Armi();
         if(dto!=null){
-            if(a.getArmiId()!=null){
-                dto.setArmiId(a.getArmiId());
-            }
+
             if(dto.getDescrizione()!=null){
                 a.setDescrizione(dto.getDescrizione());
             }
@@ -70,7 +66,7 @@ public class ArmiMapper {
         Armi A= new Armi();
         if(dto!=null){
             if (dto.getArmiId() != null) {
-                A.setArmiId(dto.getArmiId());
+
                 if(dto.getDescrizione()!=null)A.setDescrizione(dto.getDescrizione());
                 if(dto.getArmaADistanza()!=null)A.setArmaADistanza(dto.getArmaADistanza());
                 if(dto.getDannoTipo()!=null)A.setDannoTipo((dto.getDannoTipo()));

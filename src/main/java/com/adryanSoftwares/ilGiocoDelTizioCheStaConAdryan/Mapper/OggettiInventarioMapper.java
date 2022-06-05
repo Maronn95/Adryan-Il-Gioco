@@ -14,9 +14,7 @@ public class OggettiInventarioMapper {
             if(OI.getDescrizione()!=null){
                 dto.setDescrizione(OI.getDescrizione());
             }
-            if(OI.getDimensioneInventario()!=null){
-                dto.setDimensioneInventario((OI.getDimensioneInventario()));
-            }
+
             if(OI.getOggettoMagico()!=null){
                 dto.setOggettoMagico(OI.getOggettoMagico());
 
@@ -40,9 +38,7 @@ public class OggettiInventarioMapper {
             if (dto.getDescrizione() != null) {
                 OIE.setDescrizione(dto.getDescrizione());
             }
-            if (dto.getDimensioneInventario() != null) {
-                OIE.setDimensioneInventario((dto.getDimensioneInventario()));
-            }
+
             if (dto.getOggettoMagico() != null) {
                 OIE.setOggettoMagico(dto.getOggettoMagico());
             }
@@ -62,7 +58,6 @@ public class OggettiInventarioMapper {
             if (dto.getOggettoInventarioId() != null) {
                 OIE.setOggettoInventarioid(dto.getOggettoInventarioId());
                 if(dto.getDescrizione()!=null)OIE.setDescrizione(dto.getDescrizione());
-                if(dto.getDimensioneInventario()!=null)OIE.setDimensioneInventario((dto.getDimensioneInventario()));
                 if(dto.getOggettoMagico()!=null)OIE.setOggettoMagico(dto.getOggettoMagico());
                 if(dto.getRarita()!=null){
                     OIE.setRarita(dto.getRarita());

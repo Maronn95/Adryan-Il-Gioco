@@ -12,13 +12,15 @@ public class OggettoInventario {
 
     private Long OggettoInventarioid;
 
-    private String descrizione;
+     private String descrizione;
 
+     private int base;
 
-    private String dimensioneInventario;
+    private int altezza;
+
+    private Double peso;
 
     private Boolean oggettoMagico;
-
 
     private Rarita rarita;
 

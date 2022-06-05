@@ -1,16 +1,24 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.ArmiNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Requests.ProtezioniIndossabiliNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.ArmiNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.ProtezioniIndossabiliNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.ALLDTO.Responses.ProtezioniIndossabiliNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ProtezioniIndossabiliMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ProtezioniIndossabiliJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ProtezioniIndossabiliServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +28,9 @@ public class ProtezioniIndossabiliController {
 
     @Autowired
     ProtezioniIndossabiliServiceImpl PIS;
+
+    @Autowired
+    ProtezioniIndossabiliJSONservice ProtezioniJSON;
 
     @RequestMapping(value="/protezioni")
     public List<ProtezioniIndossabiliDto> getProtezioni(){
@@ -69,4 +80,11 @@ public class ProtezioniIndossabiliController {
     public void Delete(@PathVariable Long id){
         PIS.DeleteProtezione(id);
     }
+
+
+    @RequestMapping(value ="/newProtezioniIndossabili", method= RequestMethod.GET)
+    public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile (@RequestBody ProtezioniIndossabiliNewJSONreq ProtezioneDto) throws IOException, ParseException, org.json.simple.parser.ParseException {
+        return ProtezioniJSON.newProtezioneIndossabile( ProtezioneDto);
+    }
 }
+

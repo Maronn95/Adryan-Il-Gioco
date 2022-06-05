@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.cazzoDuro.Rarita;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +10,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Armi {
-
-
-    private Long armiId;
+public class Armi extends OggettoInventario {
 
     private String name;
-
-    private String descrizione;
 
     private Boolean armaADistanza;
 
@@ -30,44 +26,8 @@ public class Armi {
 
     private Double probabilitaCriticoArma;
 
-    public Armi(Integer armiId) {
 
-       switch (armiId){
-           case 1:
-               this.armiId=1L;
-               this.name="Spada Zezza";
-               this.descrizione="È proprio una spada de merda";
-               this.armaADistanza=false;
-               this.dannoTipo="Tagliente";
-               this.danno=10.0;
-               this.gittata=1.0;
-               this.moltiplicatoreCritico=1.5;
-               this.probabilitaCriticoArma=20.0;
-               break;
 
-            case 2:
-                this.armiId=2L;
-                this.name="Martello Zezzo";
-                this.descrizione="Proprio un martello de merda";
-                this.armaADistanza=false;
-                this.dannoTipo="Contundente";
-                this.danno=12.0;
-                this.gittata=1.0;
-                this.moltiplicatoreCritico=1.5;
-                this.probabilitaCriticoArma=21.0;
-                break;
 
-           case 3:
-               this.armiId=3L;
-               this.name="Arco Zezzo";
-               this.descrizione="Non ci pii un cazzo con què";
-               this.armaADistanza=true;
-               this.dannoTipo="Perforante";
-               this.danno=6.0;
-               this.gittata=5.0;
-               this.moltiplicatoreCritico=1.2;
-               this.probabilitaCriticoArma=16.0;
-               break;
-        }
-    }
+
 }

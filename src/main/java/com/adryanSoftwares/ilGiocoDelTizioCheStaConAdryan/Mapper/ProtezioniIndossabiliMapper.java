@@ -16,7 +16,7 @@ public class ProtezioniIndossabiliMapper {
 
         if(a.getDescrizione()!=null)dto.setDescrizione(a.getDescrizione());
 
-        if(a.getOggetoMagico()!=null)dto.setOggettoMagico(a.getOggetoMagico());
+        if(a.getOggettoMagico()!=null)dto.setOggettoMagico(a.getOggettoMagico());
 
         if(a.getEfd()!=null)dto.setEfd(a.getEfd());
 
@@ -35,7 +35,7 @@ public class ProtezioniIndossabiliMapper {
 
         if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
 
-        if(dto.getOggettoMagico()!=null)a.setOggetoMagico(dto.getOggettoMagico());
+        if(dto.getOggettoMagico()!=null)a.setOggettoMagico(dto.getOggettoMagico());
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 
@@ -55,7 +55,7 @@ public class ProtezioniIndossabiliMapper {
 
         if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
 
-        if(dto.getOggettoMagico()!=null)a.setOggetoMagico(dto.getOggettoMagico());
+        if(dto.getOggettoMagico()!=null)a.setOggettoMagico(dto.getOggettoMagico());
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 

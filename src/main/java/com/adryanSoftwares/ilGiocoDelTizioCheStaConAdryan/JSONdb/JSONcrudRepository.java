@@ -30,6 +30,7 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
     final String seqArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\JSONSequenceArmi.JSON";
     final String tablePgPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpg\\";
     final String tableArmiPath = loc + "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
+    final String tableProtIndPath = loc+"\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONProtInd\\";
     //final Class <Resp> respClass;
     private Integer addSeq(String table) throws IOException, ParseException {
 
@@ -83,6 +84,9 @@ public class JSONcrudRepository< Req , Resp> implements JSONrepository < Req , R
                 break;
             case "Armi":
                 pathNew = this.tableArmiPath;
+                break;
+            case "ProtInd":
+                pathNew = this.tableProtIndPath;
                 break;
             default:
                 break;

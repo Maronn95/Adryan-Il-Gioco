@@ -1,0 +1,37 @@
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
+
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class InventarioNewJSONreq {
+
+    @JsonProperty
+    private Long inventarioId;
+
+    @JsonProperty
+    private int base;
+
+    @JsonProperty
+    private int altezza;
+
+    @JsonProperty
+    private Long proprietario;
+
+    @JsonProperty
+    private List<OggettoInventario> oggetti = new ArrayList<OggettoInventario>();
+
+
+}
+
+

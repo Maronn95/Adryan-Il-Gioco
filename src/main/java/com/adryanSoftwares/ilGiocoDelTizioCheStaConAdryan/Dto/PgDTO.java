@@ -1,10 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Magia.Magia;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Skills.Skills;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.poteri.Poteri;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Magia;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Razza;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Skills;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Poteri;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

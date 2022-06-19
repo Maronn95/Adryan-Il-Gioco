@@ -1,9 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Magia.Magia;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Skills.Skills;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.poteri.Poteri;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +23,8 @@ public class PgEntity {
     private StattsCalcDto stattsCalcDto;
 
     private String razza;
+
+    private Inventario inventario;
 
     private List<Skills> skills;
 

@@ -1,6 +1,6 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,19 +10,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RazzaNewJSONresp {
-    @JsonProperty
+public class Razza {
+
     private String name;
 
-    @JsonProperty
     private String bonus;
 
-    @JsonProperty
     private String malus;
 
-    //StattsPureDTO stattsPureDTO = new StattsPureDTO();
-
-//    public RazzaNewJSONresp (PgDTO pgDTO, Razza razza) {
+//    StattsPureDTO stattsPureDTO = new StattsPureDTO();
+//
+//    public Razza(PgDTO pgDTO, Razza razza) {
 //
 //        switch (razza.getName()) {
 //            case ("sbirro"):
@@ -81,5 +79,4 @@ public class RazzaNewJSONresp {
 //        }
 //
 //    }
-
 }

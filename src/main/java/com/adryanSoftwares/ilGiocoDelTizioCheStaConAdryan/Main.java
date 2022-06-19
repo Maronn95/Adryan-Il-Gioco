@@ -2,7 +2,6 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
@@ -10,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
-		System.out.print("Tutto OK");
+		System.out.println("Tutto OK");
 	}
 
 }

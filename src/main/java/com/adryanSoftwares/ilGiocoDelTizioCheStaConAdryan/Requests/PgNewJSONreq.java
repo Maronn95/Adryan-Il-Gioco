@@ -3,6 +3,8 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,10 +21,10 @@ public class PgNewJSONreq {
     private String name;
 
     @JsonProperty
-    private StattsPureDTO stattsPureDTO;
+    private StattsPureEntity stattsPure;
 
     @JsonProperty
-    private StattsCalcDto stattsCalcDto;
+    private StattsCalcEntity stattsCalc;
 
     @JsonProperty
     private Razza razza;

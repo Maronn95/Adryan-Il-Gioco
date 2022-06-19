@@ -1,5 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
-
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
@@ -8,19 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @RestController
 @RequestMapping("/pg")
 public class PgController {
 
 
-
-
     @Autowired
     PgJSONservice pgJSONs;
 
     @GetMapping("/getPg/{idPg}")
-    public PgNewJSONresp getPg (@PathVariable("idPg") Integer idPg) throws IOException, ParseException {
+    public PgNewJSONresp getPg (@PathVariable("idPg") Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         return pgJSONs.selectPg(idPg);
     }
 

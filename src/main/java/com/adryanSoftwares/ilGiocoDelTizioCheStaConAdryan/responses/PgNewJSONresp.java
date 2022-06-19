@@ -1,8 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,12 +23,20 @@ public class PgNewJSONresp {
     private String name;
 
     @JsonProperty
-    private StattsPureDTO stattsPureDTO;
+    private StattsPureEntity stattsPure;
 
     @JsonProperty
-    private StattsCalcDto stattsCalcDto;
+    private StattsCalcEntity stattsCalc;
 
     @JsonProperty
     private Razza razza;
 
+    public PgNewJSONresp(PgEntity pgEntity) {
+        this.idPG= Math.toIntExact(pgEntity.getIdPG());
+        this.name=pgEntity.getName();
+        this.stattsPure = pgEntity.getStattsPure();
+       // ??? danie pensaci tu??? addo li vu mett ste stattcalc? this.stattsCalc = pgEntity.get?
+        this.razza = pgEntity.getRazza();
+
+    }
 }

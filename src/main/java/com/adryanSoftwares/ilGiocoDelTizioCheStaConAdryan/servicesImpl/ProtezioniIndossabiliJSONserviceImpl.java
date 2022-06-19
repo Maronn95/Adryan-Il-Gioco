@@ -16,6 +16,7 @@ public class ProtezioniIndossabiliJSONserviceImpl implements ProtezioniIndossabi
     @Override
     public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile(ProtezioniIndossabiliNewJSONreq req) throws IOException, ParseException {
         JSONcrudRepository Jrep = new JSONcrudRepository();
-        return (ProtezioniIndossabiliNewJSONresp) Jrep.creates(req, new ProtezioniIndossabiliNewJSONresp(), this.JSONtable);
+        return null;
+        //(ProtezioniIndossabiliNewJSONresp) Jrep.creates(req, new ProtezioniIndossabiliNewJSONresp(), this.JSONtable);
     }
 }

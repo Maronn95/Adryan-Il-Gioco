@@ -4,6 +4,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiReposit
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb.JSONcrudRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +24,9 @@ public class ArmiJSONserviceImpl implements ArmiJSONservice {
         return (ArmiNewJSONresp) Arep.creates(req, new ArmiNewJSONresp(), this.JSONtable);
 
     }
+
+     @Override
+     public ArmiNewJSONresp selectArmi(Integer idArma) throws IOException, ParseException {
+         return (ArmiNewJSONresp) Arep.selectById(idArma, new ArmiNewJSONresp(), this.JSONtable);
+     }
 }

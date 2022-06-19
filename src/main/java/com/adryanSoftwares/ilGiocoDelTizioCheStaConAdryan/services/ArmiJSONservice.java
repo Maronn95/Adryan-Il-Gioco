@@ -2,6 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -9,5 +10,8 @@ import java.io.IOException;
 public interface ArmiJSONservice {
 
     ArmiNewJSONresp newArmi (ArmiNewJSONreq req) throws IOException, ParseException;
+
+    ArmiNewJSONresp selectArmi(Integer idArma) throws IOException, ParseException;
+
 
 }

@@ -5,6 +5,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONr
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import org.json.simple.parser.ParseException;
@@ -72,6 +73,11 @@ public class ArmiController {
     public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException {
         System.out.println("orcoddio");
         return armiJSON.newArmi( armaDto);
+    }
+
+    @GetMapping("/getArma/{idArma}")
+    public ArmiNewJSONresp getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException {
+        return armiJSON.selectArmi(idArma);
     }
 
 

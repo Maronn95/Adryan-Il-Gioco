@@ -29,10 +29,10 @@ public class OggettiInventarioDto {
     private Rarita rarita;
 
     @JsonProperty("ArmaId")
-    private Long armaId;
+    private Integer armaId;
 
     @JsonProperty("ProtezioniIndossabiliId")
-    private Long protezioneIndossabileId;
+    private Integer protezioneIndossabileId;
 
 
 }

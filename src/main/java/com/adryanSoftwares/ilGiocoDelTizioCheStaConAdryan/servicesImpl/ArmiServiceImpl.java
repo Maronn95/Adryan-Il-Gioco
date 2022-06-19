@@ -17,7 +17,7 @@ public class ArmiServiceImpl implements ArmiService {
     }
 
     @Override
-    public Optional<Armi> getArmaById(Long id) {
+    public Optional<Armi> getArmaById(Integer id) {
 
         //return armiRepo.findById(id);
         return  null;

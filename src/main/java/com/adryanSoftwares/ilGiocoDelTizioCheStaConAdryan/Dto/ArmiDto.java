@@ -14,7 +14,7 @@ public class ArmiDto {
 
 
     @JsonProperty("ArmiId")
-    private Long ArmiId;
+    private Integer ArmiId;
     @JsonProperty("Descrizione")
     private String descrizione;
 

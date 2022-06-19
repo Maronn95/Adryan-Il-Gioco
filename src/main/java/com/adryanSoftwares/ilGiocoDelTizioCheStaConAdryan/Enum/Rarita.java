@@ -5,5 +5,5 @@ public enum Rarita {
     NONCOMUNE,
     RARO,
     EPICO,
-    LEGGENDARIO
+    LEGGENDARIO;
 }

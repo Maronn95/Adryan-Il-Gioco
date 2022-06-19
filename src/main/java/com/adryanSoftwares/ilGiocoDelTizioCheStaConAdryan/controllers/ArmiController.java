@@ -7,11 +7,11 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class ArmiController {
     }
 
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
-    public ArmiDto getOggettiById(@PathVariable Long id)
+    public ArmiDto getOggettiById(@PathVariable Integer id)
     {
         ArmiMapper AM = new ArmiMapper();
         Armi arma =armiServiceImpl.getArmaById(id).get();
@@ -69,7 +69,8 @@ public class ArmiController {
     }
 
     @RequestMapping(value ="/newArma", method= RequestMethod.GET)
-    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, org.json.simple.parser.ParseException {
+    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException {
+        System.out.println("orcoddio");
         return armiJSON.newArmi( armaDto);
     }
 

@@ -9,7 +9,7 @@ public interface ArmiService {
 
     List<Armi> getArmi();
 
-    Optional<Armi> getArmaById(Long id);
+    Optional<Armi> getArmaById(Integer id);
 
     void CreateArma(Armi oggetto);
 

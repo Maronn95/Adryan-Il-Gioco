@@ -13,4 +13,6 @@ public interface PgJSONservice {
   PgNewJSONresp newPg(PgNewJSONreq pgNewJSONreq) throws IOException, ParseException;
 
   PgNewJSONresp selectPg(Integer idPg) throws IOException, ParseException;
+
+
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 @Service
 public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONService {
@@ -22,7 +23,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
     @Autowired
     private ArmiJSONservice aService;
     @Override
-    public int fendenteLeggero(Integer idPg1, Integer idPg2, Integer idArma) throws IOException, ParseException {
+    public int fendenteLeggero(Integer idPg1, Integer idPg2, Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
         PgNewJSONresp pg1 = pService.selectPg(idPg1);
 
@@ -32,12 +33,13 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
         Double modificatoreDanno= generateRandomDouble(0.01,15.00);
 
-        int danno = (int) ((pg1.getStattsCalcDto().getUtilizzoArmaX() +arma1.getDanno() + 30 )
+        int danno = (int) ((pg1.getStattsCalc().getUtilizzoArmaX() +arma1.getDanno() + 30 )
                 - (( 0.1 + modificatoreDanno)));
 
-       pg2.getStattsCalcDto().setVitaAttuale(pg2.getStattsCalcDto().getVitaAttuale() - danno);
 
-       System.out.println("Colpito! L'avversario subisce " +danno+" danni! All'avversario restano "+pg2.getStattsCalcDto().getVitaAttuale()+" punti vita!");
+        pg2.getStattsCalc().setVitaAttuale(pg2.getStattsCalc().getVitaAttuale() - danno);
+
+       System.out.println("Colpito! L'avversario subisce " +danno+" danni! All'avversario restano "+pg2.getStattsCalc().getVitaAttuale()+" punti vita!");
 
        return danno;
 

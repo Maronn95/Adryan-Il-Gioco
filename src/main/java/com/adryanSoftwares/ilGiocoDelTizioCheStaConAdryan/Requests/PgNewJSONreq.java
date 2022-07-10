@@ -1,13 +1,13 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter

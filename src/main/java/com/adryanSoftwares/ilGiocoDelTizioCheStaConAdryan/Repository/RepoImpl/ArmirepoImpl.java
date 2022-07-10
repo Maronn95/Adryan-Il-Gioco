@@ -8,21 +8,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Repository
-class ArmiRepoImpl<Req, Resp>  implements ArmiRepository<Req, Resp> {
+class ArmiRepoImpl<Armi>  implements ArmiRepository<Armi> {
 
     @Autowired
     JSONcrudRepository JCRUD;
 
 
     @Override
-    public Resp selectById(Integer idJSONreq, Resp jsonResp, String table) throws IOException, ParseException {
-        return (Resp) JCRUD.selectById(idJSONreq,jsonResp,table);
+    public Armi selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        return null;
     }
 
     @Override
-    public Resp creates(Req JsonReq, Resp JsonResp, String table) throws IOException, ParseException {
-        return (Resp) JCRUD.creates(JsonReq, JsonResp, table);
+    public Armi creates(Armi entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
+    }
+
+    @Override
+    public Armi delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
+    }
+
+    @Override
+    public Armi update(Armi entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
     }
 }

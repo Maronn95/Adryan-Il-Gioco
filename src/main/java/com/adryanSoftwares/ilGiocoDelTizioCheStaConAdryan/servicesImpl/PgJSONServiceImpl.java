@@ -21,7 +21,7 @@ public class PgJSONServiceImpl implements PgJSONservice {
     private PgEntity reqDtoToEntity (PgNewJSONreq entityRequest){
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
-        entity.setStattsPure(entityRequest.getStattsPure());
+        entity.setStattsPureEntity(entityRequest.getStattsPure());
         entity.setRazza(entityRequest.getRazza());
         return entity;
     }

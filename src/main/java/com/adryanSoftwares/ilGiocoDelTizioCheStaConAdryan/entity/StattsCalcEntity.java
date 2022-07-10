@@ -15,6 +15,7 @@ public class StattsCalcEntity {
 
     private int utilizzoArmaX;
     private int ca;
+    private int vitaAttuale;
 
     @Autowired
     StattsCalcolateService stattsCalcolateService;

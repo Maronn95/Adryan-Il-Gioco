@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,18 +71,17 @@ public class ArmiController {
     }
 
     @RequestMapping(value ="/newArma", method= RequestMethod.GET)
-    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException {
+    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         System.out.println("orcoddio");
         return armiJSON.newArmi( armaDto);
     }
 
     @GetMapping("/getArma/{idArma}")
-    public ArmiNewJSONresp getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException {
+    public ArmiNewJSONresp getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         return armiJSON.selectArmi(idArma);
     }
 
-
-                         @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
+    @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
     public void Delete(@PathVariable Long id){
         armiServiceImpl.DeleteArma(id);
     }

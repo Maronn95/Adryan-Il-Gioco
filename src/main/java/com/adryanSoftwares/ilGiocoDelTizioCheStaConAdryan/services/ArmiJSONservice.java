@@ -6,12 +6,13 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONres
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public interface ArmiJSONservice {
 
-    ArmiNewJSONresp newArmi (ArmiNewJSONreq req) throws IOException, ParseException;
+    ArmiNewJSONresp newArmi (ArmiNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
-    ArmiNewJSONresp selectArmi(Integer idArma) throws IOException, ParseException;
+    ArmiNewJSONresp selectArmi(Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
 
 
 }

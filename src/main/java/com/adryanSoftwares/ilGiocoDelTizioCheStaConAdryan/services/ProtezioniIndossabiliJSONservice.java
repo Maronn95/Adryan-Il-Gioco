@@ -5,7 +5,8 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ProtezioniIn
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public interface ProtezioniIndossabiliJSONservice {
-    ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile (ProtezioniIndossabiliNewJSONreq req) throws IOException, ParseException;
+    ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile (ProtezioniIndossabiliNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 }

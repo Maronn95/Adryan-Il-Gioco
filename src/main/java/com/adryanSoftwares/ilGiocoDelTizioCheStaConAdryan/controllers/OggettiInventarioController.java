@@ -1,13 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiBattlegroundEntityDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiInventarioDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiInventarioMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoInventarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

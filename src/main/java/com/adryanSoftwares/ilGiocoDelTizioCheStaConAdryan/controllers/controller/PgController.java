@@ -18,7 +18,7 @@ public class PgController {
     PgJSONservice pgJSONs;
 
     @GetMapping("/getPg/{idPg}")
-    public PgNewJSONresp getPg (@PathVariable("idPg") Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    public PgNewJSONresp getPg (@PathVariable("idPg") Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
         return pgJSONs.selectPg(idPg);
     }
 
@@ -28,6 +28,18 @@ public class PgController {
         return pgJSONs.newPg(pgJSON);
 
     }
+
+    @DeleteMapping(value="/deletePG/{idPg}")
+    public PgNewJSONresp deletePG (@PathVariable("idPg") Integer idPg) throws Exception {
+        return pgJSONs.delete(idPg);
+    }
+
+    @RequestMapping(value="/updatePG")
+    public PgNewJSONresp updatePG ( @RequestBody PgNewJSONreq pgJSON) throws Exception {
+        return pgJSONs.update(pgJSON);
+    }
+
+
 
 
 /*

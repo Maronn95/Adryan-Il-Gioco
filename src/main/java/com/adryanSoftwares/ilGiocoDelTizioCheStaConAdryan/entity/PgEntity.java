@@ -4,8 +4,6 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Magia.Magia;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Skills.Skills;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.poteri.Poteri;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import lombok.AllArgsConstructor;
@@ -31,6 +29,8 @@ public class PgEntity {
      String name;
 
     private StattsPureEntity stattsPure;
+
+    Integer idStattsPure;
 
     private StattsCalcEntity stattsCalc;
 

@@ -15,7 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 @Service
 public class PgJSONServiceImpl implements PgJSONservice {
 
-
     @Autowired
     PGRepository PGrep;
 
@@ -28,7 +27,7 @@ public class PgJSONServiceImpl implements PgJSONservice {
     }
 
     @Override
-    public PgNewJSONresp newPg(PgNewJSONreq entityRequest) throws IOException, ParseException {
+    public PgNewJSONresp newPg(PgNewJSONreq entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
 
         PgEntity entity = reqDtoToEntity(entityRequest);
         PgEntity newEntity= (PgEntity) PGrep.creates(entity);
@@ -38,9 +37,21 @@ public class PgJSONServiceImpl implements PgJSONservice {
     }
 
     @Override
-    public PgNewJSONresp selectPg( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    public PgNewJSONresp selectPg( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
         PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
         PgNewJSONresp newResp = new PgNewJSONresp(pgEntity);
         return newResp;
+    }
+
+    @Override
+    public PgNewJSONresp delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        PgEntity entity = (PgEntity) PGrep.delete(id);
+        PgNewJSONresp newResp = new PgNewJSONresp(entity);
+        return newResp;
+    }
+
+    @Override
+    public PgNewJSONresp update(PgNewJSONreq pgJSON) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return new PgNewJSONresp((PgEntity) PGrep.update(pgJSON));
     }
 }

@@ -1,7 +1,5 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
@@ -19,6 +17,9 @@ public class PgNewJSONreq {
 
     @JsonProperty
     private String name;
+
+    @JsonProperty
+    private String idPG;
 
     @JsonProperty
     private StattsPureEntity stattsPure;

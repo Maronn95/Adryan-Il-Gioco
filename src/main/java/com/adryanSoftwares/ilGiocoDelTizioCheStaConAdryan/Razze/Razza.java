@@ -16,10 +16,10 @@ public class Razza {
 
     private String malus;
 
-    StattsPureDTO stattsPureDTO = new StattsPureDTO();
+
 
     public Razza(PgDTO pgDTO, Razza razza) {
-
+        StattsPureDTO stattsPureDTO = new StattsPureDTO();
         switch (razza.getName()) {
             case ("sbirro"):
                 stattsPureDTO = pgDTO.getStattsPureDTO();

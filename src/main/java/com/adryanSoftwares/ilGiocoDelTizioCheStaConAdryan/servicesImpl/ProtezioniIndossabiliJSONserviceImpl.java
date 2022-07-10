@@ -8,13 +8,15 @@ import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
 @Service
 public class ProtezioniIndossabiliJSONserviceImpl implements ProtezioniIndossabiliJSONservice {
 
     final  String JSONtable = "ProtInd";
 
     @Override
-    public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile(ProtezioniIndossabiliNewJSONreq req) throws IOException, ParseException {
+    public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile(ProtezioniIndossabiliNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         JSONcrudRepository Jrep = new JSONcrudRepository();
         return null;
         //(ProtezioniIndossabiliNewJSONresp) Jrep.creates(req, new ProtezioniIndossabiliNewJSONresp(), this.JSONtable);

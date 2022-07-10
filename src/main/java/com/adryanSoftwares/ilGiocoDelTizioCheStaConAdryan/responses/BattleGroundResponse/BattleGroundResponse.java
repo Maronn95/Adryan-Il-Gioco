@@ -3,8 +3,6 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroun
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 

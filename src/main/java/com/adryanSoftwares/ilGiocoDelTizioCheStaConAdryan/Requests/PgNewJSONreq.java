@@ -2,18 +2,12 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Magia;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Razza;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Skills;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Inventario;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Poteri;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Razze.Razza;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,16 +16,16 @@ import java.util.List;
 public class PgNewJSONreq {
 
     @JsonProperty
-    private int idPG;
-
-    @JsonProperty
     private String name;
 
     @JsonProperty
-    private StattsPureDTO stattsPureDTO;
+    private String idPG;
 
     @JsonProperty
-    private StattsCalcDto stattsCalcDto;
+    private StattsPureEntity stattsPure;
+
+    @JsonProperty
+    private StattsCalcEntity stattsCalc;
 
     @JsonProperty
     private Razza razza;

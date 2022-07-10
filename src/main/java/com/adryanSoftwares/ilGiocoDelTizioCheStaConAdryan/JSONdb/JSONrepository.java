@@ -1,19 +1,19 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 
 import org.json.simple.parser.ParseException;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.stereotype.Repository;
-
-
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 
-public interface  JSONrepository <Req, Resp> {
+public interface JSONrepository <entityClass> {
 
-    Resp selectById(Integer idJSONreq, Resp jsonResp, String table) throws IOException, ParseException;
+     entityClass selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException;
 
-    Resp creates(Req JsonReq, Resp JsonResp, String table) throws IOException, ParseException;
+     entityClass creates(entityClass entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
+     entityClass delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
+     entityClass update(entityClass entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
+
 }

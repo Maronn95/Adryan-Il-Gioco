@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +77,7 @@ public class ProtezioniIndossabiliController {
 
 
     @RequestMapping(value ="/newProtezioniIndossabili", method= RequestMethod.GET)
-    public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile (@RequestBody ProtezioniIndossabiliNewJSONreq ProtezioneDto) throws IOException, ParseException, org.json.simple.parser.ParseException {
+    public ProtezioniIndossabiliNewJSONresp newProtezioneIndossabile (@RequestBody ProtezioniIndossabiliNewJSONreq ProtezioneDto) throws IOException, ParseException, org.json.simple.parser.ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return ProtezioniJSON.newProtezioneIndossabile( ProtezioneDto);
     }
 }

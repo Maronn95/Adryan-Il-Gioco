@@ -8,7 +8,6 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -18,11 +17,11 @@ public class PgJSONServiceImpl implements PgJSONservice {
     @Autowired
     PGRepository PGrep;
 
-    private PgEntity reqDtoToEntity (PgNewJSONreq entityRequest){
+    private PgEntity reqDtoToEntity(PgNewJSONreq entityRequest) {
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
         entity.setStattsPureEntity(entityRequest.getStattsPure());
-        entity.setRazza(entityRequest.getRazza());
+        entity.setRazzaEntity(entityRequest.getRazzaEntity());
         return entity;
     }
 
@@ -30,14 +29,14 @@ public class PgJSONServiceImpl implements PgJSONservice {
     public PgNewJSONresp newPg(PgNewJSONreq entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
 
         PgEntity entity = reqDtoToEntity(entityRequest);
-        PgEntity newEntity= (PgEntity) PGrep.creates(entity);
+        PgEntity newEntity = (PgEntity) PGrep.creates(entity);
         PgNewJSONresp newResp = new PgNewJSONresp(newEntity);
 
         return newResp;
     }
 
     @Override
-    public PgNewJSONresp selectPg( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+    public PgNewJSONresp selectPg(Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
         PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
         PgNewJSONresp newResp = new PgNewJSONresp(pgEntity);
         return newResp;

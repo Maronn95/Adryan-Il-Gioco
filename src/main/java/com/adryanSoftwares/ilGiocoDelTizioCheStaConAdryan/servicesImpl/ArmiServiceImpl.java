@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiService;
 import org.springframework.stereotype.Service;
 
@@ -10,21 +10,21 @@ import java.util.Optional;
 public class ArmiServiceImpl implements ArmiService {
 
     @Override
-    public List<Armi> getArmi() {
+    public List<ArmiEntity> getArmi() {
 
         //return armiRepo.findAll();
         return  null;
     }
 
     @Override
-    public Optional<Armi> getArmaById(Integer id) {
+    public Optional<ArmiEntity> getArmaById(Integer id) {
 
         //return armiRepo.findById(id);
         return  null;
     }
 
     @Override
-    public void CreateArma(Armi arma) {
+    public void CreateArma(ArmiEntity arma) {
 
         //armiRepo.save(arma);
     }

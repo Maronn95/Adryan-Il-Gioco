@@ -17,7 +17,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 public class InventarioNewJSONresp {
 
     @JsonProperty
-    private Long inventarioId;
+    private Long idInventario;
 
     @JsonProperty
     private int base;

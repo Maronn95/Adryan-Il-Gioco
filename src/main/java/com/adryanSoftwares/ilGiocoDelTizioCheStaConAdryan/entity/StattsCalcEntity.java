@@ -1,5 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.StattsCalcNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.StattsCalcNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsCalcolateService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StattsCalcEntity {
+
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONstattsCalc\\";
+    private String table="StattsCalc";
+    private StattsCalcNewJSONreq req;
+    private StattsCalcNewJSONresp resp;
+
+    private Integer idStattsCalc;
 
     private int utilizzoArmaX;
     private int ca;

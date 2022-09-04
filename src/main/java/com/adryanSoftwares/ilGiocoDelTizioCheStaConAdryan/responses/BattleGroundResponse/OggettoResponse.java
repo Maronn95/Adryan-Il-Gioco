@@ -1,7 +1,5 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +15,7 @@ import java.util.List;
 public class OggettoResponse {
 
     @JsonProperty("data")
-    private List<OggettoDTO> Data;
+    private List<com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO> Data;
 
     @JsonProperty("id")
     private Long id;

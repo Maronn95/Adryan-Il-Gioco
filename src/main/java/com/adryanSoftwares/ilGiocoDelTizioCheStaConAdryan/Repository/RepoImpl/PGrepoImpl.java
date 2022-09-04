@@ -37,9 +37,4 @@ public class PGrepoImpl implements PGRepository {
         return (PgEntity) JCRUD.update( entity);
     }
 
-
-    /*@Override
-    public PgEntity creates(PgEntity entity) throws IOException, ParseException {
-        return (PgEntity) JCRUD.creates(entity);
-    }*/
 }

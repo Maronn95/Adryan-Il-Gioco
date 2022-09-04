@@ -13,6 +13,9 @@ import lombok.Setter;
 public class MagieNewJSONresp {
 
     @JsonProperty
+    private Integer idMagia;
+
+    @JsonProperty
     private String name;
 
     @JsonProperty

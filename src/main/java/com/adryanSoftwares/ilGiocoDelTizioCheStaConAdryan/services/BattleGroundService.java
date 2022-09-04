@@ -1,7 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 
 import java.util.List;

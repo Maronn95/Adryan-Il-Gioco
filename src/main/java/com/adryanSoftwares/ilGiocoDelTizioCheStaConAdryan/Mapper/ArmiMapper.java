@@ -1,11 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 
 public class ArmiMapper {
 
-    public static ArmiDto entityToDto(Armi a){
+    public static ArmiDto entityToDto(ArmiEntity a){
         ArmiDto dto= new ArmiDto();
 
 
@@ -30,8 +30,8 @@ public class ArmiMapper {
         return null;
     }
 
-    public static Armi dtoToEntity(ArmiDto dto){
-        Armi a= new Armi();
+    public static ArmiEntity dtoToEntity(ArmiDto dto){
+        ArmiEntity a= new ArmiEntity();
         if(dto!=null){
 
             if(dto.getDescrizione()!=null){
@@ -62,8 +62,8 @@ public class ArmiMapper {
         return a;
     }
 
-    public static Armi dtoUpdateEntity(ArmiDto dto) {
-        Armi A= new Armi();
+    public static ArmiEntity dtoUpdateEntity(ArmiDto dto) {
+        ArmiEntity A= new ArmiEntity();
         if(dto!=null){
             if (dto.getArmiId() != null) {
 

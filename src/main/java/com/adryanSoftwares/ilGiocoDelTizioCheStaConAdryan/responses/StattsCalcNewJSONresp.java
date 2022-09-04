@@ -12,11 +12,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StattsCalcNewJSONresp {
 
-    @JsonProperty("utilizzoArmaX")
+    @JsonProperty
+    private Integer idStattsCalc;
+
+    @JsonProperty
     private int utilizzoArmaX;
-    @JsonProperty("ca")
+    @JsonProperty
     private int ca;
-    @JsonProperty("vitaAttuale")
+    @JsonProperty
     private int vitaAttuale;
 
 }

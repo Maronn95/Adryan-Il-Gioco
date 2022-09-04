@@ -1,11 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController;
 
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api.BGApi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.BattleGroundMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattleGroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.BattleGroundServiceImpl;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoServiceImpl;
@@ -47,7 +47,7 @@ public class BGRestController implements BGApi {
 
         if(battleGround.getIdBattleGround()!=null){
 
-           Optional<BattleGroundEntity> BGO = bgsi.findBGById(battleGround.getIdBattleGround());
+           Optional<BattleGroundEntity> BGO = bgsi.findBGById(Long.valueOf(battleGround.getIdBattleGround()));
            BattleGroundEntity battleGroundEntity = BGO.get();
            battleGroundEntity = BattleGroundMapper.DtoUpdateEntity(battleGround);
            bgsi.saveOrUpdate(battleGroundEntity);

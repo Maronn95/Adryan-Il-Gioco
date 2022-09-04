@@ -28,26 +28,27 @@ public class PgNewJSONresp {
     private StattsCalcEntity stattsCalc;
 
     @JsonProperty
-    private Razza razza;
+    private RazzaEntity razzaEntity;
 
     public PgNewJSONresp(PgEntity pgEntity) {
         this.idPG= Math.toIntExact(pgEntity.getIdPG());
         this.name=pgEntity.getName();
         this.stattsPure = pgEntity.getStattsPureEntity();
        // ??? danie pensaci tu??? addo li vu mett ste stattcalc? this.stattsCalc = pgEntity.get?
-        this.razza = pgEntity.getRazza();
+        this.razzaEntity = pgEntity.getRazzaEntity();
+
 
     }
     @JsonProperty
-    private List<Poteri> poteri;
+    private List<PoteriEntity> poteriEntity;
 
     @JsonProperty
-    private List<Magia> magie;
+    private List<MagiaEntity> magie;
 
     @JsonProperty
-    private Inventario inventario;
+    private InventarioEntity inventarioEntity;
 
     @JsonProperty
-    private List<Skills> skills;
+    private List<SkillsEntity> skills;
 
 }

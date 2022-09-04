@@ -12,6 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class SkillsNewJSONreq {
 
+
+    @JsonProperty
+    private Integer idSkills;
+
     @JsonProperty
     private String name;
 

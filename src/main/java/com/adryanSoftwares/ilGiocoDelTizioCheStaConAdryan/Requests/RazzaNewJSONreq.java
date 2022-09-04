@@ -12,6 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RazzaNewJSONreq {
 
+
+    @JsonProperty
+    private Integer idRazza;
+
     @JsonProperty
     private String name;
 

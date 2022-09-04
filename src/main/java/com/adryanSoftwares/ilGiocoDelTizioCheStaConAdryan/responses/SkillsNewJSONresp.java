@@ -13,6 +13,9 @@ import lombok.Setter;
 public class SkillsNewJSONresp {
 
     @JsonProperty
+    private Integer idSkills;
+
+    @JsonProperty
     private String name;
 
     @JsonProperty

@@ -9,6 +9,9 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 public class PoteriNewJSONresp {
 
     @JsonProperty
+    private Integer idPotere;
+
+    @JsonProperty
     private String name;
 
     @JsonProperty

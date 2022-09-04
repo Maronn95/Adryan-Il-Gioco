@@ -1,7 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsCalcDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,11 +31,13 @@ public class PgEntity {
 
     private StattsCalcEntity stattsCalc;
 
-    private Razza razza;
+    private RazzaEntity razzaEntity;
 
-    private List<Skills> skills;
+    private InventarioEntity inventarioEntity;
 
-    private List<Poteri> poteri;
+    private List<SkillsEntity> skillsEntity;
 
-    private List<Magia> magie;
+    private List<PoteriEntity> poteriEntity;
+
+    private List<MagiaEntity> magieEntity;
 }

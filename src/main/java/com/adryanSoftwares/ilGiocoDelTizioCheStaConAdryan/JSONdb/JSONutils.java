@@ -3,13 +3,10 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 import org.json.simple.JSONObject;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.jar.JarEntry;
-import java.util.jar.JarInputStream;
 
 public class JSONutils{
 
@@ -29,6 +26,7 @@ public class JSONutils{
         }
         File scannedDir = new File(scannedUrl.getFile());
         List<Class<?>> classes = new ArrayList<Class<?>>();
+
         for (File file : scannedDir.listFiles()) {
             classes.addAll(find(file, scannedPackage));
         }

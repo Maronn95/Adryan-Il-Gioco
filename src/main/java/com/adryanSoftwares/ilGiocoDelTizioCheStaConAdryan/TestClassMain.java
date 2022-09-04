@@ -1,8 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BGRestController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.OggettoRestController;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.OggettoMapper;

@@ -17,7 +17,7 @@ import java.util.List;
 public class InventarioNewJSONreq {
 
     @JsonProperty
-    private Long inventarioId;
+    private Long idInventario;
 
     @JsonProperty
     private int base;

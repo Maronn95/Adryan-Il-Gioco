@@ -6,15 +6,16 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Repository;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 @Repository
 public class JSONcrudRepository <entityClass>   {
@@ -186,6 +187,14 @@ public class JSONcrudRepository <entityClass>   {
     public void getEntityCredentials() throws IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException, ClassNotFoundException, InstantiationException {
 
         Class<?> entityClass = null;
+
+
+        StackTraceElement[] stElements2 = Thread.currentThread().getStackTrace();
+        for(StackTraceElement StackTraceElementX : stElements2 )
+            System.out.println(StackTraceElementX);
+
+        System.out.println("Trace - 8 Porco dio = "+stElements2[stElements2.length-8]);
+
 
         List<Class<?>> entityClasses = JSONutils.find("com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity");
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();

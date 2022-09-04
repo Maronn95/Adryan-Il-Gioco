@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Armi extends OggettoInventario {
+public class ArmiEntity extends OggettoInventario {
 
     private String name;
 

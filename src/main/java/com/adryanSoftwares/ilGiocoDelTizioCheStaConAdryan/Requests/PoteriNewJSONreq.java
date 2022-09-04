@@ -13,6 +13,9 @@ import lombok.Setter;
 public class PoteriNewJSONreq {
 
     @JsonProperty
+    private Integer idPotere;
+
+    @JsonProperty
     private String name;
 
     @JsonProperty

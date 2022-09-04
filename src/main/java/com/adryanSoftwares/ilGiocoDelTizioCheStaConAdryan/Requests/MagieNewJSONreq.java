@@ -12,19 +12,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MagieNewJSONreq {
 
-    @JsonProperty("name")
+    @JsonProperty
+    private Integer idMagia;
+
+    @JsonProperty
     private String name;
 
-    @JsonProperty("buff1")
+    @JsonProperty
     private String buff1;
 
-    @JsonProperty("buff2")
+    @JsonProperty
     private String buff2;
 
-    @JsonProperty("value1")
+    @JsonProperty
     private int value1;
 
-    @JsonProperty("value2")
+    @JsonProperty
     private int value2;
 
 }

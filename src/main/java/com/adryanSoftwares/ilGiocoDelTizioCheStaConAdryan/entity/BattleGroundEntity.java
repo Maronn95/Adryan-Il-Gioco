@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BattleGroundEntity {
 
-    private Long idBattleGround;
+    private Integer idBattleGround;
 
     private String mapCode;
 

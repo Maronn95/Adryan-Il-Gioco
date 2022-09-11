@@ -42,6 +42,11 @@ public class PgJSONServiceImpl implements PgJSONservice {
         PgNewJSONresp newResp = new PgNewJSONresp(pgEntity);
         return newResp;
     }
+    @Override
+    public PgEntity selectPgentette( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
+        return pgEntity;
+    }
 
     @Override
     public PgNewJSONresp delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {

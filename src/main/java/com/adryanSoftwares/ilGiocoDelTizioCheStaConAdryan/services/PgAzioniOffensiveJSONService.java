@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface PgAzioniOffensiveJSONService {
 
-    List<Integer> fendenteLeggero (Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
+   int[] fendenteLeggero (Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
 
-    List<Integer> fendentePesante (Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
+   int[]fendentePesante (Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
 
 }

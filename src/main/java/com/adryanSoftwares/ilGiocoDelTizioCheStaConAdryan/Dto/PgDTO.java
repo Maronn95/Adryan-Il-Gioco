@@ -15,7 +15,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class PgDTO {
 
@@ -42,4 +41,6 @@ public class PgDTO {
 
     @JsonProperty("magia")
     private List<MagiaEntity> magie;
+
+
 }

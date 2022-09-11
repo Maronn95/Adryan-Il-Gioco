@@ -1,11 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PGRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiService;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgAzioniOffensiveJSONService;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import org.json.simple.parser.ParseException;
@@ -21,20 +21,20 @@ import java.util.Random;
 public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONService {
 
     @Autowired
-    private PgJSONservice pService;
+    private PGRepository pRepo;
 
     @Autowired
-    private ArmiJSONservice aService;
+    private ArmiRepository aRepo;
     @Override
-    public List<Integer> fendenteLeggero(Integer idPg1, Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public int[] fendenteLeggero(Integer idPg1, Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
         Random rand = new Random();
 
-        PgNewJSONresp pg1 = pService.selectPg(idPg1);
+        PgEntity pg1 = (PgEntity) pRepo.selectById(idPg1);
 
 
 
-        ArmiEntity arma1= aService.selectArmi(idArma);
+        ArmiEntity arma1= (ArmiEntity) aRepo.selectById(idArma);
 
         Double modificatoreDanno= generateRandomDouble(0.01,25.00);
 
@@ -42,7 +42,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
         int tiroPerColpire = (pg1.getStattsCalc().getUtilizzoArmaX() + rand.nextInt(20) );
 
-        List<Integer> valoriAttacco = new ArrayList<>();
+       int[]valoriAttacco = new int[0];
 
           if(rand.nextInt(100) <= (arma1.getProbabilitaCriticoArma()+ 10))
             {
@@ -65,8 +65,8 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
 
             }
-                valoriAttacco.add(tiroPerColpire);
-                valoriAttacco.add(danno);
+                valoriAttacco[0]=(tiroPerColpire);
+                valoriAttacco[1]=(danno);
 
                 return valoriAttacco;
 
@@ -74,16 +74,31 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
 
         }
+        public void subisciFendenteLeggero(Integer idPg2, int[]valoriAttacco) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException, InterruptedException {
+        PgEntity pg2 = (PgEntity) pRepo.selectById(idPg2);
+        int tiroPerColpire = valoriAttacco[0];
+        int danno = valoriAttacco [1];
+
+        if(pg2.getStattsCalc().getCa() <= tiroPerColpire) {
+            pg2.getStattsCalc().setVitaAttuale(pg2.getStattsCalc().getVitaAttuale() - danno);
+
+
+            pRepo.update(pg2);
+        }
+        else {
+            System.out.println("Mancato!!");
+        }
+        }
 
     @Override
-    public List<Integer> fendentePesante(Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public int[] fendentePesante(Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         Random rand = new Random();
 
-        PgNewJSONresp pg1 = pService.selectPg(idPg1);
+        PgEntity pg1 = (PgEntity) pRepo.selectById(idPg1);
 
 
 
-        ArmiEntity arma1= aService.selectArmi(idArma);
+        ArmiEntity arma1= (ArmiEntity) aRepo.selectById(idArma);
 
         Double modificatoreDanno= generateRandomDouble(0.01,15.00);
 
@@ -92,7 +107,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
         int tiroPerColpire = (pg1.getStattsCalc().getUtilizzoArmaX() + rand.nextInt(15) );
 
 
-        List<Integer> valoriAttacco = new ArrayList<>();
+        int[] valoriAttacco = new int[0];
 
         if(rand.nextInt(100) <= (arma1.getProbabilitaCriticoArma()+ 10))
         {
@@ -118,10 +133,25 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
 
         }
-        valoriAttacco.add(tiroPerColpire);
-        valoriAttacco.add(danno);
-
+        valoriAttacco[0]=(tiroPerColpire);
+        valoriAttacco[1]=(danno);
         return valoriAttacco;
+    }
+
+    public void subisciFendentePesante(Integer idPg2, int[]valoriAttacco) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException, InterruptedException {
+        PgEntity pg2 = (PgEntity) pRepo.selectById(idPg2);
+        int tiroPerColpire = valoriAttacco[0];
+        int danno = valoriAttacco [1];
+
+        if(pg2.getStattsCalc().getCa() <= tiroPerColpire) {
+            pg2.getStattsCalc().setVitaAttuale(pg2.getStattsCalc().getVitaAttuale() - danno);
+
+
+            pRepo.update(pg2);
+        }
+        else {
+            System.out.println("Mancato!!");
+        }
     }
 
 

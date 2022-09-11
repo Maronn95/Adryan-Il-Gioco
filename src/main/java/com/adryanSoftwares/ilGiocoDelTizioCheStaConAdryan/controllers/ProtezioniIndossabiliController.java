@@ -4,7 +4,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ProtezioniInd
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ProtezioniIndossabiliNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ProtezioniIndossabiliMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ProtezioniIndossabiliJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ProtezioniIndossabiliServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +29,9 @@ public class ProtezioniIndossabiliController {
     @RequestMapping(value="/protezioni")
     public List<ProtezioniIndossabiliDto> getProtezioni(){
         ProtezioniIndossabiliMapper PIM = new ProtezioniIndossabiliMapper();
-        List<ProtezioniIndossabili> protezioni=PIS.getProtezioni();
+        List<ProtezioniIndossabiliEntity> protezioni=PIS.getProtezioni();
         List<ProtezioniIndossabiliDto> protezioniDto =new ArrayList<ProtezioniIndossabiliDto>();
-        for(ProtezioniIndossabili a:protezioni)
+        for(ProtezioniIndossabiliEntity a:protezioni)
             protezioniDto.add( PIM.entityToDto(a));
         return protezioniDto;
     }
@@ -40,7 +40,7 @@ public class ProtezioniIndossabiliController {
     public ProtezioniIndossabiliDto getProtezioneById(@PathVariable Long id)
     {
         ProtezioniIndossabiliMapper PIM = new ProtezioniIndossabiliMapper();
-        ProtezioniIndossabili a =PIS.getProtezioneById(id).get();
+        ProtezioniIndossabiliEntity a =PIS.getProtezioneById(id).get();
         ProtezioniIndossabiliDto protezioneDto =PIM.entityToDto(a);
         return protezioneDto ;
     }
@@ -48,7 +48,7 @@ public class ProtezioniIndossabiliController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.POST)
     public void SaveOrUpdate(@RequestBody ProtezioniIndossabiliDto protezioneDto) {
         ProtezioniIndossabiliMapper PIM = new ProtezioniIndossabiliMapper();
-        ProtezioniIndossabili a = new ProtezioniIndossabili();
+        ProtezioniIndossabiliEntity a = new ProtezioniIndossabiliEntity();
         if (protezioneDto.getProtezioniIndossabiliId() != null) {
             a = PIM.dtoUpdateEntity(protezioneDto);
         } else {
@@ -60,7 +60,7 @@ public class ProtezioniIndossabiliController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
     public void Update(@RequestBody ProtezioniIndossabiliDto protezioneDto) {
         ProtezioniIndossabiliMapper PIM = new ProtezioniIndossabiliMapper();
-        ProtezioniIndossabili a = new ProtezioniIndossabili();
+        ProtezioniIndossabiliEntity a = new ProtezioniIndossabiliEntity();
         if (protezioneDto.getProtezioniIndossabiliId() != null) {
             a = PIM.dtoUpdateEntity(protezioneDto);
         } else {

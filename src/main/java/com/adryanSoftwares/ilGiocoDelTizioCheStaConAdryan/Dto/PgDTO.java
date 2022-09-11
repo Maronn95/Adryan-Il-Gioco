@@ -1,10 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Magia;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Razza;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Skills;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Poteri;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.MagiaEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.RazzaEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.SkillsEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,14 +32,14 @@ public class PgDTO {
     private StattsCalcDto stattsCalcDto;
 
     @JsonProperty("razza")
-    private Razza razza;
+    private RazzaEntity razza;
 
     @JsonProperty("skills")
-    private List<Skills> skills;
+    private List<SkillsEntity> skills;
 
     @JsonProperty("poteri")
-    private List<Poteri> poteri;
+    private List<PoteriEntity> poteri;
 
     @JsonProperty("magia")
-    private List<Magia> magie;
+    private List<MagiaEntity> magie;
 }

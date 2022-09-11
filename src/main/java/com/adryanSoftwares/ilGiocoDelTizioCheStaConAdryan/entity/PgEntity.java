@@ -30,11 +30,11 @@ public class PgEntity {
 
     private StattsCalcEntity stattsCalc;
 
-    private Razza razza;
+    private RazzaEntity razza;
 
-    private List<Skills> skills;
+    private List<SkillsEntity> skills;
 
-    private List<Poteri> poteri;
+    private List<PoteriEntity> poteri;
 
-    private List<Magia> magie;
+    private List<MagiaEntity> magie;
 }

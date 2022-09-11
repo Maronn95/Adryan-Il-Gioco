@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ProtezioniService;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +11,19 @@ import java.util.Optional;
 public class ProtezioniIndossabiliServiceImpl implements ProtezioniService {
 
     @Override
-    public List<ProtezioniIndossabili> getProtezioni() {
+    public List<ProtezioniIndossabiliEntity> getProtezioni() {
         //return PR.findAll();
         return  null;
     }
 
     @Override
-    public Optional<ProtezioniIndossabili> getProtezioneById(Long id) {
+    public Optional<ProtezioniIndossabiliEntity> getProtezioneById(Long id) {
         //return PR.findById(id);
         return  null;
     }
 
     @Override
-    public void CreateProtezione(ProtezioniIndossabili protezione) {
+    public void CreateProtezione(ProtezioniIndossabiliEntity protezione) {
         //PR.save(protezione);
     }
 

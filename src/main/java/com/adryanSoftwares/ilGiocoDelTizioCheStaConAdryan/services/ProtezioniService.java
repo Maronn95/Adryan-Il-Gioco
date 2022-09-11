@@ -1,19 +1,19 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ProtezioniService {
 
-    List<ProtezioniIndossabili> getProtezioni();
+    List<ProtezioniIndossabiliEntity> getProtezioni();
 
 
-    Optional<ProtezioniIndossabili> getProtezioneById(Long id);
+    Optional<ProtezioniIndossabiliEntity> getProtezioneById(Long id);
 
 
-    void CreateProtezione(ProtezioniIndossabili protezione);
+    void CreateProtezione(ProtezioniIndossabiliEntity protezione);
 
 
 

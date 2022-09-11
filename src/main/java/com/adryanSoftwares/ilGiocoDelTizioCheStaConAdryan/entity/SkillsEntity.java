@@ -1,6 +1,5 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Poteri {
+public class SkillsEntity {
 
     private String name;
 

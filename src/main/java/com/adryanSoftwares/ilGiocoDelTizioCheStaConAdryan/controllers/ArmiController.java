@@ -4,8 +4,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONre
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import org.json.simple.parser.ParseException;
@@ -30,9 +29,9 @@ public class ArmiController {
     @RequestMapping(value="/armi")
     public List<ArmiDto> GetArmi(){
         ArmiMapper AM = new ArmiMapper();
-        List<Armi> armi=armiServiceImpl.getArmi();
+        List<ArmiEntity> armi=armiServiceImpl.getArmi();
         List<ArmiDto> armiDto =new ArrayList<ArmiDto>();
-        for(Armi a:armi)
+        for(ArmiEntity a:armi)
             armiDto.add( AM.entityToDto(a));
         return armiDto;
     }
@@ -41,7 +40,7 @@ public class ArmiController {
     public ArmiDto getOggettiById(@PathVariable Integer id)
     {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma =armiServiceImpl.getArmaById(id).get();
+        ArmiEntity arma =armiServiceImpl.getArmaById(id).get();
         ArmiDto armaDto =AM.entityToDto(arma);
         return armaDto ;
     }
@@ -49,7 +48,7 @@ public class ArmiController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.POST)
     public void SaveOrUpdate(@RequestBody ArmiDto armaDto) {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma = new Armi();
+        ArmiEntity arma = new ArmiEntity();
         if (armaDto.getArmiId() != null) {
             arma = AM.dtoUpdateEntity(armaDto);
         } else {
@@ -61,7 +60,7 @@ public class ArmiController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
     public void Update(@RequestBody ArmiDto armaDto) {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma = new Armi();
+        ArmiEntity arma = new ArmiEntity();
         if (armaDto.getArmiId() != null) {
             arma = AM.dtoUpdateEntity(armaDto);
         } else {
@@ -71,13 +70,13 @@ public class ArmiController {
     }
 
     @RequestMapping(value ="/newArma", method= RequestMethod.GET)
-    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    public ArmiEntity newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         System.out.println("orcoddio");
         return armiJSON.newArmi( armaDto);
     }
 
     @GetMapping("/getArma/{idArma}")
-    public ArmiNewJSONresp getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public ArmiEntity getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         return armiJSON.selectArmi(idArma);
     }
 

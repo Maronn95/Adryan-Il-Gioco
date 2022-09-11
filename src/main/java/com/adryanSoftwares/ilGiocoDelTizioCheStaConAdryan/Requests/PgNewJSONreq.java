@@ -28,18 +28,18 @@ public class PgNewJSONreq {
     private StattsCalcEntity stattsCalc;
 
     @JsonProperty
-    private Razza razza;
+    private RazzaEntity razza;
 
     @JsonProperty
-    private List<Poteri> poteri;
+    private List<PoteriEntity> poteri;
 
     @JsonProperty
-    private List<Magia> magie;
+    private List<MagiaEntity> magie;
 
     @JsonProperty
-    private Inventario inventario;
+    private InventarioEntity inventario;
 
     @JsonProperty
-    private List<Skills> skills;
+    private List<SkillsEntity> skills;
 
 }

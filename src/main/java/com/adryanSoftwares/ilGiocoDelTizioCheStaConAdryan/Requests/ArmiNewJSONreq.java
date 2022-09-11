@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArmiNewJSONreq {
+public class ArmiNewJSONreq extends OggettoInventarioNewJSONreq{
 
         @JsonProperty
         private String name;

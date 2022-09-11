@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiInventarioService;
 import org.springframework.stereotype.Service;
 
@@ -10,21 +10,21 @@ import java.util.Optional;
 public class OggettoInventarioServiceImpl implements OggettiInventarioService {
 
     @Override
-    public List<OggettoInventario> getOggetti() {
+    public List<OggettoInventarioEntity> getOggetti() {
 
         //return OIR.findAll();
         return  null;
     }
 
     @Override
-    public Optional<OggettoInventario> getOggettiById(Long id) {
+    public Optional<OggettoInventarioEntity> getOggettiById(Long id) {
 
         //return OIR.findById(id);
         return  null;
     }
 
     @Override
-    public void CreateOggetto(OggettoInventario oggetto) {
+    public void CreateOggetto(OggettoInventarioEntity oggetto) {
         //OIR.save(oggetto);
     }
 

@@ -28,7 +28,7 @@ public class PgNewJSONresp {
     private StattsCalcEntity stattsCalc;
 
     @JsonProperty
-    private Razza razza;
+    private RazzaEntity razza;
 
     public PgNewJSONresp(PgEntity pgEntity) {
         this.idPG= Math.toIntExact(pgEntity.getIdPG());
@@ -39,15 +39,15 @@ public class PgNewJSONresp {
 
     }
     @JsonProperty
-    private List<Poteri> poteri;
+    private List<PoteriEntity> poteri;
 
     @JsonProperty
-    private List<Magia> magie;
+    private List<MagiaEntity> magie;
 
     @JsonProperty
-    private Inventario inventario;
+    private InventarioEntity inventario;
 
     @JsonProperty
-    private List<Skills> skills;
+    private List<SkillsEntity> skills;
 
 }

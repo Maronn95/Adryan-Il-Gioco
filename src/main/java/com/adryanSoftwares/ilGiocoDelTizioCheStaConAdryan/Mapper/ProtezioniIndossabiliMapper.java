@@ -1,18 +1,16 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabili;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
 
 public class ProtezioniIndossabiliMapper {
 
-    public static ProtezioniIndossabiliDto entityToDto(ProtezioniIndossabili a){
+    public static ProtezioniIndossabiliDto entityToDto(ProtezioniIndossabiliEntity a){
 
         ProtezioniIndossabiliDto dto= new ProtezioniIndossabiliDto();
         if(a.getProtezioneIndossabileId()!=null)dto.setProtezioniIndossabiliId(a.getProtezioneIndossabileId());
 
-        if(a.getDescrizione()!=null)dto.setDescrizione(a.getDescrizione());
 
-        if(a.getOggettoMagico()!=null)dto.setOggettoMagico(a.getOggettoMagico());
 
         if(a.getEfd()!=null)dto.setEfd(a.getEfd());
 
@@ -26,12 +24,10 @@ public class ProtezioniIndossabiliMapper {
 
     }
 
-    public static ProtezioniIndossabili dtoToEntity (ProtezioniIndossabiliDto dto){
-        ProtezioniIndossabili a=new ProtezioniIndossabili();
+    public static ProtezioniIndossabiliEntity dtoToEntity (ProtezioniIndossabiliDto dto){
+        ProtezioniIndossabiliEntity a=new ProtezioniIndossabiliEntity();
 
-        if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
 
-        if(dto.getOggettoMagico()!=null)a.setOggettoMagico(dto.getOggettoMagico());
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 
@@ -44,14 +40,12 @@ public class ProtezioniIndossabiliMapper {
         return a;
     }
 
-    public static ProtezioniIndossabili dtoUpdateEntity(ProtezioniIndossabiliDto dto){
-        ProtezioniIndossabili a=new ProtezioniIndossabili();
+    public static ProtezioniIndossabiliEntity dtoUpdateEntity(ProtezioniIndossabiliDto dto){
+        ProtezioniIndossabiliEntity a=new ProtezioniIndossabiliEntity();
 
         if(dto.getProtezioniIndossabiliId()!=null) a.setProtezioneIndossabileId(dto.getProtezioniIndossabiliId());
 
-        if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
-
-        if(dto.getOggettoMagico()!=null)a.setOggettoMagico(dto.getOggettoMagico());
+      
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 

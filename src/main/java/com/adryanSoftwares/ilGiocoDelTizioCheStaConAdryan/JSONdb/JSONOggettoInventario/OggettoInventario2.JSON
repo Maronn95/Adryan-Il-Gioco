@@ -1,0 +1,9 @@
+{
+  "descrizione" : "Cristo Morto",
+  "peso" : 1.0,
+  "idOggettoInventario" : 2,
+  "rarita" : "COMUNE",
+  "oggettoMagico" : false,
+  "base" : 2,
+  "altezza" : 1
+}

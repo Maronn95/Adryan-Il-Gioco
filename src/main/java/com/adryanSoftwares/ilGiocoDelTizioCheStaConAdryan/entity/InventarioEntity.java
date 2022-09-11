@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Inventario {
+public class InventarioEntity {
     @JsonProperty("id")
     private Long inventarioId;
 
@@ -23,7 +23,7 @@ public class Inventario {
 
     private Long proprietario;
 
-    private List<OggettoInventario> oggetti = new ArrayList<OggettoInventario>();
+    private List<OggettoInventarioEntity> oggetti = new ArrayList<OggettoInventarioEntity>();
 
 
 

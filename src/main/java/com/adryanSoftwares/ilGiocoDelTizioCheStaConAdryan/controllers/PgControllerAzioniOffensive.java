@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/pgAzioniOffensive")
@@ -17,13 +16,13 @@ public class PgControllerAzioniOffensive {
     private PgAzioniOffensiveJSONService pgaService;
 
     @RequestMapping(value="/fendenteLeggero/{idPg1}/{idPg2}/{idArma}", method= RequestMethod.GET)
-    public List<Integer> fendenteLeggero(@PathVariable("idPg1") int idPg1, @PathVariable("idPg2") int idPg2, @PathVariable("idArma") int idArma ) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public int[] fendenteLeggero(@PathVariable("idPg1") int idPg1, @PathVariable("idPg2") int idPg2, @PathVariable("idArma") int idArma ) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
        return pgaService.fendenteLeggero(idPg1, idArma);
 
     }
 
     @RequestMapping(value="/fendentePesante/{idPg1}/{idPg2}/{idArma}", method= RequestMethod.GET)
-    public List<Integer> fendentePesante(@PathVariable("idPg1")int idPg1, @PathVariable("idPg2") int idPg2, @PathVariable("idArma") int idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public int[] fendentePesante(@PathVariable("idPg1")int idPg1, @PathVariable("idPg2") int idPg2, @PathVariable("idArma") int idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         return pgaService.fendentePesante(idPg1, idArma);
     }
 

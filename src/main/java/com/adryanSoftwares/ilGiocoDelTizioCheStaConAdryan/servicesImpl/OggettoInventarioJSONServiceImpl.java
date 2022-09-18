@@ -31,14 +31,16 @@ public class OggettoInventarioJSONServiceImpl implements OggettoInventarioJSONSe
     public OggettoInventarioDto createOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoInventarioEntity oggetto;
         oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-        return (OggettoInventarioDto) OIR.creates(oggetto);
+        OIR.creates(oggetto);
+        return  OggettoInventarioMapper.entityToDto(oggetto);
     }
 
     @Override
     public OggettoInventarioDto updateOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoInventarioEntity oggetto;
         oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-        return (OggettoInventarioDto) OIR.update(oggetto);
+       OIR.update(oggetto);
+        return OggettoInventarioMapper.entityToDto(oggetto);
     }
 
     @Override

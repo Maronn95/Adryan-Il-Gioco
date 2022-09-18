@@ -1,8 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;
 import io.swagger.annotations.*;
+import org.json.simple.parser.ParseException;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Api(value="/BattleGround", tags="BG")
 @RequestMapping(value="/BattleGround")
@@ -35,7 +38,7 @@ public interface BGApi {
     @PostMapping(value="/newBG", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<?> saveOrUpdate(@ApiParam(value="Parametri con cui inserire o modificare il battleGround", required=true)
                                       @Validated
-                                      @RequestBody BattleGroundDto battleGround, int tipoChiamata);
+                                      @RequestBody BattlegroundDto battleGround, int tipoChiamata) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException;
 
 
 
@@ -48,5 +51,5 @@ public interface BGApi {
     @PostMapping(value="/new", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<?> saveOrUpdatePostman(@ApiParam(value="Parametri con cui inserire o modificare il battleGround", required=true)
                                    @Validated
-                                   @RequestBody BattleGroundDto battleGround);
+                                   @RequestBody BattlegroundDto battleGround);
 }

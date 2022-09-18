@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,5 +23,5 @@ public class FightNewJSONreq {
     private List<Long> idPg;
 
     @JsonProperty
-    private BattleGroundEntity battleGroundEntity;
+    private BattlegroundDto battlegroundDTO;
 }

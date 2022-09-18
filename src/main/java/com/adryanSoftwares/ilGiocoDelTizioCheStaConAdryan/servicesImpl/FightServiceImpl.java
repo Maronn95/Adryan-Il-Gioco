@@ -1,7 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.BattlegroundRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.FightRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.FightNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.FightEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.FightNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.FightService;
@@ -19,12 +22,15 @@ public class FightServiceImpl implements FightService {
     @Autowired
     FightRepository FightRep;
 
+    @Autowired
+    BattlegroundRepository battleRep;
 
-    private FightEntity reqDtoToEntity(FightNewJSONreq entityRequest) {
+
+    private FightEntity reqDtoToEntity(FightNewJSONreq entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         FightEntity entity = new FightEntity();
 
-        if(entityRequest.getBattleGroundEntity()!=null)
-            entity.setBattleGroundEntity(entityRequest.getBattleGroundEntity());
+        if(entityRequest.getBattlegroundDTO()!=null)
+            entity.setBattlegroundEntity((BattlegroundEntity) battleRep.selectById(Math.toIntExact(entityRequest.getBattlegroundDTO().getIdBattleground())));
 
         if(entityRequest.getIdPg()!=null)
             entity.setIdPg(entityRequest.getIdPg());

@@ -1,6 +1,6 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -15,10 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class BattleGroundDto {
+public class BattlegroundDto {
 
-    @JsonProperty("idBattleGround")
-    private Long idBattleGround;
+    @JsonProperty("idBattleground")
+    private Long idBattleground;
 
     @JsonProperty("mapCode")
     private String mapCode;
@@ -33,7 +33,7 @@ public class BattleGroundDto {
     private String weather;
 
     @JsonProperty("data")
-    private List<BattleGroundEntity> data;
+    private List<BattlegroundEntity> data;
 
     @JsonProperty("oggetto")
     private OggettiEntity oggetto;

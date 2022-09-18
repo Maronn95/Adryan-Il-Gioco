@@ -1,6 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.FightEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -23,12 +25,12 @@ public class FightNewJSONresp {
     private List<Long> idPg;
 
     @JsonProperty
-    private BattleGroundEntity battleGroundEntity;
+    private BattlegroundDto battlegroundDto;
 
     public FightNewJSONresp(FightEntity fightEntity) {
         this.idFight=fightEntity.getIdFight();
         this.idPg=fightEntity.getIdPg();
-        this.battleGroundEntity=getBattleGroundEntity();
+        this.battlegroundDto = BattlegroundMapper.entityToDto( fightEntity.getBattlegroundEntity());
 
     }
 

@@ -11,16 +11,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OggettiInventarioDto {
+public class OggettoInventarioDto {
 
     @JsonProperty("OggettoInventarioId")
-    private Long OggettoInventarioId;
+    private Integer idOggettoInventario;
 
     @JsonProperty("Descrizione")
     private String descrizione;
 
-    @JsonProperty("DimensioneInventario")
-    private String dimensioneInventario;
+    @JsonProperty("base")
+    private Integer base;
+
+    @JsonProperty("altezza")
+    private Integer altezza;
+
+    @JsonProperty("peso")
+    private Double peso;
 
     @JsonProperty("OggettoMagico")
     private Boolean oggettoMagico;
@@ -28,11 +34,7 @@ public class OggettiInventarioDto {
     @JsonProperty("Rarita")
     private Rarita rarita;
 
-    @JsonProperty("ArmaId")
-    private Integer armaId;
 
-    @JsonProperty("ProtezioniIndossabiliId")
-    private Integer protezioneIndossabileId;
 
 
 }

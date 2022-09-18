@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +29,7 @@ public class InventarioNewJSONreq {
     private Long proprietario;
 
     @JsonProperty
-    private List<OggettoInventario> oggetti = new ArrayList<OggettoInventario>();
+    private List<OggettoInventarioEntity> oggetti = new ArrayList<OggettoInventarioEntity>();
 
 
 }

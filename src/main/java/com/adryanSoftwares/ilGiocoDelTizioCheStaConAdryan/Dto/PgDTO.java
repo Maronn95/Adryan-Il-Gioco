@@ -32,13 +32,13 @@ public class PgDTO {
     private StattsCalcDto stattsCalcDto;
 
     @JsonProperty("razza")
-    private RazzaEntity razzaEntity;
+    private RazzaEntity razza;
 
     @JsonProperty("skills")
     private List<SkillsEntity> skills;
 
     @JsonProperty("poteri")
-    private List<PoteriEntity> poteriEntity;
+    private List<PoteriEntity> poteri;
 
     @JsonProperty("magia")
     private List<MagiaEntity> magie;

@@ -29,9 +29,9 @@ public class ArmiController {
     @RequestMapping(value="/armi")
     public List<ArmiDto> GetArmi(){
         ArmiMapper AM = new ArmiMapper();
-        List<ArmiEntity> armiEntity =armiServiceImpl.getArmi();
+        List<ArmiEntity> armi=armiServiceImpl.getArmi();
         List<ArmiDto> armiDto =new ArrayList<ArmiDto>();
-        for(ArmiEntity a: armiEntity)
+        for(ArmiEntity a:armi)
             armiDto.add( AM.entityToDto(a));
         return armiDto;
     }
@@ -70,13 +70,13 @@ public class ArmiController {
     }
 
     @RequestMapping(value ="/newArma", method= RequestMethod.GET)
-    public ArmiNewJSONresp newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    public ArmiEntity newArma (@RequestBody ArmiNewJSONreq armaDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         System.out.println("orcoddio");
         return armiJSON.newArmi( armaDto);
     }
 
     @GetMapping("/getArma/{idArma}")
-    public ArmiNewJSONresp getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+    public ArmiEntity getPg (@PathVariable("idArma") Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         return armiJSON.selectArmi(idArma);
     }
 

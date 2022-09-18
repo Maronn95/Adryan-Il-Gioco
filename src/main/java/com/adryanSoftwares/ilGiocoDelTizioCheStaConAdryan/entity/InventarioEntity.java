@@ -1,7 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.InventarioNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.InventarioNewJSONresp;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +14,8 @@ import java.util.List;
 @Getter
 @Setter
 public class InventarioEntity {
-
-    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONinventario\\";
-    private String table="Inventario";
-    private InventarioNewJSONreq req;
-    private InventarioNewJSONresp resp;
-
-    private Long idInventario;
+    @JsonProperty("id")
+    private Long inventarioId;
 
     private int base;
 
@@ -29,7 +23,7 @@ public class InventarioEntity {
 
     private Long proprietario;
 
-    private List<OggettoInventario> oggetti = new ArrayList<OggettoInventario>();
+    private List<OggettoInventarioEntity> oggetti = new ArrayList<OggettoInventarioEntity>();
 
 
 

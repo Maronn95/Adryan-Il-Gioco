@@ -2,7 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,13 @@ public class ArmiJSONserviceImpl implements ArmiJSONservice {
     private ArmiRepository Arep;
 
     @Override
-    public ArmiNewJSONresp newArmi(ArmiNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (ArmiNewJSONresp) Arep.creates(req);
+    public ArmiEntity newArmi(ArmiNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (ArmiEntity) Arep.creates(req);
 
     }
 
      @Override
-     public ArmiNewJSONresp selectArmi(Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-         return (ArmiNewJSONresp) Arep.selectById(idArma);
+     public ArmiEntity selectArmi(Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+         return (ArmiEntity) Arep.selectById(idArma);
      }
 }

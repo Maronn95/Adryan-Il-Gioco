@@ -1,11 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BattleGroundController;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.OggettoRestController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.OggettoMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +17,8 @@ public class TestClassMain {
     @Autowired
     BattleGroundController bgrs;
 
-    @Autowired
-    OggettoRestController ogrsrs;
+    //@Autowired
+   // OggettoRestController ogrsrs;
 
     boolean risposta = true;
 
@@ -68,10 +67,10 @@ public class TestClassMain {
             bgDto.setWeather(weather);
             bgDto.setAmbientazione(ambiente);
 //------------------------------------------------------------------------
-            OggettoMapper mapper2 = new OggettoMapper();
-            OggettoDTO oggettoDTO = new OggettoDTO();
+           // OggettoMapper mapper2 = new OggettoMapper();
+           // OggettoDTO oggettoDTO = new OggettoDTO();
 
-            OggettiEntity paperino= ogrsrs.saveOrUpdate(oggettoDTO);
+           // OggettiEntity paperino= ogrsrs.saveOrUpdate(oggettoDTO);
 
 
 

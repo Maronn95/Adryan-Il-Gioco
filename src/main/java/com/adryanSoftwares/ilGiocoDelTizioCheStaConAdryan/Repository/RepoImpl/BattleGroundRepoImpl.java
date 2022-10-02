@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 @Repository
 public class BattleGroundRepoImpl implements BattleGroundRepository {
@@ -33,6 +34,11 @@ public class BattleGroundRepoImpl implements BattleGroundRepository {
     @Override
     public BattleGroundEntity update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return (BattleGroundEntity) JCRUD.update(entity);
+    }
+
+    @Override
+    public List findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
     }
 }
 

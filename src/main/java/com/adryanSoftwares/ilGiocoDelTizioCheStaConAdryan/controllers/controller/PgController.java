@@ -40,10 +40,10 @@ public class PgController {
         return pgJSONs.update(pgJSON);
     }
 
-    @RequestMapping(value="/findAll")
-    public PgRespList findAll () throws Exception {
-        return pgJSONs.findAll();
-    }
+   // @RequestMapping(value="/findAll")
+   // public PgRespList findAll () throws Exception {
+     //   return pgJSONs.findAll();
+  //  }
 
 
 

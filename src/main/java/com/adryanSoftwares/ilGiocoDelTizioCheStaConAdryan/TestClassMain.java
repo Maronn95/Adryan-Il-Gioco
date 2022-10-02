@@ -1,8 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BGRestController;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BattleGroundController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.OggettoRestController;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.OggettoMapper;
@@ -16,7 +16,7 @@ public class TestClassMain {
 
 
     @Autowired
-    BGRestController bgrs;
+    BattleGroundController bgrs;
 
     @Autowired
     OggettoRestController ogrsrs;
@@ -73,11 +73,11 @@ public class TestClassMain {
 
             OggettiEntity paperino= ogrsrs.saveOrUpdate(oggettoDTO);
 
-            bgDto.setOggetto(paperino);
 
 
 
-            bgrs.saveOrUpdate(bgDto,1);
+
+          //  bgrs.saveOrUpdate(bgDto,1);
             System.out.println("inserimento riuscito!");
             System.out.println("inserire un nuovo battlegrounz? (y/n)");
             String risposta2 = scanner.next();

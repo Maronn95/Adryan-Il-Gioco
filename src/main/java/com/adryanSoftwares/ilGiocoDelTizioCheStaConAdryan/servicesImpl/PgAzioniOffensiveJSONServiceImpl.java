@@ -4,6 +4,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiReposit
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PGRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgAzioniOffensiveJSONService;
@@ -42,7 +43,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
         int tiroPerColpire = (pg1.getStattsCalc().getUtilizzoArmaX() + rand.nextInt(20) );
 
-       int[]valoriAttacco = new int[0];
+       int[]valoriAttacco = new int[2];
 
           if(rand.nextInt(100) <= (arma1.getProbabilitaCriticoArma()+ 10))
             {
@@ -94,11 +95,11 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
     public int[] fendentePesante(Integer idPg1,  Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         Random rand = new Random();
 
-        PgEntity pg1 = (PgEntity) pRepo.selectById(idPg1);
+       PgNewJSONresp pg1 = (PgNewJSONresp) pRepo.selectById(idPg1);
 
 
 
-        ArmiEntity arma1= (ArmiEntity) aRepo.selectById(idArma);
+        ArmiNewJSONresp arma1= (ArmiNewJSONresp) aRepo.selectById(idArma);
 
         Double modificatoreDanno= generateRandomDouble(0.01,15.00);
 
@@ -139,7 +140,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
     }
 
     public void subisciFendentePesante(Integer idPg2, int[]valoriAttacco) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException, InterruptedException {
-        PgEntity pg2 = (PgEntity) pRepo.selectById(idPg2);
+        PgNewJSONresp pg2 = (PgNewJSONresp) pRepo.selectById(idPg2);
         int tiroPerColpire = valoriAttacco[0];
         int danno = valoriAttacco [1];
 

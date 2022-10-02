@@ -21,6 +21,8 @@ public class ArmiEntity  {
     private ArmiNewJSONreq req;
     private ArmiNewJSONresp resp;
 
+    private Integer armiId;
+
     private String name;
 
     private Boolean armaADistanza;

@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;
 import io.swagger.annotations.*;
 import org.springframework.http.MediaType;
@@ -35,7 +35,7 @@ public interface BGApi {
     @PostMapping(value="/newBG", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<?> saveOrUpdate(@ApiParam(value="Parametri con cui inserire o modificare il battleGround", required=true)
                                       @Validated
-                                      @RequestBody BattleGroundDto battleGround, int tipoChiamata);
+                                      @RequestBody BattleGroundDto battleGround, Integer tipoChiamata);
 
 
 

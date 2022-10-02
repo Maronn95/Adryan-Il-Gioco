@@ -1,6 +1,7 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,6 @@ public class BattleGroundDto {
     @JsonProperty("data")
     private List<BattleGroundEntity> data;
 
-    @JsonProperty("oggetto")
-    private OggettiEntity oggetto;
+
 
 }

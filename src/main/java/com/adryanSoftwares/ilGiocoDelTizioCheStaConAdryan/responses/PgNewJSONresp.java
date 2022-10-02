@@ -34,6 +34,7 @@ public class PgNewJSONresp {
         this.idPG= Math.toIntExact(pgEntity.getIdPG());
         this.name=pgEntity.getName();
         this.stattsPure = pgEntity.getStattsPureEntity();
+        this.stattsCalc = pgEntity.getStattsCalc();
        // ??? danie pensaci tu??? addo li vu mett ste stattcalc? this.stattsCalc = pgEntity.get?
         this.razza = pgEntity.getRazza();
 

@@ -1,24 +1,22 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import org.json.simple.parser.ParseException;
 
-import java.util.List;
-import java.util.Optional;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public interface BattleGroundService{
 
-     List<BattleGroundEntity> findAllByOrderByIdBattleGroundAsc();
+    BattleGroundEntity newBattleGround(BattleGroundDto dto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
-     List<BattleGroundEntity> oldFindAll();
+    BattleGroundEntity selectBattleGround(Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException;
 
-     Optional<BattleGroundEntity> findBGById(Long idBG);
+    BattleGroundEntity delete ( Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
-    void saveOrUpdate(BattleGroundEntity battleGround);
-    BattleGroundDto saveOrUpdatePostman (BattleGroundDto battleGroundDto);
-
-    void deleteBG(Long idBG);
+    BattleGroundEntity update(BattleGroundDto dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
 
 }

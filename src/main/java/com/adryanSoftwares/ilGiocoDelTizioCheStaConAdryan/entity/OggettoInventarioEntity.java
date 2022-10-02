@@ -22,7 +22,7 @@ public class OggettoInventarioEntity {
     private OggettoInventarioNewJSONreq req;
     private OggettoInventarioNewJSONresp resp;
 
-    private Integer idOggettoInventario;
+    private Integer oggettoInventarioid;
 
      private String descrizione;
 

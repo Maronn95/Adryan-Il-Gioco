@@ -1,6 +1,6 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.BattleGroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 
@@ -12,7 +12,7 @@ public class BattleGroundMapper {
 
         BattleGroundDto dto = new BattleGroundDto();
         if(BattleGround!=null) {
-            if (BattleGround.getIdBattleGround()!=null) dto.setIdBattleGround(BattleGround.getIdBattleGround());
+            if (BattleGround.getIdBattleground()!=null) dto.setIdBattleGround(BattleGround.getIdBattleground());
             if (BattleGround.getMapCode()!=null) dto.setMapCode(BattleGround.getMapCode());
             if (BattleGround.getWeather()!=null) dto.setWeather(BattleGround.getWeather());
             if (BattleGround.getAmbientazione()!=null) dto.setAmbientazione(BattleGround.getAmbientazione());
@@ -25,7 +25,7 @@ public class BattleGroundMapper {
         BattleGroundEntity bgEntity = new BattleGroundEntity();
         if (bgDto != null) {
             if (bgDto.getIdBattleGround() != null) {
-                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleGround(bgDto.getIdBattleGround());
+                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleground(bgDto.getIdBattleGround());
                 if (bgDto.getMapCode() != null) bgEntity.setMapCode(bgDto.getMapCode());
                 if (bgDto.getWeather() != null) bgEntity.setWeather(bgDto.getWeather());
                 if (bgDto.getAmbientazione() != null) bgEntity.setAmbientazione(bgDto.getAmbientazione());
@@ -38,7 +38,7 @@ public class BattleGroundMapper {
     public static BattleGroundEntity dtoToEntity(BattleGroundDto bgDto){
         BattleGroundEntity bgEntity = new BattleGroundEntity();
 
-            if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleGround(bgDto.getIdBattleGround());
+            if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleground(bgDto.getIdBattleGround());
             if (bgDto.getMapCode() != null) bgEntity.setMapCode(bgDto.getMapCode());
             if (bgDto.getWeather() != null) bgEntity.setWeather(bgDto.getWeather());
             if (bgDto.getAmbientazione() != null) bgEntity.setAmbientazione(bgDto.getAmbientazione());
@@ -52,12 +52,12 @@ public class BattleGroundMapper {
 
         if (bgDto != null) {
             if (bgDto.getIdBattleGround() == null) {
-                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleGround(bgDto.getIdBattleGround());
+                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleground(bgDto.getIdBattleGround());
                 if (bgDto.getMapCode() != null) bgEntity.setMapCode(bgDto.getMapCode());
                 if (bgDto.getWeather() != null) bgEntity.setWeather(bgDto.getWeather());
                 if (bgDto.getAmbientazione() != null) bgEntity.setAmbientazione(bgDto.getAmbientazione());
                 if (bgDto.getMapSize() != null) bgEntity.setMapSize(bgDto.getMapSize());
-                if (bgDto.getOggetto() != null) oggettoEntity = bgDto.getOggetto();
+
 
             }
             paperini.add(bgEntity);
@@ -69,12 +69,12 @@ public class BattleGroundMapper {
         BattleGroundEntity bgEntity = new BattleGroundEntity();
         if (bgDto != null) {
             if (bgDto.getIdBattleGround() == null) {
-                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleGround(bgDto.getIdBattleGround());
+                if (bgDto.getIdBattleGround() != null) bgEntity.setIdBattleground(bgDto.getIdBattleGround());
                 if (bgDto.getMapCode() != null) bgEntity.setMapCode(bgDto.getMapCode());
                 if (bgDto.getWeather() != null) bgEntity.setWeather(bgDto.getWeather());
                 if (bgDto.getAmbientazione() != null) bgEntity.setAmbientazione(bgDto.getAmbientazione());
                 if (bgDto.getMapSize() != null) bgEntity.setMapSize(bgDto.getMapSize());
-                if(bgDto.getOggetto()!= null) bgEntity.setOggetto(bgDto.getOggetto());
+
                 return bgEntity;
             }
         }

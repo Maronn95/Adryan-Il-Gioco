@@ -93,7 +93,7 @@ public class JSONcrudRepository <entityClass>   {
         }
         System.out.println(oldJSON.get(getidEntity));
 
-        Long idValue = Long.valueOf((String) oldJSON.get(getidEntity));
+        Long idValue = (Long) oldJSON.get(getidEntity);
 
 
         String selectedPathString = loc + this.path + this.table + idValue +".JSON";

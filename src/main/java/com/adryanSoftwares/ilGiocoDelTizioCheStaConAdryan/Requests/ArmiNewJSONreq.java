@@ -10,22 +10,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArmiNewJSONreq extends OggettoInventarioNewJSONreq{
+public class ArmiNewJSONreq {
 
         @JsonProperty
         private String name;
-        @JsonProperty
-        private String descrizione;
-        @JsonProperty
-        private int base;
-        @JsonProperty
-        private int altezza;
-        @JsonProperty
-        private Double peso;
-        @JsonProperty
-        private Boolean oggettoMagico;
-        @JsonProperty
-        private Rarita rarita;
         @JsonProperty
         private Boolean armaADistanza;
         @JsonProperty

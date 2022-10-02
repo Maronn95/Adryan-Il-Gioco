@@ -40,7 +40,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
     public static OggettoInventarioEntity dtoToEntity(OggettoInventarioDto dto) {
         OggettoInventarioEntity OIE = new OggettoInventarioEntity();
         if (dto != null) {
-            OIE.setIdOggettoInventario(dto.getIdOggettoInventario());
+            OIE.setOggettoInventarioid(dto.getOggettoInventarioid());
 
             if (dto.getBase() != null) {
                 OIE.setBase(dto.getBase());

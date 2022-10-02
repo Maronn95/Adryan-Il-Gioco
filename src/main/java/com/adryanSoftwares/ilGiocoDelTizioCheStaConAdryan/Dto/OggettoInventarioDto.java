@@ -14,7 +14,7 @@ import lombok.Setter;
 public class OggettoInventarioDto {
 
     @JsonProperty("OggettoInventarioId")
-    private Integer idOggettoInventario;
+    private Integer oggettoInventarioid;
 
     @JsonProperty("Descrizione")
     private String descrizione;

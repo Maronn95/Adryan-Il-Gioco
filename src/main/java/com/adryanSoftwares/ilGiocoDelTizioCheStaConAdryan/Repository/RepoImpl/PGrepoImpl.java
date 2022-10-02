@@ -17,8 +17,8 @@ public class PGrepoImpl implements PGRepository {
 
 
     @Override
-    public  PgEntity selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-        return (PgEntity) JCRUD.selectById( idJSONreq);
+    public Object selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        return  JCRUD.selectById( idJSONreq);
     }
 
 

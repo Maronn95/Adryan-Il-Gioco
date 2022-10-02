@@ -32,6 +32,8 @@ public class PgEntity {
 
     private RazzaEntity razza;
 
+    private InventarioEntity inventario;
+
     private List<SkillsEntity> skills;
 
     private List<PoteriEntity> poteri;

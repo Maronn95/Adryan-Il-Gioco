@@ -10,8 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BattleGroundEntity {
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONBattleground\\";
+    private String table="Battleground";
 
-    private Long idBattleGround;
+    private Long idBattleground;
 
     private String mapCode;
 
@@ -21,5 +23,5 @@ public class BattleGroundEntity {
 
     private String weather;
 
-    private OggettiEntity oggetto;
+
 }

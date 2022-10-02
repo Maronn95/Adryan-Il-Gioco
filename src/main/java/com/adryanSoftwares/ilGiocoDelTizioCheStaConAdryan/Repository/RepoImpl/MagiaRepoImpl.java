@@ -5,10 +5,12 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.MagiaReposi
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.MagiaEntity;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+@Repository
 public class MagiaRepoImpl implements MagiaRepository {
 
     @Autowired

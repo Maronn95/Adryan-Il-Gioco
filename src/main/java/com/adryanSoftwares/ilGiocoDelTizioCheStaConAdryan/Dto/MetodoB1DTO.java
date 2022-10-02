@@ -10,15 +10,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StattsCalcDto {
+public class MetodoB1DTO {
 
-    @JsonProperty("idStattsCalc")
-    private Integer idStattsCalc;
-    @JsonProperty("utilizzoArmaX")
-    private Integer utilizzoArmaX;
-    @JsonProperty("ca")
-    private Integer ca;
-    @JsonProperty("vitaAttuale")
-    private Integer vitaAttuale;
+    @JsonProperty("azione")
+    String azione;
 
+    @JsonProperty("idPg1")
+    Integer idPg1;
+
+    @JsonProperty("idPg2")
+    Integer idPg2;
+
+    @JsonProperty("idFight")
+    Integer idFight;
 }

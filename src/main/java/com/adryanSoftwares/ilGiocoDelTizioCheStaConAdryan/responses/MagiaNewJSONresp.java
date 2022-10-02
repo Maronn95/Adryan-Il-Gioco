@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MagieNewJSONresp {
+public class MagiaNewJSONresp {
 
     @JsonProperty
     private Integer idMagia;

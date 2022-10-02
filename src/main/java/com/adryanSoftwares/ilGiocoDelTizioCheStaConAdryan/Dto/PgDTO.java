@@ -20,10 +20,10 @@ import java.util.List;
 public class PgDTO {
 
     @JsonProperty("idPg")
-    private Long idPg;
+    private Long idPgDto;
 
     @JsonProperty("name")
-    private String name;
+    private String nameDto;
 
     @JsonProperty("stattsPureDTO")
     private StattsPureDTO stattsPureDTO;
@@ -32,14 +32,14 @@ public class PgDTO {
     private StattsCalcDto stattsCalcDto;
 
     @JsonProperty("razza")
-    private RazzaEntity razza;
+    private RazzaEntity razzaDto;
 
     @JsonProperty("skills")
-    private List<SkillsEntity> skills;
+    private List<SkillsEntity> skillsDto;
 
     @JsonProperty("poteri")
-    private List<PoteriEntity> poteri;
+    private List<PoteriEntity> poteriDto;
 
     @JsonProperty("magia")
-    private List<MagiaEntity> magie;
+    private List<MagiaEntity> magieDto;
 }

@@ -19,7 +19,7 @@ public class PgNewJSONreq {
     private String name;
 
     @JsonProperty
-    private String idPG;
+    private Integer idPG;
 
     @JsonProperty
     private StattsPureEntity stattsPure;
@@ -28,18 +28,30 @@ public class PgNewJSONreq {
     private StattsCalcEntity stattsCalc;
 
     @JsonProperty
-    private RazzaEntity razzaEntity;
+    private RazzaEntity razza;
 
     @JsonProperty
-    private List<PoteriEntity> poteriEntity;
+    private List<PoteriEntity> poteri;
 
     @JsonProperty
     private List<MagiaEntity> magie;
 
     @JsonProperty
-    private InventarioEntity inventarioEntity;
+    private InventarioEntity inventario;
 
     @JsonProperty
     private List<SkillsEntity> skills;
+
+    public PgNewJSONreq(PgEntity pgEntity) {
+        this.idPG = Math.toIntExact(pgEntity.getIdPG());
+        this.name = pgEntity.getName();
+        this.stattsPure = pgEntity.getStattsPureEntity();
+        this.stattsCalc = pgEntity.getStattsCalcEntity();
+        this.razza = pgEntity.getRazzaEntity();
+        this.inventario = pgEntity.getInventarioEntity();
+        this.skills = pgEntity.getSkillsEntity();
+        this.poteri = pgEntity.getPoteriEntity();
+        this.magie = pgEntity.getMagieEntity();
+    }
 
 }

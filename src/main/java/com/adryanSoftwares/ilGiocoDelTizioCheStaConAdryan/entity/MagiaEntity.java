@@ -1,6 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.MagiaNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.MagiaNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MagiaEntity {
+
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONmagia\\";
+    private String table="Magia";
+    private MagiaNewJSONreq req;
+    private MagiaNewJSONresp resp;
 
     private String name;
 

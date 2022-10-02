@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,15 @@ public class PoteriNewJSONreq {
 
     @JsonProperty
     private int value2;
+
+    public PoteriNewJSONreq(PoteriEntity poteriEntity) {
+        this.idPotere = Math.toIntExact(poteriEntity.getIdPotere());
+        this.name = poteriEntity.getName();
+        this.buff1 = poteriEntity.getBuff1();
+        this.buff2 = poteriEntity.getBuff2();
+        this.value1 = poteriEntity.getValue1();
+        this.value2 = poteriEntity.getValue2();
+    }
 
 }
 

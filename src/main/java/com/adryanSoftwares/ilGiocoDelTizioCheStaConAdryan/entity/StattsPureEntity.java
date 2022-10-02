@@ -18,7 +18,7 @@ public class StattsPureEntity {
     private StattsPureNewJSONreq req;
     private StattsPureNewJSONresp resp;
 
-    private Long idStattsPure;
+    private Integer idStattsPure;
 
     private int forza;
     private int costituzione;
@@ -28,8 +28,5 @@ public class StattsPureEntity {
     private int saggezza;
     private int vitaMax;
     private int trash;
-
-
-
 
 }

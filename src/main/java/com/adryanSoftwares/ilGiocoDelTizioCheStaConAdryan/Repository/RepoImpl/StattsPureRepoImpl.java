@@ -5,15 +5,16 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.StattsPureR
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+@Repository
 public class StattsPureRepoImpl implements StattsPureRepository {
 
     @Autowired
     JSONcrudRepository JCRUD;
-
 
     @Override
     public StattsPureEntity selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
@@ -21,8 +22,8 @@ public class StattsPureRepoImpl implements StattsPureRepository {
     }
 
     @Override
-    public StattsPureEntity creates(StattsPureEntity entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (StattsPureEntity) JCRUD.creates(entity);
+    public Object creates(Object entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return JCRUD.creates(entity);
     }
 
     @Override
@@ -31,8 +32,8 @@ public class StattsPureRepoImpl implements StattsPureRepository {
     }
 
     @Override
-    public StattsPureEntity update(StattsPureEntity entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (StattsPureEntity) JCRUD.update(entity);
+    public Object update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return JCRUD.update(entity);
     }
 
 }

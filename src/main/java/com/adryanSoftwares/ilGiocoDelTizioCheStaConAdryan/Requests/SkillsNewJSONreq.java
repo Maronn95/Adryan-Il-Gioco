@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.SkillsEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +15,7 @@ public class SkillsNewJSONreq {
 
 
     @JsonProperty
-    private Integer idSkills;
+    private Integer idSkill;
 
     @JsonProperty
     private String name;
@@ -30,4 +31,13 @@ public class SkillsNewJSONreq {
 
     @JsonProperty
     private int value2;
+
+    public SkillsNewJSONreq(SkillsEntity skillsEntity) {
+        this.idSkill = Math.toIntExact(skillsEntity.getIdSkill());
+        this.name = skillsEntity.getName();
+        this.buff1 = skillsEntity.getBuff1();
+        this.buff2 = skillsEntity.getBuff2();
+        this.value1 = skillsEntity.getValue1();
+        this.value2 = skillsEntity.getValue2();
+    }
 }

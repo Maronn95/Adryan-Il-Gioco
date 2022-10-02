@@ -1,1 +1,15 @@
-{"peso":0.3,"idArmi":1,"rarita":"COMUNE","oggettoMagico":false,"gittata":1.0,"descrizione":"Davvero ti aspettavi una spada per cominciare?","dannoTipo":"CONTUNDENTE","armaADistanza":false,"name":"Bastone di legno","moltiplicatoreCritico":2.0,"danno":3.0,"probabilitaCriticoArma":20.0,"base":1,"altezza":1}
+{
+  "peso":0.3,
+  "idArmi":1,
+  "rarita":"COMUNE",
+  "oggettoMagico":false,
+  "gittata":1.0,
+  "descrizione":"Davvero ti aspettavi una spada per cominciare?",
+  "dannoTipo":"CONTUNDENTE",
+  "armaADistanza":false,
+  "name":"Bastone di legno",
+  "moltiplicatoreCritico":2.0,
+  "danno":3.0,
+  "probabilitaCriticoArma":20.0,
+  "base":1,"altezza":1
+}

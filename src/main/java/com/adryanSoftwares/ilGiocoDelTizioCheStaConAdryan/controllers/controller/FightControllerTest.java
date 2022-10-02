@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller;
 
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.MetodoB1DTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.FightNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.FightNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.FightService;
@@ -16,6 +17,11 @@ public class FightControllerTest {
 
     @Autowired
     FightService fightService;
+
+    @RequestMapping(value="/metodoB1", method= RequestMethod.GET)
+    public FightNewJSONresp metodoB1(@RequestBody MetodoB1DTO metodoB1DTO) throws Exception {
+        return fightService.metodoB1(metodoB1DTO);
+    }
 
     @RequestMapping(value="/prepJsonFight", method= RequestMethod.GET)
     public FightNewJSONresp metodoA(@RequestBody FightNewJSONreq entityRequest) throws Exception {

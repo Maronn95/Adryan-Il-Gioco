@@ -15,13 +15,19 @@ import java.lang.reflect.InvocationTargetException;
 public class PgJSONServiceImpl implements PgJSONservice {
 
     @Autowired
-    PGRepository PGrep;
+    PGRepository PpgRepository;
 
     private PgEntity reqDtoToEntity(PgNewJSONreq entityRequest) {
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
         entity.setStattsPureEntity(entityRequest.getStattsPure());
-        entity.setRazzaEntity(entityRequest.getRazzaEntity());
+        entity.setRazzaEntity(entityRequest.getRazza());
+        entity.setStattsCalcEntity(entityRequest.getStattsCalc());
+        entity.setPoteriEntity(entityRequest.getPoteri());
+        entity.setInventarioEntity(entityRequest.getInventario());
+        entity.setSkillsEntity(entityRequest.getSkills());
+        entity.setPoteriEntity(entityRequest.getPoteri());
+        entity.setMagieEntity(entityRequest.getMagie());
         return entity;
     }
 
@@ -29,7 +35,7 @@ public class PgJSONServiceImpl implements PgJSONservice {
     public PgNewJSONresp newPg(PgNewJSONreq entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
 
         PgEntity entity = reqDtoToEntity(entityRequest);
-        PgEntity newEntity = (PgEntity) PGrep.creates(entity);
+        PgEntity newEntity = (PgEntity) PpgRepository.creates(entity);
         PgNewJSONresp newResp = new PgNewJSONresp(newEntity);
 
         return newResp;
@@ -37,20 +43,20 @@ public class PgJSONServiceImpl implements PgJSONservice {
 
     @Override
     public PgNewJSONresp selectPg(Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-        PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
+        PgEntity pgEntity = (PgEntity) PpgRepository.selectById(idPg);
         PgNewJSONresp newResp = new PgNewJSONresp(pgEntity);
         return newResp;
     }
 
     @Override
     public PgNewJSONresp delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        PgEntity entity = (PgEntity) PGrep.delete(id);
+        PgEntity entity = (PgEntity) PpgRepository.delete(id);
         PgNewJSONresp newResp = new PgNewJSONresp(entity);
         return newResp;
     }
 
     @Override
     public PgNewJSONresp update(PgNewJSONreq pgJSON) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return new PgNewJSONresp((PgEntity) PGrep.update(pgJSON));
+        return new PgNewJSONresp((PgEntity) PpgRepository.update(pgJSON));
     }
 }

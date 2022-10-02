@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +23,10 @@ public class StattsCalcNewJSONresp {
     @JsonProperty
     private int vitaAttuale;
 
+    public StattsCalcNewJSONresp(StattsCalcEntity stattsCalcEntity) {
+        this.idStattsCalc = Math.toIntExact(stattsCalcEntity.getIdStattsCalc());
+        this.utilizzoArmaX = stattsCalcEntity.getUtilizzoArmaX();
+        this.ca = stattsCalcEntity.getCa();
+        this.vitaAttuale = stattsCalcEntity.getVitaAttuale();
+    }
 }

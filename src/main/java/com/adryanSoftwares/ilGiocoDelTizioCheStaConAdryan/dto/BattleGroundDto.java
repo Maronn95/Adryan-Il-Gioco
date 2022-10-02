@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
@@ -18,7 +18,7 @@ import java.util.List;
 public class BattleGroundDto {
 
     @JsonProperty("idBattleGround")
-    private Long idBattleGround;
+    private Integer idBattleGround;
 
     @JsonProperty("mapCode")
     private String mapCode;

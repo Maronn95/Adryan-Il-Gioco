@@ -1,11 +1,12 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class StattsPureNewJSONreq {
 
     @JsonProperty
-    private Long idStattsPure;
+    private Integer idStattsPure;
     @JsonProperty
     private int forza;
     @JsonProperty
@@ -22,5 +23,17 @@ public class StattsPureNewJSONreq {
     private int trash;
     @JsonProperty
     private int vitaMax;
+
+    public StattsPureNewJSONreq(StattsPureEntity stattsPureEntity) {
+        this.idStattsPure = Math.toIntExact(stattsPureEntity.getIdStattsPure());
+        this.forza = stattsPureEntity.getForza();
+        this.costituzione = stattsPureEntity.getCostituzione();
+        this.destrezza = stattsPureEntity.getDestrezza();
+        this.intelligenza = stattsPureEntity.getIntelligenza();
+        this.carisma = stattsPureEntity.getCarisma();
+        this.saggezza = stattsPureEntity.getSaggezza();
+        this.trash = stattsPureEntity.getTrash();
+        this.vitaMax = stattsPureEntity.getVitaMax();
+    }
 
 }

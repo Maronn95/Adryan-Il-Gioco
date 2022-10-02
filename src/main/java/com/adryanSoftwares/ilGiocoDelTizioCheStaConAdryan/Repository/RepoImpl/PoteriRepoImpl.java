@@ -5,10 +5,12 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PoteriRepos
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+@Repository
 public class PoteriRepoImpl implements PoteriRepository {
 
     @Autowired

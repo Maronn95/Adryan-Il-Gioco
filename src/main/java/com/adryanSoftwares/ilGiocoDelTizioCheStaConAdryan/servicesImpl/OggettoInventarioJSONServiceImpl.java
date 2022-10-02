@@ -16,14 +16,14 @@ import java.lang.reflect.InvocationTargetException;
 public class OggettoInventarioJSONServiceImpl implements OggettoInventarioJSONService {
 
     @Autowired
-    OggettoInventarioRepository OIR;
+    OggettoInventarioRepository oggettoInventarioRepository;
 
 
 
     @Override
     public OggettoInventarioDto getOggettoInventario(Long id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
        OggettoInventarioDto dto;
-       dto= (OggettoInventarioDto) OIR.selectById(Math.toIntExact(id));
+       dto= (OggettoInventarioDto) oggettoInventarioRepository.selectById(Math.toIntExact(id));
         return dto ;
     }
 
@@ -31,19 +31,19 @@ public class OggettoInventarioJSONServiceImpl implements OggettoInventarioJSONSe
     public OggettoInventarioDto createOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoInventarioEntity oggetto;
         oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-        return (OggettoInventarioDto) OIR.creates(oggetto);
+        return (OggettoInventarioDto) oggettoInventarioRepository.creates(oggetto);
     }
 
     @Override
     public OggettoInventarioDto updateOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoInventarioEntity oggetto;
         oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-        return (OggettoInventarioDto) OIR.update(oggetto);
+        return (OggettoInventarioDto) oggettoInventarioRepository.update(oggetto);
     }
 
     @Override
     public void deleteOggettoInventario(Long id) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        OIR.delete(Math.toIntExact(id));
+        oggettoInventarioRepository.delete(Math.toIntExact(id));
 
     }
 }

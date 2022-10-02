@@ -11,19 +11,19 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 @Repository
-public class StattsCalcRepositoryImpl implements StattsCalcRepository {
+public class StattsCalcRepoImpl implements StattsCalcRepository {
 
     @Autowired
     JSONcrudRepository JCRUD;
 
     @Override
-    public StattsCalcEntity selectById(Integer idJSONreq) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-        return (StattsCalcEntity) JCRUD.selectById(idJSONreq);
+    public StattsCalcEntity selectById(Integer idStattsCalc) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        return (StattsCalcEntity) JCRUD.selectById(idStattsCalc);
     }
 
     @Override
     public StattsCalcEntity creates(Object entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (StattsCalcEntity) JCRUD.selectById((Integer) entity);
+        return (StattsCalcEntity) JCRUD.creates(entity);
     }
 
     @Override
@@ -33,7 +33,8 @@ public class StattsCalcRepositoryImpl implements StattsCalcRepository {
 
     @Override
     public Object update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (StattsCalcEntity) JCRUD.update( entity);
+        System.out.println("RepoImpl");
+        return JCRUD.update( entity);
     }
 
 }

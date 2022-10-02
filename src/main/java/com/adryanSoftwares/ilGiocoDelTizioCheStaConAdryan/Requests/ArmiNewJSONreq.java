@@ -15,6 +15,8 @@ public class ArmiNewJSONreq extends OggettoInventarioNewJSONreq{
         @JsonProperty
         private String name;
         @JsonProperty
+        private Integer idArmi;
+        @JsonProperty
         private String descrizione;
         @JsonProperty
         private int base;
@@ -38,5 +40,10 @@ public class ArmiNewJSONreq extends OggettoInventarioNewJSONreq{
         private Double moltiplicatoreCritico;
         @JsonProperty
         private Double probabilitaCriticoArma;
+        @JsonProperty
+        private Boolean attaccoMultiplo;
+        @JsonProperty
+        private Double probabilitaAttaccoMultiplo;
+
 
 }

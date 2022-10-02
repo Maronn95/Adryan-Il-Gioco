@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,10 +15,11 @@ public class ArmiDto {
 
 
     @JsonProperty("ArmiId")
-    private Integer ArmiId;
+    private Integer idArmi;
     @JsonProperty("Descrizione")
     private String descrizione;
-
+    @JsonProperty
+    private String name;
     @JsonProperty("ArmAADistanza")
     private Boolean armaADistanza;
     @JsonProperty("DannoTipo")
@@ -34,4 +36,14 @@ public class ArmiDto {
     private Double moltiplicatoreCritico;
     @JsonProperty("ProbabilitaCriticoArma")
     private Double probabilitaCriticoArma;
+    @JsonProperty("base")
+    private int base;
+    @JsonProperty("altezza")
+    private int altezza;
+    @JsonProperty("peso")
+    private Double peso;
+    @JsonProperty("oggettoMagico")
+    private Boolean oggettoMagico;
+    @JsonProperty("rarita")
+    private Rarita rarita;
 }

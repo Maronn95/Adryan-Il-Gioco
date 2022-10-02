@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 @Repository
-class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
+public class ArmiRepoImpl implements ArmiRepository {
 
     @Autowired
     JSONcrudRepository JCRUD;
@@ -23,8 +23,9 @@ class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
     }
 
     @Override
-    public ArmiEntity creates(ArmiEntity entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (ArmiEntity) JCRUD.creates(entity);    }
+    public ArmiEntity creates(Object entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (ArmiEntity) JCRUD.creates(entity);
+    }
 
     @Override
     public ArmiEntity delete(Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
@@ -32,7 +33,7 @@ class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
     }
 
     @Override
-    public ArmiEntity update(ArmiEntity entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return null;
+    public ArmiEntity update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (ArmiEntity) JCRUD.update(entity);
     }
 }

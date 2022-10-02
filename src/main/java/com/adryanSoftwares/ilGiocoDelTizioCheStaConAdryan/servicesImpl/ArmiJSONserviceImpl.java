@@ -13,19 +13,19 @@ import java.lang.reflect.InvocationTargetException;
 
 @Service
 public class ArmiJSONserviceImpl implements ArmiJSONservice {
-    final  String JSONtable = "Armi";
 
     @Autowired
-    private ArmiRepository Arep;
+    private ArmiRepository armiRepository;
 
     @Override
     public ArmiEntity newArmi(ArmiNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (ArmiEntity) Arep.creates(req);
+        return (ArmiEntity) armiRepository.creates(req);
 
     }
 
      @Override
      public ArmiEntity selectArmi(Integer idArma) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-         return (ArmiEntity) Arep.selectById(idArma);
+         return (ArmiEntity) armiRepository.selectById(idArma);
      }
+
 }

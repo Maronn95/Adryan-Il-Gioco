@@ -77,7 +77,7 @@ public class JSONcrudRepository <entityClass>   {
     }
 
     public entityClass update (entityClass entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-
+        System.out.println("RepoImpl2");
         this.getEntityCredentials();
         String getidEntity = "id"+ this.table;
 
@@ -187,14 +187,6 @@ public class JSONcrudRepository <entityClass>   {
     public void getEntityCredentials() throws IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException, ClassNotFoundException, InstantiationException {
 
         Class<?> entityClass = null;
-
-
-        StackTraceElement[] stElements2 = Thread.currentThread().getStackTrace();
-        for(StackTraceElement StackTraceElementX : stElements2 )
-            System.out.println(StackTraceElementX);
-
-        System.out.println("Trace - 8 Porco dio = "+stElements2[stElements2.length-8]);
-
 
         List<Class<?>> entityClasses = JSONutils.find("com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity");
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();

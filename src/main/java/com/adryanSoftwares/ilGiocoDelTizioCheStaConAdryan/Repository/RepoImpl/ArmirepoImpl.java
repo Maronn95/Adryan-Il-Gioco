@@ -34,11 +34,11 @@ class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
 
     @Override
     public ArmiEntity update(ArmiEntity entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return null;
+        return (ArmiEntity) JCRUD.update(entity);
     }
 
     @Override
     public List<ArmiEntity> findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return null;
+        return JCRUD.findAll();
     }
 }

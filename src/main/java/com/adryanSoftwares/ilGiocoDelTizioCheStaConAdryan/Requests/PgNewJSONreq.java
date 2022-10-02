@@ -22,7 +22,7 @@ public class PgNewJSONreq {
     private String idPG;
 
     @JsonProperty
-    private StattsPureEntity stattsPure;
+    private StattsPureEntity stattsPureEntity;
 
     @JsonProperty
     private StattsCalcEntity stattsCalc;

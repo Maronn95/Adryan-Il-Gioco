@@ -25,5 +25,5 @@ public class FightEntity {
 
     private List<Long> idPg;
 
-    private BattleGroundEntity battleGroundEntity;
+    private BattlegroundEntity battlegroundEntity;
 }

@@ -13,10 +13,12 @@ public class FightMapper {
         if(fightEntity.getIdPg().size()<0){
             fightNewJSONresp.setIdPg(fightEntity.getIdPg());
         }
-        if(fightEntity.getBattleGroundEntity()!=null){
-            fightNewJSONresp.setBattleGroundEntity(fightEntity.getBattleGroundEntity());
+        if(fightEntity.getBattlegroundEntity()!=null){
+            fightNewJSONresp.setBattlegroundDto(BattlegroundMapper.entityToDto(fightEntity.getBattlegroundEntity()));
         }
         return fightNewJSONresp;
     }
+
+
 
 }

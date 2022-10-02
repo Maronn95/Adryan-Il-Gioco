@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.MetodoB1DTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.FightRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PGRepository;
@@ -36,12 +37,15 @@ public class FightServiceImpl implements FightService {
     StattsCalcRepository stattsCalcRepository;
 
 
-    private FightEntity reqDtoToEntity(FightNewJSONreq entityRequest) {
+    private FightEntity reqToEntity(FightNewJSONreq entityRequest) {
         FightEntity entity = new FightEntity();
 
-        if(entityRequest.getBattleGroundEntity()!=null)
-            entity.setBattleGroundEntity(entityRequest.getBattleGroundEntity());
-
+        if(entityRequest.getBattlegroundDTO()!=null){
+            entity.setBattlegroundEntity(BattlegroundMapper.dtoToEntity(entityRequest.getBattlegroundDTO()));
+        }
+        if(entityRequest.getIdFight()!=null){
+            entity.setIdFight(entityRequest.getIdFight());
+        }
         if(entityRequest.getIdPg()!=null)
             entity.setIdPg(entityRequest.getIdPg());
 
@@ -66,7 +70,7 @@ public class FightServiceImpl implements FightService {
     @Override
     public FightNewJSONresp newFight(FightNewJSONreq entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
 
-        FightEntity entity = reqDtoToEntity(entityRequest);
+        FightEntity entity = reqToEntity(entityRequest);
         FightEntity newEntity = (FightEntity) fightRepository.creates(entity);
         FightNewJSONresp newResp = new FightNewJSONresp(newEntity);
 

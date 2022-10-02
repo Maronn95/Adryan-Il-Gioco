@@ -1,10 +1,16 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.BattlegroundRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.BattleGroundService;
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,14 +18,17 @@ import java.util.Optional;
 @Service
 public class BattleGroundServiceImpl implements BattleGroundService {
 
+    @Autowired
+    private BattlegroundRepository BGRep;
+
     @Override
-    public List<BattleGroundEntity> findAllByOrderByIdBattleGroundAsc() {
+    public List<BattlegroundEntity> findAllByOrderByIdBattleGroundAsc() {
         //return BGRep.findAllByOrderByIdBattleGroundAsc();
         return null;
     }
 
     @Override
-    public List<BattleGroundEntity> oldFindAll() {
+    public List<BattlegroundEntity> oldFindAll() {
         /*if (BGRep.findAll()!= null ){
             return (List<BattleGroundEntity>) BGRep.findAll();
         } else{
@@ -29,28 +38,28 @@ public class BattleGroundServiceImpl implements BattleGroundService {
     }
 
     @Override
-    public Optional<BattleGroundEntity> findBGById(Long id) {
+    public Optional<BattlegroundDto> findBGById(Long id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
-        /*Optional<BattleGroundEntity> BG = BGRep.findById(id);
-        return BG;*/
-        return  null;
+        Optional<BattlegroundDto> BG = (Optional<BattlegroundDto>) BGRep.selectById(Math.toIntExact(id));
+        return BG;
+
     }
 
     @Override
-    public void saveOrUpdate(BattleGroundEntity battleGround) {
+    public void saveOrUpdate(BattlegroundDto dto) {
 
         //this.BGRep.save(battleGround);
     }
 
     @Override
-    public BattleGroundDto saveOrUpdatePostman(BattleGroundDto battleGroundDto) {
-        /*if (battleGroundDto != null) {
-            BattleGroundEntity battleGround = BattleGroundMapper.dtoToEntity(battleGroundDto);
-            battleGround = BGRep.save(battleGround);
-            BattleGroundDto BGdto = new BattleGroundDto();
-            BGdto = BattleGroundMapper.entityToDto(battleGround);
+    public BattlegroundDto saveOrUpdatePostman(BattlegroundDto battleGroundDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        if (battleGroundDto != null) {
+            BattlegroundEntity battleGround = BattlegroundMapper.dtoToEntity(battleGroundDto);
+            battleGround = (BattlegroundEntity) BGRep.creates(battleGround);
+            BattlegroundDto BGdto = new BattlegroundDto();
+            BGdto = BattlegroundMapper.entityToDto(battleGround);
             return BGdto;
-        }*/
+        }
         return null;
     }
 

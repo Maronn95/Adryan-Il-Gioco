@@ -19,7 +19,7 @@ public class BattlegroundEntity {
     private BattleGroundNewJSONreq req;
     private BattlegroundNewJSONresp resp;
 
-    private Long idBattleground;
+    private Integer idBattleGround;
 
     private String mapCode;
 

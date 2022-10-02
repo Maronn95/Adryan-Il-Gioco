@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 @Repository
 class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
@@ -33,6 +34,11 @@ class ArmiRepoImpl<ArmiEntity>  implements ArmiRepository<ArmiEntity> {
 
     @Override
     public ArmiEntity update(ArmiEntity entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
+    }
+
+    @Override
+    public List<ArmiEntity> findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return null;
     }
 }

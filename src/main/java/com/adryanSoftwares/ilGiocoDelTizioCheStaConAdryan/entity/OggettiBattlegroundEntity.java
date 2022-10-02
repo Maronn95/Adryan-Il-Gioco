@@ -22,6 +22,7 @@ public class OggettiBattlegroundEntity  {
     private int altezza;
 
 
+
     private Boolean copertura;
 
 

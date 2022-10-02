@@ -3,6 +3,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 
 public interface JSONrepository <entityClass> {
@@ -15,5 +16,5 @@ public interface JSONrepository <entityClass> {
 
      entityClass update(entityClass entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
-
+     List<entityClass> findAll () throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 }

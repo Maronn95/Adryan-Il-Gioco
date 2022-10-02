@@ -4,7 +4,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controlle
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api.BGApi;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.BattleGroundServiceImpl;
@@ -33,7 +33,7 @@ public class BGRestController implements BGApi {
     public ResponseEntity<BattleGroundResponse> findAll(HttpServletRequest request) {
 
         BattleGroundResponse response = new BattleGroundResponse();
-        List<BattlegroundEntity> entityList = battleGroundServiceImpl.findAllByOrderByIdBattleGroundAsc();
+        List<BattleGroundEntity> entityList = battleGroundServiceImpl.findAllByOrderByIdBattleGroundAsc();
         List<BattlegroundDto> dtoList = new ArrayList<BattlegroundDto>();
 
         for (int i = 0; i < entityList.size(); i++) {
@@ -57,7 +57,7 @@ public class BGRestController implements BGApi {
             ArrayList paperinis = new ArrayList();
 
             paperinis = BattlegroundMapper.DtoNewEntity2(battleGround);
-            BattlegroundEntity bge = (BattlegroundEntity) paperinis.get(0);
+            BattleGroundEntity bge = (BattleGroundEntity) paperinis.get(0);
             OggettiEntity oge = (OggettiEntity) paperinis.get(1);
             oggettoServiceImpl.saveOrUpdate(oge);
 

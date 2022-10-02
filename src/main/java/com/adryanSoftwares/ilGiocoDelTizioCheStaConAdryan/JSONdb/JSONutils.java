@@ -1,12 +1,23 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Main;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
+import java.util.stream.Collectors;
 
 public class JSONutils{
 
@@ -31,6 +42,30 @@ public class JSONutils{
             classes.addAll(find(file, scannedPackage));
         }
         return classes;
+    }
+    public static List<Object> findJSONs(String scannedPackage) {
+
+        String scannedPath = scannedPackage.replace(PKG_SEPARATOR, DIR_SEPARATOR);
+        String dir =System.getProperty("user.dir")+scannedPath;
+        List<Object> JSONs = new ArrayList<>();
+
+        try{
+            List<Path> paths = Files.walk(Paths.get(dir),1) //by mentioning max depth as 1 it will only traverse immediate level
+
+                    .filter(Files::isRegularFile)
+                    .filter(path-> path.getFileName().toString().endsWith(".JSON")) // fetch only the files which are ending with .JSON
+                    .collect(Collectors.toList());
+
+            paths.removeIf(path-> path.getFileName().toString().startsWith( "JSONSequence"));
+
+            for(Path path : paths) {
+                String json = new String(Files.readAllBytes(path));
+                JSONs.add(json);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return JSONs;
     }
 
     private static List<Class<?>> find(File file, String scannedPackage) {

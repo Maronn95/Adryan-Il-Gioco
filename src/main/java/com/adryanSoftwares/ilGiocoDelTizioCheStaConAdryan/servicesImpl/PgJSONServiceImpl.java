@@ -8,6 +8,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -46,6 +47,11 @@ public class PgJSONServiceImpl implements PgJSONservice {
         PgEntity pgEntity = (PgEntity) PpgRepository.selectById(idPg);
         PgNewJSONresp newResp = new PgNewJSONresp(pgEntity);
         return newResp;
+    }
+    @Override
+    public PgEntity selectPgentette( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
+        return pgEntity;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -24,7 +24,7 @@ public class BattleGroundNewJSONreq {
     private String weather;
 
     @JsonProperty
-    private List<BattlegroundEntity> data;
+    private List<BattleGroundEntity> data;
 
     @JsonProperty
     private OggettiEntity oggetto;

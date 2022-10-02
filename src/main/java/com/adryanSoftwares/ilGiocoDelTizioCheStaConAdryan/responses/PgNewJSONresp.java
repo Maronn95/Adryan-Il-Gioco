@@ -22,7 +22,7 @@ public class PgNewJSONresp {
     private String name;
 
     @JsonProperty
-    private StattsPureEntity stattsPure;
+    private StattsPureEntity stattsPureEntity;
 
     @JsonProperty
     private StattsCalcEntity stattsCalc;
@@ -33,10 +33,10 @@ public class PgNewJSONresp {
     public PgNewJSONresp(PgEntity pgEntity) {
         this.idPG= Math.toIntExact(pgEntity.getIdPG());
         this.name=pgEntity.getName();
-        this.stattsPure = pgEntity.getStattsPureEntity();
-       // ??? danie pensaci tu??? addo li vu mett ste stattcalc? this.stattsCalc = pgEntity.get?
+        this.stattsPureEntity = pgEntity.getStattsPureEntity();
+        this.poteri = pgEntity.getPoteri();
         this.razza = pgEntity.getRazza();
-
+        this.skills = pgEntity.getSkills();
     }
     @JsonProperty
     private List<Poteri> poteri;

@@ -4,6 +4,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PGRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgRespList;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 @Service
 public class PgJSONServiceImpl implements PgJSONservice {
@@ -21,8 +23,11 @@ public class PgJSONServiceImpl implements PgJSONservice {
     private PgEntity reqDtoToEntity (PgNewJSONreq entityRequest){
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
-        entity.setStattsPureEntity(entityRequest.getStattsPure());
+        entity.setStattsPureEntity(entityRequest.getStattsPureEntity());
         entity.setRazza(entityRequest.getRazza());
+        entity.setPoteri(entityRequest.getPoteri());
+        entity.setSkills(entityRequest.getSkills());
+
         return entity;
     }
 
@@ -53,5 +58,10 @@ public class PgJSONServiceImpl implements PgJSONservice {
     @Override
     public PgNewJSONresp update(PgNewJSONreq pgJSON) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return new PgNewJSONresp((PgEntity) PGrep.update(pgJSON));
+    }
+
+    @Override
+    public PgRespList findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return new PgRespList ((List<PgEntity>)PGrep.findAll());
     }
 }

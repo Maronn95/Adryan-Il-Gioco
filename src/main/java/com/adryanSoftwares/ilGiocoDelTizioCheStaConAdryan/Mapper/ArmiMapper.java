@@ -1,17 +1,12 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 
 public class ArmiMapper {
 
-    public static ArmiDto entityToDto(Armi a){
+    public static ArmiDto entityToDto(ArmiEntity a){
         ArmiDto dto= new ArmiDto();
-
-
-            if(a.getDescrizione()!=null){
-                dto.setDescrizione(a.getDescrizione());
-            }
 
             if(a.getArmaADistanza()!=null){
                 dto.setArmaADistanza((a.getArmaADistanza()));
@@ -30,14 +25,9 @@ public class ArmiMapper {
         return null;
     }
 
-    public static Armi dtoToEntity(ArmiDto dto){
-        Armi a= new Armi();
+    public static ArmiEntity dtoToEntity(ArmiDto dto){
+        ArmiEntity a= new ArmiEntity();
         if(dto!=null){
-
-            if(dto.getDescrizione()!=null){
-                a.setDescrizione(dto.getDescrizione());
-            }
-
             }
             if(dto.getArmaADistanza()!=null){
                 a.setArmaADistanza((dto.getArmaADistanza()));
@@ -62,12 +52,10 @@ public class ArmiMapper {
         return a;
     }
 
-    public static Armi dtoUpdateEntity(ArmiDto dto) {
-        Armi A= new Armi();
+    public static ArmiEntity dtoUpdateEntity(ArmiDto dto) {
+        ArmiEntity A= new ArmiEntity();
         if(dto!=null){
             if (dto.getArmiId() != null) {
-
-                if(dto.getDescrizione()!=null)A.setDescrizione(dto.getDescrizione());
                 if(dto.getArmaADistanza()!=null)A.setArmaADistanza(dto.getArmaADistanza());
                 if(dto.getDannoTipo()!=null)A.setDannoTipo((dto.getDannoTipo()));
                 if(dto.getDanno()!=null)A.setDanno((dto.getDanno()));

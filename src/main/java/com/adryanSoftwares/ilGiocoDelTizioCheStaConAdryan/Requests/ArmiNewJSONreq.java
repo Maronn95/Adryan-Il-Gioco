@@ -12,31 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ArmiNewJSONreq {
 
-        @JsonProperty
+        @JsonProperty ("idProof")
+        private String idProof;
+
+        @JsonProperty ("name")
         private String name;
-        @JsonProperty
-        private String descrizione;
-        @JsonProperty
-        private int base;
-        @JsonProperty
-        private int altezza;
-        @JsonProperty
-        private Double peso;
-        @JsonProperty
-        private Boolean oggettoMagico;
-        @JsonProperty
-        private Rarita rarita;
-        @JsonProperty
-        private Boolean armaADistanza;
-        @JsonProperty
-        private String dannoTipo;
-        @JsonProperty
-        private Double danno;
-        @JsonProperty
-        private Double gittata;
-        @JsonProperty
-        private Double moltiplicatoreCritico;
-        @JsonProperty
-        private Double probabilitaCriticoArma;
 
 }

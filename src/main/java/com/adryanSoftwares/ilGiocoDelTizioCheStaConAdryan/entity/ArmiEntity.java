@@ -9,7 +9,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Armi extends OggettoInventario {
+public class ArmiEntity {
+
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
+    private String table="Armi";
+
+    private Long idArmi;
 
     private String name;
 
@@ -25,6 +30,7 @@ public class Armi extends OggettoInventario {
 
     private Double probabilitaCriticoArma;
 
+    private String descrizione;
 
 
 

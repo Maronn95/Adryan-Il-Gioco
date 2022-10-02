@@ -2,7 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiInventarioDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiInventarioMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventario;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoInventarioServiceImpl;
@@ -44,7 +44,7 @@ public class OggettiInventarioController {
     public void SaveOrUpdate(@RequestBody OggettiInventarioDto oggettiDto) {
         OggettiInventarioMapper OIM = new OggettiInventarioMapper();
         OggettoInventario oggetto = new OggettoInventario();
-        Armi arma = new Armi();
+        ArmiEntity arma = new ArmiEntity();
         if (oggettiDto.getOggettoInventarioId() != null) {
             oggetto = OIM.dtoUpdateEntity(oggettiDto);
         } else {

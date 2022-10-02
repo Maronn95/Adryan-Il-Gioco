@@ -2,6 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgRespList;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -16,4 +17,7 @@ public interface PgJSONservice {
   PgNewJSONresp delete ( Integer id) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
   PgNewJSONresp update(PgNewJSONreq pgJSON) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
+  PgRespList findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
 }

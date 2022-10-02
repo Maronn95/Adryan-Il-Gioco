@@ -16,28 +16,6 @@ public class StattsCalcEntity {
     private int utilizzoArmaX;
     private int ca;
     private int vitaAttuale;
-
-    @Autowired
-    StattsCalcolateService stattsCalcolateService;
-
-    public StattsCalcEntity calcolaStattsCalc (int forza,
-                                               int costituzione,
-                                               int destrezza,
-                                               int intelligenza,
-                                               int carisma,
-                                               int saggezza,
-                                               int vita,
-                                               int vitaMax,
-                                               int vitaAttuale){
-
-
-
-        StattsCalcEntity stattsCalcEntity = new StattsCalcEntity();
-
-        stattsCalcEntity.setCa(costituzione+10);
-        stattsCalcEntity.setUtilizzoArmaX(forza+3);
-
-        return stattsCalcEntity;
-    }
-
+    private StattsCalcEntity calcolaStattsCalc;
 }
+

@@ -1,17 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ArmiService {
 
-    List<Armi> getArmi();
+    List<ArmiEntity> getArmi();
 
-    Optional<Armi> getArmaById(Integer id);
+    Optional<ArmiEntity> getArmaById(Integer id);
 
-    void CreateArma(Armi oggetto);
+    void CreateArma(ArmiEntity oggetto);
 
     void DeleteArma(Long id);
 }

@@ -1,12 +1,17 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.Armi;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiService;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.DaProofService;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.ArmiServiceImpl;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +26,31 @@ import java.util.List;
 @RequestMapping(value="/armi")
 public class ArmiController {
 
-    @Autowired
-    ArmiServiceImpl armiServiceImpl;
+   // @Autowired
+   // ArmiRepository armiServiceImpl;
+
+   // @Autowired
+  //  ArmiJSONservice armiJSON;
 
     @Autowired
-    ArmiJSONservice armiJSON;
+    DaProofService proovingService;
 
+
+    @RequestMapping (value ="/proofMe", method = RequestMethod.GET)
+    public PgNewJSONresp guessWhat (@RequestBody ArmiNewJSONreq prooveMe) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+
+        PgEntity livingProof = proovingService.gedDaProof(prooveMe);
+        PgNewJSONresp proof = new PgNewJSONresp(livingProof);
+
+        return proof;
+    }
+/*
     @RequestMapping(value="/armi")
     public List<ArmiDto> GetArmi(){
         ArmiMapper AM = new ArmiMapper();
-        List<Armi> armi=armiServiceImpl.getArmi();
+        List<ArmiEntity> armi=armiServiceImpl.getArmi();
         List<ArmiDto> armiDto =new ArrayList<ArmiDto>();
-        for(Armi a:armi)
+        for(ArmiEntity a:armi)
             armiDto.add( AM.entityToDto(a));
         return armiDto;
     }
@@ -41,7 +59,7 @@ public class ArmiController {
     public ArmiDto getOggettiById(@PathVariable Integer id)
     {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma =armiServiceImpl.getArmaById(id).get();
+        ArmiEntity arma =armiServiceImpl.getArmaById(id).get();
         ArmiDto armaDto =AM.entityToDto(arma);
         return armaDto ;
     }
@@ -49,7 +67,7 @@ public class ArmiController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.POST)
     public void SaveOrUpdate(@RequestBody ArmiDto armaDto) {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma = new Armi();
+        ArmiEntity arma = new ArmiEntity();
         if (armaDto.getArmiId() != null) {
             arma = AM.dtoUpdateEntity(armaDto);
         } else {
@@ -61,7 +79,7 @@ public class ArmiController {
     @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
     public void Update(@RequestBody ArmiDto armaDto) {
         ArmiMapper AM = new ArmiMapper();
-        Armi arma = new Armi();
+        ArmiEntity arma = new ArmiEntity();
         if (armaDto.getArmiId() != null) {
             arma = AM.dtoUpdateEntity(armaDto);
         } else {
@@ -85,4 +103,6 @@ public class ArmiController {
     public void Delete(@PathVariable Long id){
         armiServiceImpl.DeleteArma(id);
     }
+
+ */
 }

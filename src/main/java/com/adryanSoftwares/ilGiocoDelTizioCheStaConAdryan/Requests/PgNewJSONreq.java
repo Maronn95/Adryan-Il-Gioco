@@ -45,7 +45,7 @@ public class PgNewJSONreq {
     public PgNewJSONreq(PgEntity pgEntity) {
         this.idPG = Math.toIntExact(pgEntity.getIdPG());
         this.name = pgEntity.getName();
-        this.stattsPure = pgEntity.getStattsPureEntity();
+        this.stattsPureEntity = pgEntity.getStattsPureEntity();
         this.stattsCalc = pgEntity.getStattsCalcEntity();
         this.razza = pgEntity.getRazzaEntity();
         this.inventario = pgEntity.getInventarioEntity();

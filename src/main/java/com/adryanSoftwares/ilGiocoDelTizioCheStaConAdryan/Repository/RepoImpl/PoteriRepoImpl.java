@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 @Repository
 public class PoteriRepoImpl implements PoteriRepository {
@@ -34,5 +35,10 @@ public class PoteriRepoImpl implements PoteriRepository {
     @Override
     public Object update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return (PoteriEntity) JCRUD.update( entity);
+    }
+
+    @Override
+    public List findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return null;
     }
 }

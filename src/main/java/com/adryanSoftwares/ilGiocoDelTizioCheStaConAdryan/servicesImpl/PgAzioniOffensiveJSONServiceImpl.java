@@ -6,17 +6,13 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PgEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.ArmiJSONservice;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgAzioniOffensiveJSONService;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 @Service
 public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONService {
@@ -41,13 +37,13 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
          int danno = 0;
 
-        int tiroPerColpire = (pg1.getStattsCalc().getUtilizzoArmaX() + rand.nextInt(20) );
+        int tiroPerColpire = (pg1.getStattsCalcEntity().getUtilizzoArmaX() + rand.nextInt(20) );
 
        int[]valoriAttacco = new int[2];
 
           if(rand.nextInt(100) <= (arma1.getProbabilitaCriticoArma()+ 10))
             {
-                danno = (int) ((int) (pg1.getStattsCalc().getUtilizzoArmaX()+ arma1.getDanno() +30
+                danno = (int) ((int) (pg1.getStattsCalcEntity().getUtilizzoArmaX()+ arma1.getDanno() +30
                                                 - (0.1 + modificatoreDanno)) * arma1.getMoltiplicatoreCritico());
 
 
@@ -56,7 +52,7 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
 
             }
                 else{
-                danno = (int) ((int) pg1.getStattsCalc().getUtilizzoArmaX() + arma1.getDanno() + 30
+                danno = (int) ((int) pg1.getStattsCalcEntity().getUtilizzoArmaX() + arma1.getDanno() + 30
                         - (0.1 + modificatoreDanno));
 
 
@@ -80,8 +76,8 @@ public class PgAzioniOffensiveJSONServiceImpl implements PgAzioniOffensiveJSONSe
         int tiroPerColpire = valoriAttacco[0];
         int danno = valoriAttacco [1];
 
-        if(pg2.getStattsCalc().getCa() <= tiroPerColpire) {
-            pg2.getStattsCalc().setVitaAttuale(pg2.getStattsCalc().getVitaAttuale() - danno);
+        if(pg2.getStattsCalcEntity().getCa() <= tiroPerColpire) {
+            pg2.getStattsCalcEntity().setVitaAttuale(pg2.getStattsCalcEntity().getVitaAttuale() - danno);
 
 
             pRepo.update(pg2);

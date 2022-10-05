@@ -21,7 +21,7 @@ public class PgJSONServiceImpl implements PgJSONservice {
     private PgEntity reqDtoToEntity(PgNewJSONreq entityRequest) {
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
-        entity.setStattsPureEntity(entityRequest.getStattsPure());
+        entity.setStattsPureEntity(entityRequest.getStattsPureEntity());
         entity.setRazzaEntity(entityRequest.getRazza());
         entity.setStattsCalcEntity(entityRequest.getStattsCalc());
         entity.setPoteriEntity(entityRequest.getPoteri());
@@ -50,7 +50,7 @@ public class PgJSONServiceImpl implements PgJSONservice {
     }
     @Override
     public PgEntity selectPgentette( Integer idPg) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-        PgEntity pgEntity = (PgEntity) PGrep.selectById(idPg);
+        PgEntity pgEntity = (PgEntity) PpgRepository.selectById(idPg);
         return pgEntity;
     }
 

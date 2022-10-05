@@ -9,11 +9,11 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BattleGroundEntity {
+public class BattlegroundEntity {
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONBattleground\\";
     private String table="Battleground";
 
-    private Long idBattleground;
+    private Integer idBattleground;
 
     private String mapCode;
 

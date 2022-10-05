@@ -1,8 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.ArmiNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.ArmiNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,8 +14,8 @@ public class ArmiEntity extends OggettoInventarioEntity {
 
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONarmi\\";
     private String table="Armi";
-    private ArmiNewJSONreq req;
-    private ArmiNewJSONresp resp;
+    /*private ArmiNewJSONreq req;
+    private ArmiNewJSONresp resp;*/
 
     private Integer idArmi;
 

@@ -1,8 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BattlegroundRestController;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BattleGroundController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.OggettoRestController;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattlegroundDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.mapper.OggettoMapper;
@@ -16,7 +16,7 @@ public class TestClassMain {
 
 
     @Autowired
-    BattlegroundRestController bgrs;
+    BattleGroundController bgrs;
 
     @Autowired
     OggettoRestController ogrsrs;
@@ -33,7 +33,7 @@ public class TestClassMain {
 
 
 
-            BattlegroundDto battleGround = new BattlegroundDto();
+            BattleGroundDto battleGround = new BattleGroundDto();
 
 
             System.out.println("creiamo un nuovo battleGround ");
@@ -62,7 +62,7 @@ public class TestClassMain {
             System.out.println("bgMapCode =" + bgMapCode);
 
 
-            BattlegroundDto bgDto = new BattlegroundDto();
+            BattleGroundDto bgDto = new BattleGroundDto();
             bgDto.setMapCode(bgMapCode);
             bgDto.setMapSize(base + "x" + altezza);
             bgDto.setWeather(weather);

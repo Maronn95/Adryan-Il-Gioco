@@ -21,6 +21,10 @@ public class OggettiBattlegroundEntity  {
 
     private int altezza;
 
+    private ArmiEntity armiEntity;
+
+    private ProtezioniIndossabiliEntity protezioniIndossabiliEntity;
+
 
 
     private Boolean copertura;

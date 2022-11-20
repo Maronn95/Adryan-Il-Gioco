@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OggettiEntity {
-    private Integer oggettoId;
+    private Integer idOggetto;
 
     private String nome;
 

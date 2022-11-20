@@ -1,8 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.OggettiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiService;
@@ -19,8 +17,8 @@ public class OggettoServiceImpl implements OggettiService {
 private OggettiRepository oggettiRepository;
 
     @Override
-    public OggettiEntity newOggetto(OggettoDTO oggetto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (OggettiEntity) oggettiRepository.creates(OggettoMapper.DtoNewEntity(oggetto));
+    public OggettiEntity newOggetto(OggettiDTO oggetto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (OggettiEntity) oggettiRepository.creates(com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper.DtoNewEntity(oggetto));
     }
 
     @Override
@@ -34,8 +32,8 @@ private OggettiRepository oggettiRepository;
     }
 
     @Override
-    public OggettiEntity update(OggettoDTO dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (OggettiEntity) oggettiRepository.update(OggettoMapper.DtoNewEntity(dto));
+    public OggettiEntity update(OggettiDTO dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (OggettiEntity) oggettiRepository.update(com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper.DtoNewEntity(dto));
     }
 
 

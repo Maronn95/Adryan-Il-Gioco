@@ -36,10 +36,6 @@ public class BattlegroundRepoImpl implements BattlegroundRepository {
         return (BattlegroundEntity) JCRUD.update(entity);
     }
 
-    @Override
-    public List findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return null;
-    }
 
     @Override
     public List findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {

@@ -3,33 +3,38 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @RestController
 @RequestMapping("/stattsPure")
 public class PgControllerStatsPure {
 
     @Autowired
-    StattsPureService stattsPureServiceImpl;
+    StattsPureService stattsPureService;
 
-    @GetMapping("/getAll")
-    public List<StattsPureDTO> getAllStatts(){
-
-        return this.stattsPureServiceImpl.getAllStatts();
-    }
-    @PostMapping("/setStatt")
-    public StattsPureDTO setStatt(@RequestBody StattsPureDTO stattsPureDTO){
-        stattsPureServiceImpl.setStatt(stattsPureDTO);
-        return stattsPureDTO;
+    @PostMapping("/updateStatt")
+    public StattsPureEntity update(@RequestBody StattsPureDTO stattsPureDto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return stattsPureService.update(stattsPureDto);
     }
 
     @GetMapping("/getStattById/{idPg}")
-    public StattsPureEntity getStattById(@PathVariable("idPg") Long idPg){
+    public StattsPureEntity selectById(@PathVariable("idPg") Integer idPg) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        return this.stattsPureService.selectById(idPg);
+    }
 
-        return this.stattsPureServiceImpl.getStattById(idPg);
+    @GetMapping("/newStatt")
+    public StattsPureEntity create(@RequestBody StattsPureDTO stattsPureDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return this.stattsPureService.create(stattsPureDto);
+    }
+
+    @GetMapping("/deleteStattCalc/{idPg}")
+    public StattsPureEntity delete(@PathVariable("idStattsCalc") Integer idStattsPure) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException, InterruptedException {
+        return this.stattsPureService.delete(idStattsPure);
     }
 
 }

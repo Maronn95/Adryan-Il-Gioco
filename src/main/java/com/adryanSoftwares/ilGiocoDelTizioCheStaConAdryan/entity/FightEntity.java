@@ -23,7 +23,7 @@ public class FightEntity {
 
     private Integer idFight;
 
-    private List<Long> idPg;
+    private List<Integer> pgList;
 
     private BattlegroundEntity battlegroundEntity;
 }

@@ -21,14 +21,14 @@ public class FightNewJSONresp {
     private Integer idFight;
 
     @JsonProperty
-    private List<Long> idPg;
+    private List<Integer> pgList;
 
     @JsonProperty
     private BattlegroundDto battlegroundDto;
 
     public FightNewJSONresp(FightEntity fightEntity) {
         this.idFight=fightEntity.getIdFight();
-        this.idPg=fightEntity.getIdPg();
+        this.pgList =fightEntity.getPgList();
         this.battlegroundDto = BattlegroundMapper.entityToDto( fightEntity.getBattlegroundEntity());
 
     }

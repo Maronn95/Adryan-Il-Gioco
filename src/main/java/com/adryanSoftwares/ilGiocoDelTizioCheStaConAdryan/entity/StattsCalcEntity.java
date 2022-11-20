@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StattsCalcEntity {
 
-    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONstattsCalc\\";
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONStattsCalc\\";
     private String table="StattsCalc";
     private StattsCalcNewJSONreq req;
     private StattsCalcNewJSONresp resp;
@@ -22,23 +22,23 @@ public class StattsCalcEntity {
     private Integer utilizzoArmaX;
     private Integer ca;
     private Integer vitaAttuale;
+    private Integer vitaMax;
 
 
-    public StattsCalcEntity calcolaStattsCalc (int forza,
-                                               int costituzione,
-                                               int destrezza,
-                                               int intelligenza,
-                                               int carisma,
-                                               int saggezza,
-                                               int vita,
-                                               int vitaMax,
-                                               int vitaAttuale){
-            StattsCalcEntity stattsCalcEntity = new StattsCalcEntity();
-
-            stattsCalcEntity.setCa(costituzione+10);
-            stattsCalcEntity.setUtilizzoArmaX(forza+3);
-
-        return stattsCalcEntity;
-    }
+//    public StattsCalcEntity calcolaStattsCalc (int forza,
+//                                               int costituzione,
+//                                               int destrezza,
+//                                               int intelligenza,
+//                                               int carisma,
+//                                               int saggezza,
+//                                               int vitaMax,
+//                                               int vitaAttuale){
+//            StattsCalcEntity stattsCalcEntity = new StattsCalcEntity();
+//
+//            stattsCalcEntity.setCa(costituzione+10);
+//            stattsCalcEntity.setUtilizzoArmaX(forza+3);
+//
+//        return stattsCalcEntity;
+//    }
 
 }

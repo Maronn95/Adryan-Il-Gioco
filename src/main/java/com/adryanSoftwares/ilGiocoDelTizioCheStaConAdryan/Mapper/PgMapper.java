@@ -23,20 +23,26 @@ public class PgMapper {
         if(pgNewJSONresp.getIdPG()!=0){
             pgEntity.setIdPG(pgNewJSONresp.getIdPG());
         }
-        if(pgNewJSONresp.getRazza()!=null){
-            pgEntity.setRazzaEntity(pgNewJSONresp.getRazza());
+        if(pgNewJSONresp.getRazzaEnum()!=null){
+            pgEntity.setRazzaEnum(pgNewJSONresp.getRazzaEnum());
         }
         if(pgNewJSONresp.getInventario()!=null){
             pgEntity.setInventarioEntity(pgNewJSONresp.getInventario());
         }
-        if(pgNewJSONresp.getSkills()!=null){
-            pgEntity.setSkillsEntity(pgNewJSONresp.getSkills());
+        if(pgNewJSONresp.getInventarioEquipaggiato()!=null){
+            pgEntity.setInventarioEquipaggiatoEntity(pgNewJSONresp.getInventarioEquipaggiato());
         }
-        if(pgNewJSONresp.getPoteri()!=null){
-            pgEntity.setPoteriEntity(pgNewJSONresp.getPoteri());
+        if(pgNewJSONresp.getSkillList()!=null){
+            pgEntity.setSkillList(pgNewJSONresp.getSkillList());
         }
-        if(pgNewJSONresp.getMagie()!=null){
-            pgEntity.setMagieEntity(pgNewJSONresp.getMagie());
+        if(pgNewJSONresp.getPotereList()!=null){
+            pgEntity.setPotereList(pgNewJSONresp.getPotereList());
+        }
+        if(pgNewJSONresp.getMagiaList()!=null){
+            pgEntity.setMagiaList(pgNewJSONresp.getMagiaList());
+        }
+        if(pgNewJSONresp.getAvanzamentoStattsPure()!=null){
+            pgEntity.setAvanzamentoStattsPureEntity(pgNewJSONresp.getAvanzamentoStattsPure());
         }
 
         return pgEntity;

@@ -10,8 +10,8 @@ public class FightMapper {
         if(fightEntity.getIdFight()!=null){
             fightNewJSONresp.setIdFight(fightEntity.getIdFight());
         }
-        if(fightEntity.getIdPg().size()<0){
-            fightNewJSONresp.setIdPg(fightEntity.getIdPg());
+        if(fightEntity.getPgList()!=null){
+            fightNewJSONresp.setPgList(fightEntity.getPgList());
         }
         if(fightEntity.getBattlegroundEntity()!=null){
             fightNewJSONresp.setBattlegroundDto(BattlegroundMapper.entityToDto(fightEntity.getBattlegroundEntity()));

@@ -19,7 +19,7 @@ public class FightNewJSONreq {
     private Integer idFight;
 
     @JsonProperty
-    private List<Long> idPg;
+    private List<Integer> pgList;
 
     @JsonProperty
     private BattlegroundDto battlegroundDTO;

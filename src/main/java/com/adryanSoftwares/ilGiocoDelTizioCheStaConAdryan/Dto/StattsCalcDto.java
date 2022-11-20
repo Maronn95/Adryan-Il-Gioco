@@ -20,5 +20,7 @@ public class StattsCalcDto {
     private Integer ca;
     @JsonProperty("vitaAttuale")
     private Integer vitaAttuale;
+    @JsonProperty("vitaMax")
+    private Integer vitaMax;
 
 }

@@ -26,7 +26,7 @@ public class StattsPureEntity {
     private int intelligenza;
     private int carisma;
     private int saggezza;
-    private int vitaMax;
+    private int vitaPura;
     private int trash;
 
 }

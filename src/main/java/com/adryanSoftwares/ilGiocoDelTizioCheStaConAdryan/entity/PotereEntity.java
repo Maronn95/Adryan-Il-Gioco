@@ -1,8 +1,8 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PoteriNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PoteriNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PotereNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PotereNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,12 +12,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PoteriEntity {
+public class PotereEntity {
 
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONpoteri\\";
     private String table="Poteri";
-    private PoteriNewJSONreq req;
-    private PoteriNewJSONresp resp;
+    private PotereNewJSONreq req;
+    private PotereNewJSONresp resp;
 
 
     private Integer idPotere;

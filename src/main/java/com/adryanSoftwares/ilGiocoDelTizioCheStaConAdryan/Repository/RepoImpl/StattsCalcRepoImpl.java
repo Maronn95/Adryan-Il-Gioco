@@ -34,7 +34,7 @@ public class StattsCalcRepoImpl implements StattsCalcRepository {
 
     @Override
     public Object update(Object entity) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        System.out.println("RepoImpl");
+        System.out.println("StattsCalcRepoImpl");
         return JCRUD.update( entity);
     }
 

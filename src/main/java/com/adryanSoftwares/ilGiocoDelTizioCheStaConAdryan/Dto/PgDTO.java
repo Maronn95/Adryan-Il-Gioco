@@ -1,10 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.MagiaEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.AvanzamentoStattsPureEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.InventarioEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.InventarioEquipaggiatoEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.RazzaEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.SkillsEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +20,7 @@ import java.util.List;
 public class PgDTO {
 
     @JsonProperty("idPg")
-    private Long idPgDto;
+    private Integer idPgDto;
 
     @JsonProperty("name")
     private String nameDto;
@@ -31,15 +31,24 @@ public class PgDTO {
     @JsonProperty("stattsCalcDto")
     private StattsCalcDto stattsCalcDto;
 
+    @JsonProperty("avanzamentoStattsPure")
+    private AvanzamentoStattsPureEntity avanzamentoStattsPure;
+
     @JsonProperty("razza")
     private RazzaEntity razzaDto;
 
-    @JsonProperty("skills")
-    private List<SkillsEntity> skillsDto;
+    @JsonProperty("skillEntityList")
+    private List<Integer> skillList;
 
-    @JsonProperty("poteri")
-    private List<PoteriEntity> poteriDto;
+    @JsonProperty("potereEntityList")
+    private List<Integer> potereList;
 
-    @JsonProperty("magia")
-    private List<MagiaEntity> magieDto;
+    @JsonProperty("magiaEntityList")
+    private List<Integer> magiaList;
+
+    @JsonProperty("inventarioEntity")
+    private InventarioEntity inventarioEntity;
+
+    @JsonProperty("inventarioEquipaggiatoEntity")
+    private InventarioEquipaggiatoEntity inventarioEquipaggiatoEntity;
 }

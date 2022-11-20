@@ -19,6 +19,8 @@ public class MagiaEntity {
     private MagiaNewJSONreq req;
     private MagiaNewJSONresp resp;
 
+    private Integer idMagia;
+
     private String name;
 
     private String buff1;

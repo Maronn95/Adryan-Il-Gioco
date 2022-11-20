@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PotereEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PoteriNewJSONreq {
+public class PotereNewJSONreq {
 
     @JsonProperty
     private Integer idPotere;
@@ -31,13 +31,13 @@ public class PoteriNewJSONreq {
     @JsonProperty
     private int value2;
 
-    public PoteriNewJSONreq(PoteriEntity poteriEntity) {
-        this.idPotere = Math.toIntExact(poteriEntity.getIdPotere());
-        this.name = poteriEntity.getName();
-        this.buff1 = poteriEntity.getBuff1();
-        this.buff2 = poteriEntity.getBuff2();
-        this.value1 = poteriEntity.getValue1();
-        this.value2 = poteriEntity.getValue2();
+    public PotereNewJSONreq(PotereEntity potereEntity) {
+        this.idPotere = Math.toIntExact(potereEntity.getIdPotere());
+        this.name = potereEntity.getName();
+        this.buff1 = potereEntity.getBuff1();
+        this.buff2 = potereEntity.getBuff2();
+        this.value1 = potereEntity.getValue1();
+        this.value2 = potereEntity.getValue2();
     }
 
 }

@@ -10,7 +10,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PoteriDTO {
+public class PotereDTO {
+
+    @JsonProperty("idPotere")
+    private Integer idPotere;
 
     @JsonProperty("name")
     private String name;

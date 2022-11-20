@@ -19,7 +19,7 @@ public interface StattsCalcService {
 
     StattsCalcEntity deleteStattCalc(Integer idStattsCalc) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
-    StattsPureDTO calcoloCa(long idPg);
+    StattsPureDTO calcoloCa(Integer idPg);
 
     StattsPureEntity vita(int vita);
 

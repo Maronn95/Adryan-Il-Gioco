@@ -31,7 +31,7 @@ public class StattsPureNewJSONresp {
     @JsonProperty
     private int trash;
     @JsonProperty
-    private int vitaMax;
+    private int vitaPura;
 
     public StattsPureNewJSONresp(StattsPureEntity stattsPureEntity) {
         this.idStattsPure = Math.toIntExact(stattsPureEntity.getIdStattsPure());
@@ -42,6 +42,6 @@ public class StattsPureNewJSONresp {
         this.carisma = stattsPureEntity.getCarisma();
         this.saggezza = stattsPureEntity.getSaggezza();
         this.trash = stattsPureEntity.getTrash();
-        this.vitaMax = stattsPureEntity.getVitaMax();
+        this.vitaPura = stattsPureEntity.getVitaPura();
     }
 }

@@ -22,13 +22,15 @@ public class PgJSONServiceImpl implements PgJSONservice {
         PgEntity entity = new PgEntity();
         entity.setName(entityRequest.getName());
         entity.setStattsPureEntity(entityRequest.getStattsPureEntity());
-        entity.setRazzaEntity(entityRequest.getRazza());
+        entity.setRazzaEnum(entityRequest.getRazzaEnum());
         entity.setStattsCalcEntity(entityRequest.getStattsCalc());
-        entity.setPoteriEntity(entityRequest.getPoteri());
+        entity.setPotereList(entityRequest.getPotereList());
         entity.setInventarioEntity(entityRequest.getInventario());
-        entity.setSkillsEntity(entityRequest.getSkills());
-        entity.setPoteriEntity(entityRequest.getPoteri());
-        entity.setMagieEntity(entityRequest.getMagie());
+        entity.setInventarioEquipaggiatoEntity(entityRequest.getInventarioEquipaggiato());
+        entity.setSkillList(entityRequest.getSkillList());
+        entity.setPotereList(entityRequest.getPotereList());
+        entity.setMagiaList(entityRequest.getMagiaList());
+        entity.setAvanzamentoStattsPureEntity(entityRequest.getAvanzamentoStattsPure());
         return entity;
     }
 

@@ -1,7 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.SkillsNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.SkillsNewJSONresp;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.SkillNewJSONreq;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.SkillNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +11,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillsEntity {
+public class SkillEntity {
 
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONskills\\";
     private String table="Skills";
-    private SkillsNewJSONreq req;
-    private SkillsNewJSONresp resp;
+    private SkillNewJSONreq req;
+    private SkillNewJSONresp resp;
 
     private Integer idSkill;
 

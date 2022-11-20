@@ -17,8 +17,8 @@ public class FightDTO {
     @JsonProperty("idJSONfight")
     private Long idJSONfight;
 
-    @JsonProperty("idPg")
-    private List<Long> idPg;
+    @JsonProperty("pgList")
+    private List<Long> pgList;
 
     @JsonProperty("battleGroundDto")
     private BattlegroundDto battlegroundDto;

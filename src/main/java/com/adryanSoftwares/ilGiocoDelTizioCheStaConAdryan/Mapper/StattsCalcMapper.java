@@ -16,6 +16,9 @@ public class StattsCalcMapper {
         if(stattsCalcDto.getVitaAttuale()!=null){
             stattsCalcEntity.setVitaAttuale((stattsCalcDto.getVitaAttuale()));
         }
+        if(stattsCalcDto.getVitaMax()!=null){
+            stattsCalcEntity.setVitaMax((stattsCalcDto.getVitaMax()));
+        }
         if(stattsCalcDto.getCa()!=null){
             stattsCalcEntity.setCa((stattsCalcDto.getCa()));
         }
@@ -32,6 +35,9 @@ public class StattsCalcMapper {
         }
         if(stattsCalcEntity.getVitaAttuale()!=null){
             stattsCalcDto.setVitaAttuale((stattsCalcEntity.getVitaAttuale()));
+        }
+        if(stattsCalcEntity.getVitaMax()!=null){
+            stattsCalcDto.setVitaMax((stattsCalcEntity.getVitaMax()));
         }
         if(stattsCalcEntity.getCa()!=null){
             stattsCalcDto.setCa((stattsCalcEntity.getCa()));

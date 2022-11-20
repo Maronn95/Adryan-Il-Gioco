@@ -2,6 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.MetodoB1DTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.BattlegroundMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.FightMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.FightRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.PGRepository;
@@ -36,6 +37,9 @@ public class FightServiceImpl implements FightService {
     @Autowired
     StattsCalcRepository stattsCalcRepository;
 
+    @Autowired
+    AvanzamentiStattsPureUtils avanzamentiStattsPureUtils;
+
 
     private FightEntity reqToEntity(FightNewJSONreq entityRequest) {
         FightEntity entity = new FightEntity();
@@ -46,8 +50,8 @@ public class FightServiceImpl implements FightService {
         if(entityRequest.getIdFight()!=null){
             entity.setIdFight(entityRequest.getIdFight());
         }
-        if(entityRequest.getIdPg()!=null)
-            entity.setIdPg(entityRequest.getIdPg());
+        if(entityRequest.getPgList()!=null)
+            entity.setPgList(entityRequest.getPgList());
 
         return entity;
     }
@@ -60,9 +64,9 @@ public class FightServiceImpl implements FightService {
 
         ArmiEntity arma1 = (ArmiEntity) armiRepository.selectById(1);
 
-        subisciAzioneOffensiva(PgAzioniOffensiveUtils.eseguiAzioneDinamicamente(metodoB1DTO.getAzione(), pg1, arma1), pg1, pg2, metodoB1DTO.getIdFight());
+        subisciAzioneFisicaOffensiva(PgAzioniOffensiveUtils.eseguiAzioneDinamicamente(metodoB1DTO.getAzione(), pg1, arma1), pg1, pg2, metodoB1DTO.getIdFight());
 
-        FightNewJSONresp fightNewJSONresp = (FightNewJSONresp) fightRepository.selectById(metodoB1DTO.getIdFight());
+        FightNewJSONresp fightNewJSONresp = FightMapper.entityToResp((FightEntity) fightRepository.selectById(metodoB1DTO.getIdFight()));
 
         return fightNewJSONresp;
     }
@@ -102,17 +106,31 @@ public class FightServiceImpl implements FightService {
         return new FightNewJSONresp((FightEntity) fightRepository.update(fightJSON));
     }
 
-    public void subisciAzioneOffensiva (List<Integer> valoriAttacco, PgEntity pg1, PgEntity pg2, Integer idFight) throws IOException, NoSuchFieldException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InterruptedException, ParseException, InvocationTargetException {
+    public void subisciAzioneFisicaOffensiva(List<Integer> valoriAttacco, PgEntity pg1, PgEntity pg2, Integer idFight) throws IOException, NoSuchFieldException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InterruptedException, ParseException, InvocationTargetException {
 
-        StattsCalcEntity stattsCalcEntity = pg2.getStattsCalcEntity();
-
-        if (stattsCalcEntity.getCa()<= valoriAttacco.get(0)){
-            stattsCalcEntity.setVitaAttuale(stattsCalcEntity.getVitaAttuale()-valoriAttacco.get(1));
+        //StattsCalcEntity stattsCalcEntity = pg2.getStattsCalcEntity();
+        System.out.println("subisci az off");
+        System.out.println("CA ="+pg2.getStattsCalcEntity().getCa());
+        System.out.println("T X C ="+valoriAttacco.get(0));
+        if (pg2.getStattsCalcEntity().getCa()<= valoriAttacco.get(0)){
             System.out.println("Mannaggia a gesù");
+
+            StattsCalcEntity stattsCalcEntity = (StattsCalcEntity) stattsCalcRepository.selectById(pg2.getStattsCalcEntity().getIdStattsCalc());
+            stattsCalcEntity.setVitaAttuale(pg2.getStattsCalcEntity().getVitaAttuale()-valoriAttacco.get(1));
+
+            System.out.println("subisciAzioneOffensiva UPDATEstattsCalc start");
             stattsCalcRepository.update(stattsCalcEntity);
-            System.out.println("Le statistichePure di "+pg2.getIdPG()+" sono state aggiornate");
+            System.out.println("subisciAzioneOffensiva UPDATEstattsCalc finish");
+            System.out.println("Le statistichePure di idPG="+pg2.getIdPG()+" sono state aggiornate");
+
+            System.out.println("subisciAzioneOffensiva UPDATEstattsPurePG1 start");
+            pg1.getAvanzamentoStattsPureEntity().setAvanzamentoForza(pg1.getAvanzamentoStattsPureEntity().getAvanzamentoForza()+1);
+            avanzamentiStattsPureUtils.updateAvanzamentiStattsPure(pg1);
+
+            System.out.println("subisciAzioneOffensiva UPDATEstattsPurePG2 start");
+            pg2.getAvanzamentoStattsPureEntity().setAvanzamentoVitaMax(pg2.getAvanzamentoStattsPureEntity().getAvanzamentoVitaMax()+1);
+            avanzamentiStattsPureUtils.updateAvanzamentiStattsPure(pg2);
         }
     }
-
 
 }

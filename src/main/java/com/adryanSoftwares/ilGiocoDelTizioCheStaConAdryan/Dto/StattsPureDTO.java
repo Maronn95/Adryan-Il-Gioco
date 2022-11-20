@@ -28,7 +28,7 @@ public class StattsPureDTO {
     private int saggezza;
     @JsonProperty("trash")
     private int trash;
-    @JsonProperty("vitaMax")
-    private int vitaMax;
+    @JsonProperty("vitaPura")
+    private int vitaPura;
 
 }

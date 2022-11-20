@@ -23,11 +23,14 @@ public class StattsCalcNewJSONreq {
     private Integer ca;
     @JsonProperty
     private Integer vitaAttuale;
+    @JsonProperty
+    private Integer vitaMax;
 
     public StattsCalcNewJSONreq(StattsCalcEntity stattsCalcEntity) {
         this.idStattsCalc = Math.toIntExact(stattsCalcEntity.getIdStattsCalc());
         this.utilizzoArmaX = stattsCalcEntity.getUtilizzoArmaX();
         this.ca = stattsCalcEntity.getCa();
         this.vitaAttuale = stattsCalcEntity.getVitaAttuale();
+        this.vitaMax = stattsCalcEntity.getVitaMax();
     }
 }

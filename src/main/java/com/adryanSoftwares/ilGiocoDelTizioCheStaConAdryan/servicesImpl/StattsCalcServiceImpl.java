@@ -89,7 +89,7 @@ public class StattsCalcServiceImpl implements StattsCalcService {
     }
 
     @Override
-    public StattsPureDTO calcoloCa(long pgId) {
+    public StattsPureDTO calcoloCa(Integer pgId) {
         StattsPureEntity stattsPureEntity = new StattsPureEntity();
         StattsPureDTO stattsPureDTO = new StattsPureDTO();
          stattsPureDTO = convertToDto(stattsPureEntity);

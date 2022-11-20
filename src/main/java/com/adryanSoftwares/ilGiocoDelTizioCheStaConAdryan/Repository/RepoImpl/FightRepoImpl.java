@@ -39,6 +39,6 @@ public class FightRepoImpl implements FightRepository {
 
     @Override
     public List findAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return null;
+        return (List) JCRUD.findAll();
     }
 }

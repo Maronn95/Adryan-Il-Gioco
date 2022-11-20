@@ -17,9 +17,9 @@ public class InventarioEntity {
 
     private Integer idInventario;
 
-    private int base;
+    private int base = 1;
 
-    private int altezza;
+    private int altezza = 1;
 
     private Long proprietario;
 

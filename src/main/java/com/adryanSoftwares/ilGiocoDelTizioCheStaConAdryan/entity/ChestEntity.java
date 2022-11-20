@@ -17,7 +17,7 @@ public class ChestEntity {
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONChest\\";
     private String table="Chest";
 
-    private Long idChest;
+    private Integer idChest;
 
     private String dimensione;
 

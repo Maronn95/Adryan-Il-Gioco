@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ChestDTO {
     @JsonProperty("idChest")
-    private Long idChest;
+    private Integer idChest;
     @JsonProperty("dimensione")
     private String dimensione;
     @JsonProperty("livello")

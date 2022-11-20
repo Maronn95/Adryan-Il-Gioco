@@ -2,9 +2,13 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoInventarioDto;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoInventarioMapper;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ArmiRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.OggettiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.OggettoInventarioRepository;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.ProtezioniIndossabiliRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.*;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioJSONService;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,34 +22,51 @@ public class OggettoInventarioJSONServiceImpl implements OggettoInventarioJSONSe
     @Autowired
     OggettoInventarioRepository OIR;
 
+    @Autowired
+    ArmiRepository armiRepository;
+
+    @Autowired
+    ProtezioniIndossabiliRepository protezioniIndossabiliRepository;
+
+    @Autowired
+    OggettiRepository oggettiRepository;
+
 
 
     @Override
-    public OggettoInventarioDto getOggettoInventario(Long id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-       OggettoInventarioDto dto;
-       dto= (OggettoInventarioDto) OIR.selectById(Math.toIntExact(id));
-        return dto ;
+    public OggettoInventarioEntity getOggettoInventario(Integer id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        OggettoInventarioEntity oggetto;
+       oggetto= (OggettoInventarioEntity) OIR.selectById(id);
+        return oggetto ;
     }
 
     @Override
-    public OggettoInventarioDto createOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    public OggettoInventarioEntity createOggettoInventario(OggettoInventarioDto dto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        OggettoInventarioEntity oggetto = OggettoInventarioMapper.dtoToEntity(dto);
+
+
+        if(dto.getIdArmi()!=null){
+            oggetto.setArmiEntity((ArmiEntity) armiRepository.selectById(dto.getIdArmi()));}
+        if(dto.getIdProtezione()!=null){
+            oggetto.setProtezioniIndossabiliEntity((ProtezioniIndossabiliEntity)protezioniIndossabiliRepository.selectById(dto.getIdProtezione()) );
+        }
+        if(dto.getIdOggetto()!=null){
+            oggetto.setOggettiEntity((OggettiEntity)oggettiRepository.selectById(dto.getIdOggetto()));
+        }
+        return (OggettoInventarioEntity) OIR.creates(oggetto);
+    }
+
+    @Override
+    public OggettoInventarioEntity updateOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoInventarioEntity oggetto;
         oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-        OIR.creates(oggetto);
-        return  OggettoInventarioMapper.entityToDto(oggetto);
+
+        return (OggettoInventarioEntity) OIR.update(oggetto);
     }
 
     @Override
-    public OggettoInventarioDto updateOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        OggettoInventarioEntity oggetto;
-        oggetto= OggettoInventarioMapper.dtoToEntity(entity);
-       OIR.update(oggetto);
-        return OggettoInventarioMapper.entityToDto(oggetto);
-    }
-
-    @Override
-    public void deleteOggettoInventario(Long id) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        OIR.delete(Math.toIntExact(id));
+    public void deleteOggettoInventario(Integer id) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        OIR.delete(id);
 
     }
 }

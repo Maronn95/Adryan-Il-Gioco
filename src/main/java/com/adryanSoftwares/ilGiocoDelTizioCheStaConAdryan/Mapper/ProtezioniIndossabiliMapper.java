@@ -1,16 +1,18 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ProtezioniIndossabiliDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
 
 public class ProtezioniIndossabiliMapper {
 
-    public static ProtezioniIndossabiliDto entityToDto(ProtezioniIndossabiliEntity a){
+    public static ProtezioniIndossabiliDTO entityToDto(ProtezioniIndossabiliEntity a){
 
-        ProtezioniIndossabiliDto dto= new ProtezioniIndossabiliDto();
-        if(a.getProtezioneIndossabileId()!=null)dto.setProtezioniIndossabiliId(a.getProtezioneIndossabileId());
+        ProtezioniIndossabiliDTO dto= new ProtezioniIndossabiliDTO();
+        if(a.getIdProtezioniIndossabili()!=null)dto.setIdProtezioniIndossabili(a.getIdProtezioniIndossabili());
 
+        if(a.getNome()!=null)dto.setNome(a.getNome());
 
+        if(a.getDescrizione()!=null)dto.setDescrizione(a.getDescrizione());
 
         if(a.getEfd()!=null)dto.setEfd(a.getEfd());
 
@@ -24,10 +26,14 @@ public class ProtezioniIndossabiliMapper {
 
     }
 
-    public static ProtezioniIndossabiliEntity dtoToEntity (ProtezioniIndossabiliDto dto){
+    public static ProtezioniIndossabiliEntity dtoToEntity (ProtezioniIndossabiliDTO dto){
         ProtezioniIndossabiliEntity a=new ProtezioniIndossabiliEntity();
 
+        if(dto.getIdProtezioniIndossabili()!=null)a.setIdProtezioniIndossabili(dto.getIdProtezioniIndossabili());
 
+        if(dto.getNome()!=null)a.setNome(dto.getNome());
+
+        if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 
@@ -40,12 +46,14 @@ public class ProtezioniIndossabiliMapper {
         return a;
     }
 
-    public static ProtezioniIndossabiliEntity dtoUpdateEntity(ProtezioniIndossabiliDto dto){
-        ProtezioniIndossabiliEntity a=new ProtezioniIndossabiliEntity();
+    public static ProtezioniIndossabiliEntity dtoUpdateEntity (ProtezioniIndossabiliDTO dto, ProtezioniIndossabiliEntity a){
 
-        if(dto.getProtezioniIndossabiliId()!=null) a.setProtezioneIndossabileId(dto.getProtezioniIndossabiliId());
 
-      
+        if(dto.getIdProtezioniIndossabili()!=null)a.setIdProtezioniIndossabili(dto.getIdProtezioniIndossabili());
+
+        if(dto.getNome()!=null)a.setNome(dto.getNome());
+
+        if(dto.getDescrizione()!=null)a.setDescrizione(dto.getDescrizione());
 
         if(dto.getEfd()!=null)a.setEfd(dto.getEfd());
 
@@ -57,5 +65,8 @@ public class ProtezioniIndossabiliMapper {
 
         return a;
     }
+
+
+
 
 }

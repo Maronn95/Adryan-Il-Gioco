@@ -22,12 +22,21 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
             if(OI.getPeso()!=null) {
                 dto.setPeso(OI.getPeso());
             }
+            if(OI.getName()!=null){
+                dto.setName(OI.getName());
+            }
 
             if(OI.getOggettoMagico()!=null){
                 dto.setOggettoMagico(OI.getOggettoMagico());
 
              if(OI.getRarita()!=null){
                  dto.setRarita(OI.getRarita());
+             }
+             if(OI.getValoreRarita()!=null){
+                 dto.setValoreRarita(OI.getValoreRarita());
+             }
+             if(OI.getLivello()!=null){
+                 dto.setLivello(OI.getLivello());
              }
 
             }
@@ -40,7 +49,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
     public static OggettoInventarioEntity dtoToEntity(OggettoInventarioDto dto) {
         OggettoInventarioEntity OIE = new OggettoInventarioEntity();
         if (dto != null) {
-            OIE.setOggettoInventarioid(dto.getOggettoInventarioid());
+            OIE.setIdOggettoInventario(dto.getIdOggettoInventario());
 
             if (dto.getBase() != null) {
                 OIE.setBase(dto.getBase());
@@ -48,6 +57,10 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
             if (dto.getAltezza() != null) {
                 OIE.setAltezza(dto.getAltezza());
             }
+            if (dto.getName() != null) {
+                OIE.setName(dto.getName());
+            }
+
 
 
             if (dto.getDescrizione() != null) {
@@ -62,6 +75,12 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
             }
             if (dto.getRarita() != null) {
                 OIE.setRarita(dto.getRarita());
+            }
+            if(dto.getValoreRarita()!=null){
+                OIE.setValoreRarita(dto.getValoreRarita());
+            }
+            if(dto.getLivello()!=null){
+                OIE.setLivello(dto.getLivello());
             }
 
             return OIE;

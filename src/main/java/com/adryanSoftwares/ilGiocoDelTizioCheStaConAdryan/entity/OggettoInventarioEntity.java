@@ -19,10 +19,15 @@ public class OggettoInventarioEntity {
 
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONOggettoInventario\\";
     private String table="OggettoInventario";
-    private OggettoInventarioNewJSONreq req;
-    private OggettoInventarioNewJSONresp resp;
 
-    private Integer oggettoInventarioid;
+
+    private Integer idOggettoInventario;
+
+    private OggettiEntity oggettiEntity;
+
+    private ArmiEntity armiEntity;
+
+    private ProtezioniIndossabiliEntity protezioniIndossabiliEntity;
 
      private String descrizione;
 
@@ -30,11 +35,17 @@ public class OggettoInventarioEntity {
 
     private Integer altezza;
 
+    private String name;
+
     private Double peso;
 
     private Boolean oggettoMagico;
 
     private Rarita rarita;
+
+    private Integer valoreRarita;
+
+    private Integer livello;
 
 
 }

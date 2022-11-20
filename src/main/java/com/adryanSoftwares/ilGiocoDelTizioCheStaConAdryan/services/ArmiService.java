@@ -14,5 +14,7 @@ public interface ArmiService {
     void CreateArma(ArmiEntity oggetto);
 
     void DeleteArma(Long id);
+
+
 }
 

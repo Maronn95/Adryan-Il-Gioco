@@ -1,7 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.OggettiRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
@@ -12,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class OggettoServiceImpl implements OggettiService {
@@ -19,7 +20,7 @@ public class OggettoServiceImpl implements OggettiService {
 private OggettiRepository oggettiRepository;
 
     @Override
-    public OggettiEntity newOggetto(OggettoDTO oggetto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+    public OggettiEntity newOggetto(OggettiDTO oggetto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return (OggettiEntity) oggettiRepository.creates(OggettoMapper.DtoNewEntity(oggetto));
     }
 
@@ -34,10 +35,32 @@ private OggettiRepository oggettiRepository;
     }
 
     @Override
-    public OggettiEntity update(OggettoDTO dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        return (OggettiEntity) oggettiRepository.update(OggettoMapper.DtoNewEntity(dto));
+    public OggettiEntity update(OggettiDTO dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        OggettiEntity oggetto = (OggettiEntity) oggettiRepository.selectById(dto.getIdOggetti());
+        return (OggettiEntity) oggettiRepository.update(OggettoMapper.dtoUpdateEntity(dto,oggetto));
+    }
+
+    @Override
+    public List<OggettiEntity> getAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return oggettiRepository.findAll();
+    }
+
+    @Override
+    public List<OggettiEntity> selectByLevelAndRarity(Integer valoreRarita, Integer livello) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        List<OggettiEntity> oggetti = oggettiRepository.findAll();
+        List<OggettiEntity>oggettiFiltrati = new ArrayList<>();
+        for(OggettiEntity oggetto : oggetti ){
+            if( oggetto.getValoreRarita()<= valoreRarita
+                && oggetto.getLivello() == livello
+                ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()+1 != 5 && oggetto.getLivello() == livello+1)
+                ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()-1 != 0 && oggetto.getLivello() == livello-1)
+            ){
+                oggettiFiltrati.add(oggetto);
+            }
+        }
+        return oggettiFiltrati;
     }
 
 
-    }
+}
 

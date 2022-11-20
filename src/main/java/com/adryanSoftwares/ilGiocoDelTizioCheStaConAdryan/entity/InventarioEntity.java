@@ -14,8 +14,8 @@ import java.util.List;
 @Getter
 @Setter
 public class InventarioEntity {
-    @JsonProperty("id")
-    private Long inventarioId;
+
+    private Integer idInventario;
 
     private int base;
 
@@ -24,6 +24,8 @@ public class InventarioEntity {
     private Long proprietario;
 
     private List<OggettoInventarioEntity> oggetti = new ArrayList<OggettoInventarioEntity>();
+
+    private int [] [] slotGriglia = new int [altezza] [base];
 
 
 

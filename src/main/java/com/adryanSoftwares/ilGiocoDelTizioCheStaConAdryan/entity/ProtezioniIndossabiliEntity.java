@@ -17,18 +17,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProtezioniIndossabiliEntity {
 
-    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONprotInd\\";
-    private String table="ProtInd";
-    private ProtezioniIndossabiliNewJSONreq req;
-    private ProtezioniIndossabiliNewJSONresp resp;
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONProtezioniIndossabili\\";
+    private String table="ProtezioniIndossabili";
 
-    private Long protezioneIndossabileId;
+
+    private Integer idProtezioniIndossabili;
+
+    private String nome;
+
+    private String descrizione;
 
     private Locazione locazione;
 
-    private String name;
-
     private EffettiMagiciDifensivi efd;
+
+    private Boolean oggettoMagico;
+
 
 
     private Double valoreProtettivo;

@@ -1,12 +1,19 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiBattlegroundEntityDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoBattleGroundDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoBattleGroundEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoBattleGroundService;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoBattlegroundServiceImpl;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,59 +22,53 @@ import java.util.List;
 public class OggettiBattleGroundController {
 
     @Autowired
-    OggettoBattlegroundServiceImpl OBS;
+    OggettoBattleGroundService OBS;
 
 
 
     @RequestMapping(value="/Oggetti")
-    public List<OggettiBattlegroundEntityDto> GetOggettiBattleground(){
+    public List<OggettoBattleGroundDTO> GetOggettiBattleground() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
-        List<OggettiBattlegroundEntity>oggetti=OBS.getOggetti();
-        List<OggettiBattlegroundEntityDto> oggettiDto =new ArrayList<OggettiBattlegroundEntityDto>();
-        for(OggettiBattlegroundEntity obj:oggetti)
+        List<OggettoBattleGroundEntity>oggetti=OBS.getAll();
+        List<OggettoBattleGroundDTO> oggettiDto =new ArrayList<OggettoBattleGroundDTO>();
+        for(OggettoBattleGroundEntity obj:oggetti)
            oggettiDto.add( OBM.entityToDto(obj));
         return oggettiDto;
     }
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
-    public OggettiBattlegroundEntityDto getOggettiById(@PathVariable Long id)
-    {
+    public OggettoBattleGroundEntity getOggettiById(@PathVariable Integer id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
-      OggettiBattlegroundEntity oggetto =OBS.getOggettiById(id).get();
-      OggettiBattlegroundEntityDto oggettoDto =OBM.entityToDto(oggetto);
-        return oggettoDto ;
+      OggettoBattleGroundEntity oggetto =OBS.selectOggetto(id);
+     // OggettoBattleGroundDTO oggettoDto =OBM.entityToDto(oggetto);
+        return oggetto ;
         }
 
 
 
-    @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.POST)
-    public void SaveOrUpdate(@RequestBody OggettiBattlegroundEntityDto oggettiDto){
-        OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
-        OggettiBattlegroundEntity oggetto= new OggettiBattlegroundEntity();
-        if(oggettiDto.getOggettoBattlegroundId()!=null){
-         oggetto  = OBM.dtoUpdateEntity(oggettiDto);
-        }
-        else{
-            oggetto=OBM.dtoToEntity(oggettiDto);
-        }
-        OBS.CreateOggetto(oggetto);
-    }
+    @RequestMapping(value="/create", method= RequestMethod.POST)
+    public OggettoBattleGroundEntity create(@RequestBody OggettoBattleGroundDTO oggettiDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        OggettoBattleGroundEntity oggetto= OBS.newOggetto( oggettiDto);
+        return oggetto;    }
 
-    @RequestMapping(value="/SaveOrUpdate", method= RequestMethod.PUT)
-    public void Update(@RequestBody OggettiBattlegroundEntityDto oggettiDto) {
-        OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
-        OggettiBattlegroundEntity oggetto = new OggettiBattlegroundEntity();
-        if (oggettiDto.getOggettoBattlegroundId() != null) {
-            oggetto = OBM.dtoUpdateEntity(oggettiDto);
-        } else {
-            oggetto = OBM.dtoToEntity(oggettiDto);
-        }
-        OBS.CreateOggetto(oggetto);
+    @RequestMapping(value="/update", method= RequestMethod.PUT)
+    public OggettoBattleGroundDTO Update(@RequestBody OggettoBattleGroundDTO oggettiDto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        OggettoBattleGroundDTO dto = OggettiBattlegroundMapper.entityToDto(OBS.update(oggettiDto));
+        return dto;
     }
 
     @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)
-    public void Delete(@PathVariable Long id){
-                OBS.DeleteOggetto(id);
+    public void Delete(@PathVariable Integer id) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+                OBS.delete(id);
             }
+    @RequestMapping(value="/getAll", method = RequestMethod.GET)
+    public List<OggettoBattleGroundDTO> getAll() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        List<OggettoBattleGroundEntity> oggetti = new ArrayList<>();
+        oggetti = OBS.getAll();
+        List<OggettoBattleGroundDTO> oggetti1 = new ArrayList<>();
+        for (OggettoBattleGroundEntity oggetto : oggetti) {
+            oggetti1.add(OggettiBattlegroundMapper.entityToDto(oggetto));
+        }
+        return oggetti1;
 
-
+    }
 }

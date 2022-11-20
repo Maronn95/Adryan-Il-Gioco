@@ -12,26 +12,29 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProtezioniIndossabiliDto {
+public class ProtezioniIndossabiliDTO {
 
-    @JsonProperty("ProtezioniIndossabiliId")
-    private Long ProtezioniIndossabiliId;
+    @JsonProperty("idProtezioniIndossabili")
+    private Integer idProtezioniIndossabili;
 
-    @JsonProperty("Descrizione")
+    @JsonProperty("nome")
+    private String nome;
+
+    @JsonProperty("descrizione")
     private String descrizione;
 
-    @JsonProperty("OggettoMagico")
+    @JsonProperty("oggettoMagico")
     private Boolean oggettoMagico;
 
-    @JsonProperty("EffettoMagicoDifensivo")
+    @JsonProperty("effettoMagicoDifensivo")
     private EffettiMagiciDifensivi efd;
 
-    @JsonProperty("Locazione")
+    @JsonProperty("locazione")
     private Locazione locazione;
 
-    @JsonProperty("ValoreProtettivo")
+    @JsonProperty("valoreProtettivo")
     private Double valoreProtettivo;
 
-    @JsonProperty("Durabilita")
+    @JsonProperty("durabilita")
     private Double durabilita;
 }

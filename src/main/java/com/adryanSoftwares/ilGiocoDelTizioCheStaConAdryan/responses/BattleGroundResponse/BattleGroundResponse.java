@@ -2,7 +2,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroun
 
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -34,6 +34,6 @@ public class BattleGroundResponse {
     private String weather;
 
     @JsonProperty ("oggetto")
-    private OggettoDTO oggetto;
+    private OggettiDTO oggetto;
  }
 

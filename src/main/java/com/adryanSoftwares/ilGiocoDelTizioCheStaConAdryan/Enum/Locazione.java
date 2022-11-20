@@ -5,7 +5,8 @@ public enum Locazione {
     COLLO,
     TORACE,
     BRACCIA,
-    MANI,
+    MANO_SINISTRA,
+    MANO_DESTRA,
     GAMBE,
     PIEDI
 }

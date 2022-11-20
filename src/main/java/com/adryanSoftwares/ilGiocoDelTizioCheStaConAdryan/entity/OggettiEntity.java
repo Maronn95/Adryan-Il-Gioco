@@ -11,15 +11,23 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OggettiEntity {
-    private Integer oggettoId;
+
+    private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONOggetti\\";
+    private String table="Oggetti";
+
+    private Integer idOggetti;
 
     private String nome;
+
+    private Integer livello;
 
     private String descrizione;
 
     private TipoOggetto tipo;
 
     private Rarita rarita;
+
+    private Integer valoreRarita;
 
 
 }

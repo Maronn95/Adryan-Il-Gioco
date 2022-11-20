@@ -2,9 +2,6 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.restController.BattleGroundController;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.BattleGroundDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

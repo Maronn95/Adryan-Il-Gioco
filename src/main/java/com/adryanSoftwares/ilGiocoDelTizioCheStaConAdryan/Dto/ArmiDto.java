@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,25 +14,28 @@ import lombok.Setter;
 public class ArmiDto {
 
 
-    @JsonProperty("ArmiId")
-    private Integer ArmiId;
-    @JsonProperty("Descrizione")
+    @JsonProperty("idArmi")
+    private Integer idArmi;
+    @JsonProperty("descrizione")
     private String descrizione;
-
-    @JsonProperty("ArmAADistanza")
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("armaADistanza")
     private Boolean armaADistanza;
-    @JsonProperty("DannoTipo")
+    @JsonProperty("dannoTipo")
     private String dannoTipo;
-    @JsonProperty("Danno")
+    @JsonProperty("danno")
     private Double danno;
-    @JsonProperty("Gittata")
+    @JsonProperty("gittata")
     private Double gittata;
-    @JsonProperty("AttaccoMultiplo")
-    private Boolean attaccoMultiplo;
-    @JsonProperty("ProbabilitaAttaccoMultiplo")
-    private Double probabilitaAttaccoMultiplo;
-    @JsonProperty("MoltiplicatoreCritico")
+    @JsonProperty("moltiplicatoreCritico")
     private Double moltiplicatoreCritico;
-    @JsonProperty("ProbabilitaCriticoArma")
+    @JsonProperty("probabilitaCriticoArma")
     private Double probabilitaCriticoArma;
+    @JsonProperty("rarita")
+    private Rarita rarita;
+    @JsonProperty("valoreRarita")
+    private Integer valoreRarita;
+    @JsonProperty("livello")
+    private Integer livello;
 }

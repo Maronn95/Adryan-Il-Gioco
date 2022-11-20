@@ -31,7 +31,9 @@ public class JSONcrudRepository <entityClass>   {
         this.getEntityCredentials();
         String selectedPathString = loc + this.path + this.table + idJSONreq +".JSON";
         Path pathSelected = Paths.get(selectedPathString);
-        Object selectedObj = new JSONParser().parse(new FileReader(String.valueOf(pathSelected)));
+        FileReader fileReader = new FileReader(String.valueOf(pathSelected));
+        Object selectedObj = new JSONParser().parse(fileReader);
+        fileReader.close();
         ObjectMapper oMapper = new ObjectMapper();
         Map<String, Object> map = oMapper.convertValue(selectedObj, Map.class);
         JSONObject selectedJSON = new JSONObject(map);
@@ -126,7 +128,7 @@ public class JSONcrudRepository <entityClass>   {
                 getidEntity=String.valueOf(key);
             }
         }
-        Long idValue = Long.valueOf((String) oldJSON.get(getidEntity));
+        Long idValue = Long.valueOf(String.valueOf(oldJSON.get(getidEntity)));
 
         String selectedPathString = loc + this.path + this.table + idValue +".JSON";
         Path pathSelected = Paths.get(selectedPathString);
@@ -191,12 +193,13 @@ public class JSONcrudRepository <entityClass>   {
                     Iterator iSpingFkeys = foreignJSON.keySet().iterator();
                     while (iSpingFkeys.hasNext()){
                         Object foreignKeyName = iSpingFkeys.next();
-                        if ( foreignKeyName.toString().equalsIgnoreCase("id"+subTable.toLowerCase().replace("entity",""))){
-                            inForeignJSON[0] = this.creates(foreignEntity, subPath, subTable, classe);
+                        if ( foreignKeyName.toString().equalsIgnoreCase("id"+subTable.toLowerCase().replace("entity",""))
+                                && foreignJSON.get(foreignKeyName)!=null){
+                            inForeignJSON[0] = this.update(foreignEntity, subPath, subTable, classe);
                         }
                     }
-                    if (inForeignJSON[0] != null)
-                        inForeignJSON[0] = this.update(foreignEntity, subPath, subTable, classe);
+                    if (inForeignJSON[0] == null)
+                        inForeignJSON[0] = this.creates(foreignEntity, subPath, subTable, classe);
 
                     inForeignJSON [1]= subTable;
                     inForeignJSON [2]= classe;
@@ -239,7 +242,7 @@ public class JSONcrudRepository <entityClass>   {
                 getidEntity=String.valueOf(key);
             }
         }
-        Long idValue = (Long) oldJSON.get(getidEntity);
+        Long idValue =  Long.valueOf(String.valueOf(oldJSON.get(getidEntity)));
 
         String selectedPathString = loc + subPath + subTable + idValue +".JSON";
         Path pathSelected = Paths.get(selectedPathString);
@@ -285,8 +288,9 @@ public class JSONcrudRepository <entityClass>   {
 
         String pathSeq = loc + subPath + "JSONSequence" + subTable + ".JSON";
         Path pathSettings = Paths.get(pathSeq);
-
-        Object imposta = new JSONParser().parse(new FileReader(String.valueOf(pathSettings))); // apro il json di sequence come oggetto
+        FileReader fileReader = (new FileReader(String.valueOf(pathSettings)));
+        Object imposta = new JSONParser().parse(fileReader);
+        fileReader.close();// apro il json di sequence come oggetto
         JSONObject JSONImpostazioni = (JSONObject) imposta;
         Iterator iSpin = JSONImpostazioni.values().iterator();
         while (iSpin.hasNext()) {
@@ -330,7 +334,9 @@ public class JSONcrudRepository <entityClass>   {
 
                     String selectedPathString = loc + subPath + subTable + foreignValue + ".JSON";
                     Path pathSelected = Paths.get(selectedPathString);
-                    Object selectedObj = new JSONParser().parse(new FileReader(String.valueOf(pathSelected)));
+                    FileReader fileReader = (new FileReader(String.valueOf(pathSelected)));
+                    Object selectedObj = new JSONParser().parse(fileReader);
+                    fileReader.close();
                     ObjectMapper oMapper = new ObjectMapper();
                     Map<String, Object> map = oMapper.convertValue(selectedObj, Map.class);
                     JSONObject subJSON = new JSONObject(map);
@@ -385,8 +391,9 @@ public class JSONcrudRepository <entityClass>   {
 
         String pathSeq = loc + this.path + "JSONSequence" + this.table + ".JSON";
         Path pathSettings = Paths.get(pathSeq);
-
-        Object Impostazioni = new JSONParser().parse(new FileReader(String.valueOf(pathSettings))); // apro il json di sequence come oggetto
+        FileReader fileReader=(new FileReader(String.valueOf(pathSettings)));
+        Object Impostazioni = new JSONParser().parse(fileReader);
+        fileReader.close();// apro il json di sequence come oggetto
         JSONObject JSONImpostazioni = (JSONObject) Impostazioni;
         Iterator iSpin = JSONImpostazioni.values().iterator();
         while (iSpin.hasNext()) {

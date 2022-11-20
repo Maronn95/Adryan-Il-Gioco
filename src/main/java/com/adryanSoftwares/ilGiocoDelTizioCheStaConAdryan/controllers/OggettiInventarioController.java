@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoInventarioDto;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoInventarioMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
@@ -23,26 +24,26 @@ public class OggettiInventarioController {
 
 
    @GetMapping("/getOggettoInventario/{idOggettoInventario}")
-   public OggettoInventarioDto getPg (@PathVariable("idOggettoInventario") Long idOggettoInventario) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+   public OggettoInventarioEntity getPg (@PathVariable("idOggettoInventario") Integer idOggettoInventario) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
       return OIS.getOggettoInventario(idOggettoInventario);
    }
 
 
    @RequestMapping(value="/newOggettoInventario", method= RequestMethod.POST)
-   public OggettoInventarioDto creaPGinJSON(@RequestBody OggettoInventarioDto dto) throws Exception {
-      OggettoInventarioDto entity = OIS.createOggettoInventario(dto);
+   public OggettoInventarioEntity creaPGinJSON(@RequestBody OggettoInventarioDto dto) throws Exception {
+      OggettoInventarioEntity entity = OIS.createOggettoInventario(dto);
       return entity;
 
    }
 
    @DeleteMapping(value="/deleteOggettoInventario/{idOggettoInventario}")
-   public void deleteOggettoInventario (@PathVariable("idOggettoInventario") Long idOggettoInventario) throws Exception {
+   public void deleteOggettoInventario (@PathVariable("idOggettoInventario") Integer idOggettoInventario) throws Exception {
       OIS.deleteOggettoInventario(idOggettoInventario);
    }
 
    @RequestMapping(value="/updateOggettoInventario", method = RequestMethod.POST)
    public OggettoInventarioDto updatePG ( @RequestBody OggettoInventarioDto dto) throws Exception {
-      return OIS.updateOggettoInventario(dto);
+      return OggettoInventarioMapper.entityToDto( OIS.updateOggettoInventario(dto));
    }
 
 }

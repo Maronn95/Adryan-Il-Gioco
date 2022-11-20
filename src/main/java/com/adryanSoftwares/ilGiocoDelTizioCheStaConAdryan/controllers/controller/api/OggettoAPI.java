@@ -1,6 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller.api;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto.OggettoDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiDTO;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.BattleGroundResponse;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.BattleGroundResponse.OggettoResponse;
@@ -25,5 +25,5 @@ public interface OggettoAPI {
     @PostMapping(value="/newBG", produces= MediaType.APPLICATION_JSON_VALUE, consumes= MediaType.APPLICATION_JSON_VALUE)
     OggettiEntity saveOrUpdate(@ApiParam(value="Parametri con cui inserire o modificare il battleGround", required=true)
                                    @Validated
-                                   @RequestBody OggettoDTO oggettoDTO);
+                                   @RequestBody OggettiDTO oggettoDTO);
 }

@@ -1,14 +1,13 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
-        import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
-        import com.fasterxml.jackson.annotation.JsonProperty;
-        import lombok.AllArgsConstructor;
-        import lombok.Getter;
-        import lombok.NoArgsConstructor;
-        import lombok.Setter;
-
-        import java.util.ArrayList;
-        import java.util.List;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +16,7 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 public class InventarioNewJSONresp {
 
     @JsonProperty
-    private Long idInventario;
+    private Integer idInventario;
 
     @JsonProperty
     private int base;

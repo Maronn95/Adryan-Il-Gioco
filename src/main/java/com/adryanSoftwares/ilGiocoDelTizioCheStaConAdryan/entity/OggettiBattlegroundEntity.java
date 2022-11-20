@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class OggettiBattlegroundEntity  {
 
-    private Long oggettoBattegroundId;
+    private Integer oggettoBattegroundId;
 
 
     private String descrizione;
@@ -38,7 +38,7 @@ public class OggettiBattlegroundEntity  {
 
     private Double randomLoot;
 
-    public OggettiBattlegroundEntity(Long oggettoBattegroundId){
+    public OggettiBattlegroundEntity(Integer oggettoBattegroundId){
      switch(Math.toIntExact(oggettoBattegroundId)){
          case 1:
              this.oggettoBattegroundId = oggettoBattegroundId;

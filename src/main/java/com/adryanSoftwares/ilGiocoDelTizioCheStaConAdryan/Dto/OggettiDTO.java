@@ -1,4 +1,4 @@
-package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.dto;
+package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,11 +13,11 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OggettoDTO {
+public class OggettiDTO {
     @JsonProperty("data")
     private List<OggettiEntity> data;
 
     @JsonProperty("id")
-    private Long id;
+    private Integer id;
 
 }

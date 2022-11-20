@@ -14,7 +14,7 @@ import lombok.Setter;
 public class OggettiBattlegroundEntityDto {
 
   @JsonProperty("OggettoBattlegroundId")
-  private Long OggettoBattlegroundId;
+  private Integer OggettoBattlegroundId;
 
   @JsonProperty("Descrizione")
   private String descrizione;

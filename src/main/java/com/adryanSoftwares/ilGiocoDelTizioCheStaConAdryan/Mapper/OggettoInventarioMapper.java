@@ -29,6 +29,15 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
              if(OI.getRarita()!=null){
                  dto.setRarita(OI.getRarita());
              }
+             if(OI.getLivello()!=null){
+                    dto.setLivello(OI.getLivello());
+                }
+                if(OI.getValoreRarita()!=null){
+                    dto.setValoreRarita(OI.getValoreRarita());
+                }
+                if(OI.getTipoOggetto()!=null){
+                    dto.setTipoOggetto(OI.getTipoOggetto());
+                }
 
             }
 
@@ -40,7 +49,7 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
     public static OggettoInventarioEntity dtoToEntity(OggettoInventarioDto dto) {
         OggettoInventarioEntity OIE = new OggettoInventarioEntity();
         if (dto != null) {
-            OIE.setOggettoInventarioid(dto.getOggettoInventarioid());
+            OIE.setIdOggettoInventario(dto.getIdOggettoInventario());
 
             if (dto.getBase() != null) {
                 OIE.setBase(dto.getBase());
@@ -63,7 +72,15 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
             if (dto.getRarita() != null) {
                 OIE.setRarita(dto.getRarita());
             }
-
+            if (dto.getValoreRarita() != null) {
+                OIE.setValoreRarita(dto.getValoreRarita());
+            }
+            if (dto.getLivello() != null) {
+                OIE.setLivello(dto.getLivello());
+            }
+            if (dto.getTipoOggetto() != null) {
+                OIE.setTipoOggetto(dto.getTipoOggetto());
+            }
             return OIE;
         }
         return null;
@@ -79,10 +96,21 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventar
                 if (dto.getAltezza() != null) OIE.setAltezza(dto.getAltezza());
                 if (dto.getPeso() != null) OIE.setPeso(dto.getPeso());
                 if (dto.getOggettoMagico() != null) OIE.setOggettoMagico(dto.getOggettoMagico());
+
                 if (dto.getRarita() != null) {
                     OIE.setRarita(dto.getRarita());
                 }
 
+                if (dto.getLivello() != null) {
+                    OIE.setLivello(dto.getLivello());
+                }
+
+                if (dto.getValoreRarita() != null) {
+                    OIE.setValoreRarita(dto.getValoreRarita());
+                }
+                if (dto.getTipoOggetto() != null) {
+                    OIE.setTipoOggetto(dto.getTipoOggetto());
+                }
                 return OIE;
             }
             return null;

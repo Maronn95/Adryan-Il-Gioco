@@ -20,7 +20,6 @@ public class ArmiJSONserviceImpl implements ArmiJSONservice {
     @Override
     public ArmiEntity newArmi(ArmiNewJSONreq req) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return (ArmiEntity) armiRepository.creates(req);
-
     }
 
      @Override

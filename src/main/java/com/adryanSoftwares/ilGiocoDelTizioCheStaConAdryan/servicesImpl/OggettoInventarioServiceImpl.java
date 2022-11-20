@@ -1,35 +1,38 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiInventarioService;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoInventarioDto;
+
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.OggettoInventarioRepository;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioService;
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 @Service
-public class OggettoInventarioServiceImpl implements OggettiInventarioService {
+public class OggettoInventarioServiceImpl implements OggettoInventarioService {
+
+    @Autowired
+    OggettoInventarioRepository oggettoInventarioRepository;
 
     @Override
-    public List<OggettoInventarioEntity> getOggetti() {
-
-        //return OIR.findAll();
-        return  null;
+    public OggettoInventarioDto getOggettoInventario(Integer id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        return (OggettoInventarioDto) oggettoInventarioRepository.selectById(Math.toIntExact(id)) ;
     }
 
     @Override
-    public Optional<OggettoInventarioEntity> getOggettiById(Long id) {
-
-        //return OIR.findById(id);
-        return  null;
+    public OggettoInventarioDto createOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (OggettoInventarioDto) oggettoInventarioRepository.creates(entity);
     }
 
     @Override
-    public void CreateOggetto(OggettoInventarioEntity oggetto) {
-        //OIR.save(oggetto);
+    public OggettoInventarioDto updateOggettoInventario(OggettoInventarioDto entity) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (OggettoInventarioDto) oggettoInventarioRepository.update(entity);
     }
 
     @Override
-    public void DeleteOggetto(Long id) {
-        //OIR.deleteById(id);
+    public void deleteOggettoInventario(Integer id) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        oggettoInventarioRepository.delete(Math.toIntExact(id));
     }
 }

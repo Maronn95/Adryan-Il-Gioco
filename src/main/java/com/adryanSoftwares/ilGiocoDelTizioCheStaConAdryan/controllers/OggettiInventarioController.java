@@ -1,12 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoInventarioDto;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioJSONService;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoInventarioJSONServiceImpl;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioService;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +14,11 @@ import java.lang.reflect.InvocationTargetException;
 public class OggettiInventarioController {
 
    @Autowired
-   OggettoInventarioJSONService OIS;
+   OggettoInventarioService OIS;
 
 
    @GetMapping("/getOggettoInventario/{idOggettoInventario}")
-   public OggettoInventarioDto getPg (@PathVariable("idOggettoInventario") Long idOggettoInventario) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+   public OggettoInventarioDto getPg (@PathVariable("idOggettoInventario") Integer idOggettoInventario) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
       return OIS.getOggettoInventario(idOggettoInventario);
    }
 
@@ -36,7 +31,7 @@ public class OggettiInventarioController {
    }
 
    @DeleteMapping(value="/deleteOggettoInventario/{idOggettoInventario}")
-   public void deleteOggettoInventario (@PathVariable("idOggettoInventario") Long idOggettoInventario) throws Exception {
+   public void deleteOggettoInventario (@PathVariable("idOggettoInventario") Integer idOggettoInventario) throws Exception {
       OIS.deleteOggettoInventario(idOggettoInventario);
    }
 

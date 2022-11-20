@@ -2,14 +2,11 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.OggettoInventarioNewJSONreq;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.OggettoInventarioNewJSONresp;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 @Getter
 @Setter
@@ -22,11 +19,11 @@ public class OggettoInventarioEntity {
     private OggettoInventarioNewJSONreq req;
     private OggettoInventarioNewJSONresp resp;
 
-    private Integer oggettoInventarioid;
+    private Integer idOggettoInventario;
 
-     private String descrizione;
+    private String descrizione;
 
-     private Integer base;
+    private Integer base;
 
     private Integer altezza;
 
@@ -36,6 +33,11 @@ public class OggettoInventarioEntity {
 
     private Rarita rarita;
 
+    private Integer valoreRarita;
+
+    private Integer livello;
+
+    private String tipoOggetto;
 
 }
 

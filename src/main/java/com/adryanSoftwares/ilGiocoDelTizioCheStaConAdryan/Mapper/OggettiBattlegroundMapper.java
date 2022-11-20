@@ -5,19 +5,19 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiBattlegr
 
 public class OggettiBattlegroundMapper {
 
-    public static OggettiBattlegroundEntityDto entityToDto(OggettiBattlegroundEntity OBE){
-        OggettiBattlegroundEntityDto dto= new OggettiBattlegroundEntityDto();
-        if(OBE!=null){
-            if(OBE.getOggettoBattegroundId()!=null) dto.setOggettoBattlegroundId(OBE.getOggettoBattegroundId());
-            if(OBE.getDescrizione()!=null)dto.setDescrizione(OBE.getDescrizione());
+    public static OggettiBattlegroundEntityDto entityToDto(OggettiBattlegroundEntity oggettiBattlegroundEntity){
+        OggettiBattlegroundEntityDto oggettiBattlegroundEntityDto= new OggettiBattlegroundEntityDto();
+        if(oggettiBattlegroundEntity!=null){
+            if(oggettiBattlegroundEntity.getOggettoBattegroundId()!=null) oggettiBattlegroundEntityDto.setOggettoBattlegroundId(oggettiBattlegroundEntity.getOggettoBattegroundId());
+            if(oggettiBattlegroundEntity.getDescrizione()!=null)oggettiBattlegroundEntityDto.setDescrizione(oggettiBattlegroundEntity.getDescrizione());
 
-            if(OBE.getLoot()!=null)dto.setLoot(OBE.getLoot());
-            if(OBE.getRandomLoot()!=null)dto.setRandomLoot((OBE.getRandomLoot()));
-            if(OBE.getCopertura()!=null)dto.setCopertura((OBE.getCopertura()));
-            if(OBE.getValoreCopertura()!=null)dto.setValoreCopertura((OBE.getValoreCopertura()));
+            if(oggettiBattlegroundEntity.getLoot()!=null)oggettiBattlegroundEntityDto.setLoot(oggettiBattlegroundEntity.getLoot());
+            if(oggettiBattlegroundEntity.getRandomLoot()!=null)oggettiBattlegroundEntityDto.setRandomLoot((oggettiBattlegroundEntity.getRandomLoot()));
+            if(oggettiBattlegroundEntity.getCopertura()!=null)oggettiBattlegroundEntityDto.setCopertura((oggettiBattlegroundEntity.getCopertura()));
+            if(oggettiBattlegroundEntity.getValoreCopertura()!=null)oggettiBattlegroundEntityDto.setValoreCopertura((oggettiBattlegroundEntity.getValoreCopertura()));
 
         }
-        return dto;
+        return oggettiBattlegroundEntityDto;
     }
 
     public static OggettiBattlegroundEntity dtoToEntity(OggettiBattlegroundEntityDto dto){

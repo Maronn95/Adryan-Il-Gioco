@@ -15,6 +15,20 @@ public class ArmiNewJSONreq {
         @JsonProperty
         private String name;
         @JsonProperty
+        private Integer idArmi;
+        @JsonProperty
+        private String descrizione;
+        @JsonProperty
+        private int base;
+        @JsonProperty
+        private int altezza;
+        @JsonProperty
+        private Double peso;
+        @JsonProperty
+        private Boolean oggettoMagico;
+        @JsonProperty
+        private Rarita rarita;
+        @JsonProperty
         private Boolean armaADistanza;
         @JsonProperty
         private String dannoTipo;
@@ -26,5 +40,10 @@ public class ArmiNewJSONreq {
         private Double moltiplicatoreCritico;
         @JsonProperty
         private Double probabilitaCriticoArma;
+        @JsonProperty
+        private Boolean attaccoMultiplo;
+        @JsonProperty
+        private Double probabilitaAttaccoMultiplo;
+
 
 }

@@ -13,7 +13,7 @@ import lombok.Setter;
 public class StattsPureDTO {
 
     @JsonProperty("idStattsPure")
-    private Long idStattsPure;
+    private Integer idStattsPure;
     @JsonProperty("forza")
     private int forza;
     @JsonProperty("costituzione")
@@ -28,7 +28,7 @@ public class StattsPureDTO {
     private int saggezza;
     @JsonProperty("trash")
     private int trash;
-    @JsonProperty("vitaMax")
-    private int vitaMax;
+    @JsonProperty("vitaPura")
+    private int vitaPura;
 
 }

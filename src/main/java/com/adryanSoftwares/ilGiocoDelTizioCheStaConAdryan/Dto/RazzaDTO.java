@@ -15,6 +15,9 @@ public class RazzaDTO {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("idRazza")
+    private Integer idRazza;
+
     @JsonProperty("bonus")
     private String bonus;
 

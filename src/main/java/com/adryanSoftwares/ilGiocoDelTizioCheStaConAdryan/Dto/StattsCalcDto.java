@@ -12,13 +12,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StattsCalcDto {
 
+    @JsonProperty("idStattsCalc")
+    private Integer idStattsCalc;
     @JsonProperty("utilizzoArmaX")
-    private int utilizzoArmaX;
+    private Integer utilizzoArmaX;
     @JsonProperty("ca")
-    private int ca;
+    private Integer ca;
     @JsonProperty("vitaAttuale")
-    private int vitaAttuale;
-
-
+    private Integer vitaAttuale;
+    @JsonProperty("vitaMax")
+    private Integer vitaMax;
 
 }

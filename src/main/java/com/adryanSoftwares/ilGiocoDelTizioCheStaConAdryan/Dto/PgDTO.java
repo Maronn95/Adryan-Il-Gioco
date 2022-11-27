@@ -1,10 +1,10 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.MagiaEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.AvanzamentoStattsPureEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.InventarioEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.InventarioEquipaggiatoEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.RazzaEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.SkillsEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.PoteriEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,14 +15,15 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class PgDTO {
 
     @JsonProperty("idPg")
-    private Long idPg;
+    private Integer idPgDto;
 
     @JsonProperty("name")
-    private String name;
+    private String nameDto;
 
     @JsonProperty("stattsPureDTO")
     private StattsPureDTO stattsPureDTO;
@@ -30,17 +31,24 @@ public class PgDTO {
     @JsonProperty("stattsCalcDto")
     private StattsCalcDto stattsCalcDto;
 
+    @JsonProperty("avanzamentoStattsPure")
+    private AvanzamentoStattsPureEntity avanzamentoStattsPure;
+
     @JsonProperty("razza")
-    private RazzaEntity razza;
+    private RazzaEntity razzaDto;
 
-    @JsonProperty("skills")
-    private List<SkillsEntity> skills;
+    @JsonProperty("skillEntityList")
+    private List<Integer> skillList;
 
-    @JsonProperty("poteri")
-    private List<PoteriEntity> poteri;
+    @JsonProperty("potereEntityList")
+    private List<Integer> potereList;
 
-    @JsonProperty("magia")
-    private List<MagiaEntity> magie;
+    @JsonProperty("magiaEntityList")
+    private List<Integer> magiaList;
 
+    @JsonProperty("inventarioEntity")
+    private InventarioEntity inventarioEntity;
 
+    @JsonProperty("inventarioEquipaggiatoEntity")
+    private InventarioEquipaggiatoEntity inventarioEquipaggiatoEntity;
 }

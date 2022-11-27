@@ -2,12 +2,8 @@ package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoInventarioDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoInventarioMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests.PgNewJSONreq;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoInventarioEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses.PgNewJSONresp;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioJSONService;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.PgJSONservice;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoInventarioJSONServiceImpl;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoInventarioService;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 public class OggettiInventarioController {
 
    @Autowired
-   OggettoInventarioJSONService OIS;
+   OggettoInventarioService OIS;
 
 
    @GetMapping("/getOggettoInventario/{idOggettoInventario}")

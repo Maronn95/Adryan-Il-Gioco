@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.responses;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.RazzaEnum;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -28,27 +29,38 @@ public class PgNewJSONresp {
     private StattsCalcEntity stattsCalc;
 
     @JsonProperty
-    private RazzaEntity razza;
+    private InventarioEquipaggiatoEntity inventarioEquipaggiato;
+
+    @JsonProperty
+    private AvanzamentoStattsPureEntity avanzamentoStattsPure;
+
+    @JsonProperty
+    private RazzaEnum razzaEnum;
 
     public PgNewJSONresp(PgEntity pgEntity) {
         this.idPG= Math.toIntExact(pgEntity.getIdPG());
         this.name=pgEntity.getName();
         this.stattsPure = pgEntity.getStattsPureEntity();
-        this.stattsCalc = pgEntity.getStattsCalc();
-       // ??? danie pensaci tu??? addo li vu mett ste stattcalc? this.stattsCalc = pgEntity.get?
-        this.razza = pgEntity.getRazza();
+        this.stattsCalc =pgEntity.getStattsCalcEntity();
+        this.razzaEnum = pgEntity.getRazzaEnum();
+        this.inventario = pgEntity.getInventarioEntity();
+        this.inventarioEquipaggiato = pgEntity.getInventarioEquipaggiatoEntity();
+        this.skillList = pgEntity.getSkillList();
+        this.potereList = pgEntity.getPotereList();
+        this.magiaList = pgEntity.getMagiaList();
+        this.avanzamentoStattsPure = pgEntity.getAvanzamentoStattsPureEntity();
 
     }
     @JsonProperty
-    private List<PoteriEntity> poteri;
+    private List<Integer> potereList;
 
     @JsonProperty
-    private List<MagiaEntity> magie;
+    private List<Integer> magiaList;
 
     @JsonProperty
     private InventarioEntity inventario;
 
     @JsonProperty
-    private List<SkillsEntity> skills;
+    private List<Integer> skillList;
 
 }

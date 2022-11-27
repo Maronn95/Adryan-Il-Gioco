@@ -1,16 +1,43 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.StattsPureDTO;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Repository.StattsPureRepository;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsPureEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.StattsPureService;
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @Service
 public class StattsPureServiceImpl implements StattsPureService {
 
-    //convertitore ENTITY-->DTO
+    @Autowired
+    StattsPureRepository stattsPureRepository;
+
+    @Override
+    public StattsPureEntity create(StattsPureDTO entityRequest) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (StattsPureEntity) stattsPureRepository.creates(entityRequest);
+    }
+
+    @Override
+    public StattsPureEntity selectById(Integer idStattsPure) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
+        return (StattsPureEntity) stattsPureRepository.selectById(idStattsPure);
+    }
+
+    @Override
+    public StattsPureEntity delete(Integer idStattsPure) throws IOException, ParseException, InterruptedException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (StattsPureEntity) stattsPureRepository.delete(idStattsPure);
+    }
+
+    @Override
+    public StattsPureEntity update(StattsPureDTO stattsPureDTO) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        return (StattsPureEntity) stattsPureRepository.update(stattsPureDTO);
+    }
+
+//convertitore ENTITY-->DTO
 
     private StattsPureDTO convertToDto (StattsPureEntity stattsPureEntity){
         StattsPureDTO stattsPureDTO =new StattsPureDTO();
@@ -18,7 +45,7 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureDTO.setIdStattsPure(stattsPureEntity.getIdStattsPure());
 
         //stattsPureDTO.setVita(stattsPureEntity.getVita());
-        stattsPureDTO.setVitaMax(stattsPureEntity.getVitaMax());
+        stattsPureDTO.setVitaPura(stattsPureEntity.getVitaPura());
         //stattsPureDTO.setVitaAttuale(stattsPureEntity.getVitaAttuale());
 
         stattsPureDTO.setCostituzione(stattsPureEntity.getCostituzione());
@@ -43,7 +70,7 @@ public class StattsPureServiceImpl implements StattsPureService {
         stattsPureEntity.setIdStattsPure(stattsPureDTO.getIdStattsPure());
         }
         //stattsPureEntity.setVita(stattsPureDTO.getVita());
-        stattsPureEntity.setVitaMax(stattsPureDTO.getVitaMax());
+        stattsPureEntity.setVitaPura(stattsPureDTO.getVitaPura());
         //stattsPureEntity.setVitaAttuale(stattsPureDTO.getVitaAttuale());
 
         stattsPureEntity.setCostituzione(stattsPureDTO.getCostituzione());
@@ -59,35 +86,6 @@ public class StattsPureServiceImpl implements StattsPureService {
         return stattsPureEntity;
     }
 
-    @Override
-    public List<StattsPureDTO> getAllStatts() {
-        /*List<StattsPureEntity> Pgstatts = stattsPureRepository.findAll();
-        List<StattsPureDTO> stattsDTO = new ArrayList<>();
-        for(StattsPureEntity stattsPureEntity : Pgstatts){
-            StattsPureDTO stattsPureDTO = convertToDto(stattsPureEntity);
-            stattsDTO.add(stattsPureDTO);
-        }
-        return stattsDTO;*/
-        return  null;
-    }
 
-    public StattsPureEntity getStattByIdPg(Long idPg) {
-        return  null;
-        }
-
-    @Override
-    public StattsPureEntity getStattById(Long IdStattsPure) {
-        //StattsPureEntity stattsPureEntity = stattsPureRepository.getById(IdStattsPure);
-        //return stattsPureEntity;
-        return  null;
-    }
-
-    @Override
-    public StattsPureDTO setStatt(StattsPureDTO stattsPureDTO) {
-        StattsPureEntity stattsPure = convertToEntity(stattsPureDTO);
-        //stattsPureRepository.save(stattsPure);
-        //return stattsPureDTO;
-        return  null;
-    }
 
 }

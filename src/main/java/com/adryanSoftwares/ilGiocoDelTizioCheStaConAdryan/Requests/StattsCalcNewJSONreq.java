@@ -1,5 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.StattsCalcEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,11 +13,24 @@ import lombok.Setter;
 @NoArgsConstructor
 public class StattsCalcNewJSONreq {
 
-    @JsonProperty("utilizzoArmaX")
-    private int utilizzoArmaX;
-    @JsonProperty("ca")
-    private int ca;
-    @JsonProperty("vitaAttuale")
-    private int vitaAttuale;
 
+    @JsonProperty
+    private Integer idStattsCalc;
+
+    @JsonProperty
+    private Integer utilizzoArmaX;
+    @JsonProperty
+    private Integer ca;
+    @JsonProperty
+    private Integer vitaAttuale;
+    @JsonProperty
+    private Integer vitaMax;
+
+    public StattsCalcNewJSONreq(StattsCalcEntity stattsCalcEntity) {
+        this.idStattsCalc = Math.toIntExact(stattsCalcEntity.getIdStattsCalc());
+        this.utilizzoArmaX = stattsCalcEntity.getUtilizzoArmaX();
+        this.ca = stattsCalcEntity.getCa();
+        this.vitaAttuale = stattsCalcEntity.getVitaAttuale();
+        this.vitaMax = stattsCalcEntity.getVitaMax();
+    }
 }

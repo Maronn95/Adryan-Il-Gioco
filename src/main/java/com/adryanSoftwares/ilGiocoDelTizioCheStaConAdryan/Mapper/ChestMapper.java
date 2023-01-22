@@ -14,6 +14,7 @@ public class ChestMapper {
             if(ogDto.getLivello()!=null)chest.setLivello(ogDto.getLivello());
             if(ogDto.getRarita()!=null) chest.setRarita((ogDto.getRarita()));
             if(ogDto.getLoot()!=null)chest.setLoot(ogDto.getLoot());
+            if(ogDto.getValoreRarita()!=null)chest.setValoreRarita(ogDto.getValoreRarita());
             return chest;
 
         }
@@ -28,6 +29,7 @@ public class ChestMapper {
             if(chest.getLivello()!=null)dto.setLivello(chest.getLivello());
             if (chest.getRarita()!= null) dto.setRarita((chest.getRarita()));
             if(chest.getLoot()!=null)dto.setLoot(chest.getLoot());
+            if(chest.getValoreRarita()!=null)dto.setValoreRarita((chest.getValoreRarita()));
         }
         return dto;
     }

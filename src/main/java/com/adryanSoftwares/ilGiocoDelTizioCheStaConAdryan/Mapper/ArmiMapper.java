@@ -28,7 +28,7 @@ public class ArmiMapper {
                 dto.setGittata((a.getGittata()));
             }
             if(a.getMoltiplicatoreCritico()!=null)dto.setMoltiplicatoreCritico(a.getMoltiplicatoreCritico());
-            if(a.getProbabilitaCriticoArma()!=null)
+            if(a.getProbabilitaCriticoArma()!=null)dto.setProbabilitaCriticoArma(a.getProbabilitaCriticoArma());
             if(a.getRarita()!=null)dto.setRarita(a.getRarita());
             if(a.getValoreRarita()!=null)dto.setValoreRarita(a.getValoreRarita());
             if(a.getLivello()!=null)dto.setLivello(a.getLivello());

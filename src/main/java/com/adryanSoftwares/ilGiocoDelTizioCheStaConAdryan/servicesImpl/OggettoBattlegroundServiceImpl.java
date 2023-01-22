@@ -76,8 +76,8 @@ private OggettiRepository oggettiRepository;
         for(OggettoBattleGroundEntity oggetto : oggetti ){
             if( oggetto.getValoreRarita()<= valoreRarita
                     && oggetto.getLivello() == livello
-                    ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()+1 != 5 && oggetto.getLivello() == livello+1)
-                    ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()-1 != 0 && oggetto.getLivello() == livello-1)
+                    ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()+1 < 7 && oggetto.getLivello() == livello+1)
+                    ||oggetto.getValoreRarita()<= valoreRarita && (oggetto.getLivello()-1 >= 0 && oggetto.getLivello() == livello-1)
             ){
                 oggettiFiltrati.add(oggetto);
             }

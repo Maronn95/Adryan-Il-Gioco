@@ -42,4 +42,10 @@ public class ChestController {
         ChestDTO dto =( ChestMapper.entityToDto(chestService.delete(id)));
         return dto;
     }
+    @GetMapping("/loot/{id}")
+    public ChestDTO generatingLoot (@PathVariable("id")Integer id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        ChestDTO dto= (ChestMapper.entityToDto(chestService.selectChest(id)));
+        dto.setLoot(chestService.generatingLoot(dto.getDimensione(),dto.getValoreRarita(),dto.getLivello()));
+        return dto;
+    }
 }

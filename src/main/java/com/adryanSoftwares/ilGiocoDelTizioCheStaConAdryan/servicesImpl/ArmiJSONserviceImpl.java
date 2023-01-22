@@ -57,8 +57,8 @@ public class ArmiJSONserviceImpl implements ArmiJSONservice {
         for(ArmiEntity arma : armi ){
             if( arma.getValoreRarita()<= valoreRarita
                     && arma.getLivello() == livello
-                    ||arma.getValoreRarita()<= valoreRarita && (arma.getLivello()+1 != 5 && arma.getLivello() == livello+1)
-                    ||arma.getValoreRarita()<= valoreRarita && (arma.getLivello()-1 != 0 && arma.getLivello() == livello-1)
+                    ||arma.getValoreRarita()<= valoreRarita && (arma.getLivello()+1 < 7 && arma.getLivello() == livello+1)
+                    ||arma.getValoreRarita()<= valoreRarita && (arma.getLivello()-1 >= 0 && arma.getLivello() == livello-1)
             ){
                 armiFiltrate.add(arma);
             }

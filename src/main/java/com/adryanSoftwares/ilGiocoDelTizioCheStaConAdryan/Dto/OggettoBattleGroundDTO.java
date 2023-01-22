@@ -1,16 +1,11 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ChestEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ProtezioniIndossabiliEntity;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 
 @AllArgsConstructor
@@ -22,20 +17,49 @@ public class OggettoBattleGroundDTO {
   @JsonProperty("idOggettoBattleGround")
   private Integer idOggettoBattleGround;
 
-  @JsonProperty("oggettiEntity")
-  private OggettiEntity oggettiEntity;
+  @JsonProperty("idArmi")
+  private Integer idArmi;
 
-  @JsonProperty("armiEntity")
-  private ArmiEntity armiEntity;
+  @JsonProperty("idOggetto")
+  private Integer idOggetto;
 
-  @JsonProperty("protezioniIndossabiliEntity")
-  private ProtezioniIndossabiliEntity protezioniIndossabiliEntity;
+  @JsonProperty("idProtezione")
+  private Integer idProtezione;
 
-  @JsonProperty("chestEntity")
-  private ChestEntity chestEntity;
+  @JsonProperty("base")
+  private Integer base;
 
-  @JsonProperty("statusList")
-  private List<Integer> statusList;
+  @JsonProperty("altezza")
+  private Integer altezza;
 
+  @JsonProperty("nome")
+  private String nome;
+
+  @JsonProperty("descrizione")
+  private String descrizione;
+
+  @JsonProperty("dimensioneBattleground")
+  private String dimensioneBattleground;
+
+  @JsonProperty("copertura")
+  private Boolean copertura;
+
+  @JsonProperty("valoreCopertura")
+  private Double valoreCopertura;
+
+  @JsonProperty("loot")
+  private Boolean loot;
+
+  @JsonProperty("randomLoot")
+  private Double randomLoot;
+
+  @JsonProperty("rarita")
+  private Rarita rarita;
+
+  @JsonProperty("valoreRarita")
+  private Integer valoreRarita;
+
+  @JsonProperty("livello")
+  private Integer livello;
 
 }

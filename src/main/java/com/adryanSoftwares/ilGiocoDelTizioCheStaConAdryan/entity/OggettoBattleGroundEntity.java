@@ -1,18 +1,16 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
 public class OggettoBattleGroundEntity {
-
     private String path = "\\src\\main\\java\\com\\adryanSoftwares\\ilGiocoDelTizioCheStaConAdryan\\JSONdb\\JSONOggettoBattleGround\\";
     private String table="OggettoBattleGround";
 
@@ -24,7 +22,29 @@ public class OggettoBattleGroundEntity {
 
     private ProtezioniIndossabiliEntity protezioniIndossabiliEntity;
 
-    private ChestEntity chestEntity;
+    private String descrizione;
 
-    private List<Integer> statusList;
+    private String nome;
+
+    private String dimensioniBattleGround;
+
+    private Integer base;
+
+    private Integer altezza;
+
+    private Boolean copertura;
+
+    private Double valoreCopertura;
+
+    private Boolean loot;
+
+    private Double randomLoot;
+
+    private Rarita rarita;
+
+    private Integer valoreRarita;
+
+    private Integer livello;
+
+
 }

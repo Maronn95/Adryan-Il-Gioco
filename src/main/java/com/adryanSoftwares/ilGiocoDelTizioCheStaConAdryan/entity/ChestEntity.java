@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Setter
@@ -19,11 +20,24 @@ public class ChestEntity {
 
     private Integer idChest;
 
-    private String dimensione;
+    private Integer dimensione;
 
     private Integer livello;
 
     private Rarita rarita;
 
-    private List<Integer> loot;
+    private Integer valoreRarita;
+
+    private Integer[] loot;
+
+
+
+
+
+
+
+
+
+
+
 }

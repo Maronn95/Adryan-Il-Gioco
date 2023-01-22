@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.JSONdb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.catalina.mapper.Mapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -154,7 +155,10 @@ public class JSONcrudRepository <entityClass>   {
         List<Object> JSONentities = JSONutils.findJSONs(this.path);
         List<entityClass> entities = new ArrayList<>();
         for (Object obj: JSONentities) {
-            entityClass entity = (entityClass) new ObjectMapper().readValue(obj.toString(), this.entityClass);
+            JSONParser parser = new JSONParser();
+            JSONObject json = (JSONObject) parser.parse(obj.toString());
+            json = this.subSelect( json ,this.path, this.table, this.entityClass);
+            entityClass entity = (entityClass) new ObjectMapper().readValue(json.toString(), this.entityClass);
             entities.add(entity);
         }
 

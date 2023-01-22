@@ -18,11 +18,13 @@ public class ChestDTO {
     @JsonProperty("idChest")
     private Integer idChest;
     @JsonProperty("dimensione")
-    private String dimensione;
+    private Integer dimensione;
     @JsonProperty("livello")
     private Integer livello;
     @JsonProperty("rarita")
     private Rarita rarita;
+    @JsonProperty("valoreRarita")
+    private Integer valoreRarita;
     @JsonProperty("loot")
-    private List<Integer> loot;
+    private Integer[] loot;
 }

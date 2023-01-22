@@ -1,21 +1,21 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Requests;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.BattlegroundEntity;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class BattleGroundNewJSONreq {
 
     @JsonProperty
-    private Integer idBattleGround;
-
-    @JsonProperty
-    private String mapCode;
-
-    @JsonProperty
-    private String mapSize;
+    private Integer idBattleground;
 
     @JsonProperty
     private String ambientazione;
@@ -24,8 +24,7 @@ public class BattleGroundNewJSONreq {
     private String weather;
 
     @JsonProperty
-    private List<BattlegroundEntity> data;
+    private Integer[][] oggetto;
 
-    @JsonProperty
-    private OggettiEntity oggetto;
+
 }

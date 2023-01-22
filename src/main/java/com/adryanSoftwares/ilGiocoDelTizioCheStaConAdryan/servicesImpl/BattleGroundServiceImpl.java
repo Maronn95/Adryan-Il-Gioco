@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Random;
 
 
 @Service
@@ -26,8 +27,17 @@ public class BattleGroundServiceImpl implements BattleGroundService {
     }
 
     @Override
+    public BattlegroundEntity newBattleGroundDinamico(String ambientazione, String weather, int base, int altezza) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
+        BattlegroundEntity battlegroundEntity = new BattlegroundEntity();
+        battlegroundEntity.setAmbientazione(ambientazione);
+        battlegroundEntity.setWeather(weather);
+        battlegroundEntity.setOggetto(popolamentoGriglia(ambientazione, base, altezza));
+        return (BattlegroundEntity) battleGroundRepository.creates(battlegroundEntity);
+    }
+
+    @Override
     public BattlegroundDto selectBattleGround(Integer id) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-        return (BattlegroundDto) battleGroundRepository.selectById(id);
+        return BattlegroundMapper.entityToDto((BattlegroundEntity) battleGroundRepository.selectById(id));
     }
 
     @Override
@@ -44,4 +54,48 @@ public class BattleGroundServiceImpl implements BattleGroundService {
     public List<BattlegroundEntity> findAllByOrderByIdBattleGroundAsc() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         return battleGroundRepository.findAll();
     }
+
+
+    public Integer[][] popolamentoGriglia(String ambientazione, int base, int altezza){
+
+        Integer[][] griglia = new Integer[base][altezza];
+
+        switch (ambientazione) {
+            case "bosco":
+                System.out.println("popolamentoGriglia");
+                int numeroCreazioni=base+altezza/7;
+                Random rand = new Random();
+
+                for(int i=0; i<=numeroCreazioni; i++){
+                    int base2=rand.nextInt(base);
+                    int altezza2=rand.nextInt(altezza);
+                    if(griglia[base2][altezza2]==null) {
+                        griglia[base2][altezza2] = rand.nextInt(10);
+                    }else {
+                        int base3=rand.nextInt(base);
+                        int altezza3=rand.nextInt(altezza);
+                        if(griglia[base3][altezza3]==null) {
+                            griglia[base3][altezza3] = rand.nextInt(10);
+                        }else {
+                        break;
+                        }
+                    }
+
+
+                }
+                return griglia;
+
+            case "panura":
+                return griglia;
+
+            case "lago":
+                return griglia;
+        }
+
+
+        return griglia;
+    }
+
+
+
 }

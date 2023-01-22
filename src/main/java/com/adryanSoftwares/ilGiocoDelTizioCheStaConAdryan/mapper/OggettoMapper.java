@@ -6,16 +6,16 @@ import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 public class OggettoMapper {
 
     public static OggettiEntity DtoNewEntity(OggettiDTO ogDto){
-        OggettiEntity oggetto = new OggettiEntity();
+        OggettiEntity entity = new OggettiEntity();
         if (ogDto != null) {
-            if (ogDto.getIdOggetti() != null) oggetto.setIdOggetti(ogDto.getIdOggetti());
-            if (ogDto.getDescrizione()!= null) oggetto.setDescrizione((ogDto.getDescrizione()));
-            if(ogDto.getNome()!= null) oggetto.setNome((ogDto.getNome()));
-            if(ogDto.getLivello()!=null)oggetto.setLivello(ogDto.getLivello());
-            if(ogDto.getTipo()!=null) oggetto.setTipo((ogDto.getTipo()));
-            if(ogDto.getRarita()!=null) oggetto.setRarita((ogDto.getRarita()));
-            if(ogDto.getValoreRarita()!=null)oggetto.setValoreRarita(ogDto.getValoreRarita());
-            return oggetto;
+            if (ogDto.getIdOggetti() != null) entity.setIdOggetti(ogDto.getIdOggetti());
+            if (ogDto.getDescrizione()!= null) entity.setDescrizione((ogDto.getDescrizione()));
+            if(ogDto.getNome()!= null) entity.setNome((ogDto.getNome()));
+            if(ogDto.getLivello()!=null)entity.setLivello(ogDto.getLivello());
+            if(ogDto.getTipo()!=null) entity.setTipo((ogDto.getTipo()));
+            if(ogDto.getRarita()!=null) entity.setRarita((ogDto.getRarita()));
+            if(ogDto.getValoreRarita()!=null)entity.setValoreRarita(ogDto.getValoreRarita());
+            return entity;
 
         }
         return null;

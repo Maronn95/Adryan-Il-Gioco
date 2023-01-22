@@ -19,6 +19,7 @@ public interface BattleGroundService{
 
     BattlegroundEntity update(BattlegroundDto dto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
+    BattlegroundEntity newBattleGroundDinamico(String ambientazione, String weather, int base, int altezza) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
     List<BattlegroundEntity> findAllByOrderByIdBattleGroundAsc() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 }

@@ -16,4 +16,7 @@ public interface CreaturaSelvaticaService {
     CreaturaSelvaticaNewJSONresp delete (Integer idCreaturaSelvatica) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
 
     CreaturaSelvaticaNewJSONresp update(CreaturaSelvaticaNewJSONreq creaturaSelvaticaNewJSONreq) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException;
+
+
+
 }

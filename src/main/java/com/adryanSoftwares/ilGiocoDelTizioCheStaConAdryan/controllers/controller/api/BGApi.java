@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-@Api(value="/BattleGround", tags="BG")
+@Api(value="/BattleGround2", tags="BG")
 @RequestMapping(value="/BattleGround")
 public interface BGApi {
 

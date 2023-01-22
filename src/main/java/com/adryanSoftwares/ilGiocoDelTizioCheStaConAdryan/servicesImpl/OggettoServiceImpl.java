@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class OggettoServiceImpl implements OggettiService {
 @Autowired
-private OggettiRepository oggettiRepository;
+OggettiRepository oggettiRepository;
 
     @Override
     public OggettiEntity newOggetto(OggettiDTO oggetto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {

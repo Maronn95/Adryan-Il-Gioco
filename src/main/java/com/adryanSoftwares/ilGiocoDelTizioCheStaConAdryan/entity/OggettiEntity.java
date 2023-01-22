@@ -1,6 +1,7 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
+import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.TipoOggetto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,5 @@ public class OggettiEntity {
     private Rarita rarita;
 
     private Integer valoreRarita;
-
 
 }

@@ -15,13 +15,10 @@ public class BattlegroundEntity {
 
     private Integer idBattleground;
 
-    private String mapCode;
-
-    private String mapSize;
-
     private String ambientazione;
 
     private String weather;
 
-    private OggettiEntity oggetto;
+    private Integer[][] oggetto;
+
 }

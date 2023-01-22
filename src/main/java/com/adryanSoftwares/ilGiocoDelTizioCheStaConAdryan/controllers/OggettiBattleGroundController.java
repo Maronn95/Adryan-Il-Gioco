@@ -1,13 +1,9 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers;
 
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.ArmiDto;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettoBattleGroundDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.ArmiMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettiBattlegroundMapper;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.ArmiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettoBattleGroundEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettoBattleGroundService;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.servicesImpl.OggettoBattlegroundServiceImpl;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/oggetti_battleground")
+@RequestMapping(value="/oggettiBattleground")
 public class OggettiBattleGroundController {
 
     @Autowired
     OggettoBattleGroundService OBS;
-
-
 
     @RequestMapping(value="/Oggetti")
     public List<OggettoBattleGroundDTO> GetOggettiBattleground() throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
@@ -35,6 +29,7 @@ public class OggettiBattleGroundController {
            oggettiDto.add( OBM.entityToDto(obj));
         return oggettiDto;
     }
+
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     public OggettoBattleGroundEntity getOggettiById(@PathVariable Integer id) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         OggettiBattlegroundMapper OBM = new OggettiBattlegroundMapper();
@@ -48,12 +43,12 @@ public class OggettiBattleGroundController {
     @RequestMapping(value="/create", method= RequestMethod.POST)
     public OggettoBattleGroundEntity create(@RequestBody OggettoBattleGroundDTO oggettiDto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
         OggettoBattleGroundEntity oggetto= OBS.newOggetto( oggettiDto);
-        return oggetto;    }
+        return oggetto;
+    }
 
     @RequestMapping(value="/update", method= RequestMethod.PUT)
     public OggettoBattleGroundDTO Update(@RequestBody OggettoBattleGroundDTO oggettiDto) throws IOException, ParseException, NoSuchFieldException, InterruptedException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        OggettoBattleGroundDTO dto = OggettiBattlegroundMapper.entityToDto(OBS.update(oggettiDto));
-        return dto;
+        return OggettiBattlegroundMapper.entityToDto(OBS.update(oggettiDto));
     }
 
     @RequestMapping(value="/delete/{id}", method =  RequestMethod.DELETE)

@@ -1,7 +1,6 @@
 package com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.controllers.controller;
 
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Dto.OggettiDTO;
-import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Enum.Rarita;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.Mapper.OggettoMapper;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.entity.OggettiEntity;
 import com.adryanSoftwares.ilGiocoDelTizioCheStaConAdryan.services.OggettiService;
@@ -23,27 +22,24 @@ public class OggettoController {
 
     @GetMapping("/getOggetto/{id}")
     public OggettiDTO getOggetto (@PathVariable("id") Integer id) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException {
-
-        OggettiDTO dto =(OggettoMapper.entityToDto(oggettiService.selectOggetto(id)));
-        return dto;
+        return OggettoMapper.entityToDto(oggettiService.selectOggetto(id));
     }
 
     @PostMapping("/newOggetto")
     public OggettiDTO create (@RequestBody OggettiDTO dto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
-        OggettiDTO newDto =( OggettoMapper.entityToDto(oggettiService.newOggetto(dto)));
-        return newDto;
+        return OggettoMapper.entityToDto(oggettiService.newOggetto(dto));
     }
+
     @PutMapping("/update")
     public OggettiDTO update (@RequestBody OggettiDTO dto) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException, InterruptedException {
-        OggettiDTO newDto = (OggettoMapper.entityToDto(oggettiService.update(dto)));
-        return newDto;
+        return OggettoMapper.entityToDto(oggettiService.update(dto));
     }
+
     @DeleteMapping("/delete/{id}")
     public OggettiDTO delete (@PathVariable("id") Integer id) throws IOException, ParseException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, NoSuchFieldException, ClassNotFoundException, InterruptedException {
-
-        OggettiDTO dto =( OggettoMapper.entityToDto(oggettiService.delete(id)));
-        return dto;
+        return OggettoMapper.entityToDto(oggettiService.delete(id));
     }
+
     @GetMapping("/byLevelAndRarity/{rarita}/{livello}")
     public List<OggettiDTO> selectByLevelAndRarity(@PathVariable("rarita") Integer rarita, @PathVariable("livello")Integer livello) throws IOException, ParseException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException {
     List<OggettiDTO> oggettiFiltrati = new ArrayList<>();

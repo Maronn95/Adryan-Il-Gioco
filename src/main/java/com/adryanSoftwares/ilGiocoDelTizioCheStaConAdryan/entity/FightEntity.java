@@ -26,4 +26,5 @@ public class FightEntity {
     private List<Integer> pgList;
 
     private BattlegroundEntity battlegroundEntity;
+
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,12 +17,17 @@ public class MetodoB1DTO {
     @JsonProperty("azione")
     String azione;
 
-    @JsonProperty("idPg1")
-    Integer idPg1;
-
-    @JsonProperty("idPg2")
-    Integer idPg2;
+    @JsonProperty("pgList")
+    List<String> pgList;
+    // come si popola questa lista?
+    // risposta:
+    // posizione 0 = stringa tipo personaggio
+    // posizione 1 = id personaggio
+    // posizione 2 = stringa tipo personaggio
+    // posizione 3 = id personaggio
+    // etcetera
 
     @JsonProperty("idFight")
     Integer idFight;
+
 }
